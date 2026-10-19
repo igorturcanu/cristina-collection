@@ -1,0 +1,1054 @@
+<!doctype html>
+<html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Cristina Collection – croitorie în Schiedam</title><meta name="description" content="Croitorie, reparații și ajustări de haine în Schiedam. Haine pe măsură și haine de vânzare. Scrieți-ne pe WhatsApp."><meta property="og:title" content="Cristina Collection – croitorie în Schiedam"><meta property="og:description" content="Reparații, ajustări și haine pe măsură. Scrieți-ne pe WhatsApp."><meta property="og:image" content="https://igorturcanu.github.io/cristina-collection/img/hero.jpg"><meta property="og:url" content="https://igorturcanu.github.io/cristina-collection/"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%E2%9C%82%EF%B8%8F%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,400;1,6..96,600&family=Figtree:wght@400;500;600;700&display=swap"><style id="css">
+:root{
+  --bg:#FBF6EE; --surface:#FFFDF9; --ink:#3A2430; --muted:#7A6570; --line:#EEDFD6;
+  --accent:#A53B64; --accent2:#E07A6B; --accent-soft:#FBE4EA;
+  --peach:#FDEBDD; --sage:#E6F0E4; --lav:#EEE8F6; --butter:#FFF4D6;
+  --wa:#177A48; --wa-ink:#FFFFFF; --sold:#3A2430; --danger:#B3261E;
+  --shadow:0 1px 2px rgba(58,36,48,.05),0 10px 30px rgba(165,59,100,.08);
+  color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Figtree,"Segoe UI",system-ui,sans-serif}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:16px;padding-block:0 96px}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.langbar{display:flex;justify-content:flex-end;gap:4px;padding-block:14px 0}
+.langbar button{border:1px solid transparent;background:none;border-radius:999px;padding:4px 10px;font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--muted);cursor:pointer}
+.langbar button[aria-pressed="true"]{border-color:var(--line);background:var(--surface);color:var(--ink)}
+header.top{margin-top:10px;padding:28px 20px;display:grid;gap:18px;border-radius:18px;background:linear-gradient(135deg,var(--accent-soft) 0%,var(--peach) 55%,var(--butter) 100%)}
+@media (min-width:860px){header.top{padding:40px 40px}}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1.brand{margin:0;font-family:"Bodoni Moda",Didot,"Times New Roman",serif;font-weight:500;line-height:.95;font-size:clamp(46px,11vw,104px);letter-spacing:-.01em;text-wrap:balance}
+h1.brand{color:var(--ink)}
+h1.brand em{font-style:italic;font-weight:400;color:var(--accent);background:linear-gradient(95deg,var(--accent) 10%,var(--accent2) 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-right:.08em}
+.lede{margin:0;max-width:52ch;color:var(--muted);font-size:17px}
+.contact{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.jump{display:flex;flex-wrap:wrap;gap:8px 18px;font-weight:600;font-size:15px}
+.jump a{color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor}
+.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--wa);color:var(--wa-ink);text-decoration:none;font-weight:600;border:0;border-radius:999px;padding:12px 20px;cursor:pointer}
+.btn-wa svg{width:18px;height:18px;flex:none}
+.phone{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid rgba(165,59,100,.18);border-radius:999px;background:var(--surface);font-variant-numeric:tabular-nums;user-select:all}
+.phone button{border:0;background:none;color:var(--accent);font-weight:600;cursor:pointer;padding:0}
+
+.hero{display:grid;gap:24px;align-items:center}
+
+.herotext{display:grid;gap:18px;align-content:center}
+.heroimg{position:relative;margin:6px 0;aspect-ratio:4/3;width:100%;max-width:760px;border-radius:14px;box-shadow:0 12px 30px rgba(58,36,48,.15);overflow:hidden;background:var(--accent-soft)}
+@media (max-width:600px){.heroimg{aspect-ratio:4/5}}
+.heroimg img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.heroimg figcaption{position:absolute;left:12px;bottom:12px;background:var(--surface);color:var(--ink);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:3px}
+.paylist{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.paylist li{border:1px solid rgba(165,59,100,.2);background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:10px 18px;font-weight:600}
+.regform{display:grid;gap:14px;grid-template-columns:1fr;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px}
+@media (min-width:760px){.regform{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.regform .consent,.regform .actions{grid-column:1/-1}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:15px;cursor:pointer}
+.consent input{width:20px;height:20px;flex:none;margin:2px 0 0;accent-color:var(--accent)}
+.main{scroll-margin-top:16px}
+.main{margin-top:28px;padding:4px 20px 28px;border-radius:18px;background:var(--surface);box-shadow:var(--shadow)}
+@media (min-width:860px){.main{padding:8px 36px 36px}}
+#croitorie{background:var(--peach)}
+#haine{background:var(--surface)}
+#despre{background:var(--lav)}
+#inregistrare{background:var(--sage)}
+#plata{background:var(--butter)}
+.about.main{padding-top:36px}
+.main .sechead{padding-block:32px 16px}
+.about.main .sechead{padding:0}
+.pay .paylist{padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.filein{display:block;width:100%;max-width:100%;font-size:16px;padding:14px;border:2px dashed var(--accent);border-radius:10px;background:var(--accent-soft);color:var(--ink);cursor:pointer}
+.filein::file-selector-button{font:inherit;font-weight:600;background:var(--accent);color:#fff;border:0;border-radius:999px;padding:10px 18px;margin-right:12px;cursor:pointer}
+.pastezone{margin-top:8px;min-height:56px;padding:12px;border:1.5px dashed var(--line);border-radius:10px;background:var(--surface);color:var(--muted);font-size:14px;outline:none}
+.pastezone:focus{border-color:var(--accent)}
+.appnote{margin:0;padding:12px 14px;border-radius:10px;background:var(--butter);color:var(--ink)!important;font-size:15px!important}
+.filelbl{display:block;font-weight:600;margin-bottom:6px}
+.vh{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;pointer-events:none}
+.stitch{height:0;border-top:2px dashed var(--accent);opacity:.6;width:120px}
+
+.about{display:grid;gap:22px;padding-block:44px 8px}
+@media (min-width:860px){.about{grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}}
+.about .sechead{padding:0}
+.abouttext{margin:0;font-size:18px;line-height:1.65;max-width:60ch}
+.abouttext p{margin:0 0 6px}
+.abouth{margin:16px 0 8px;font-family:"Bodoni Moda",Didot,serif;font-weight:500;font-size:22px;color:var(--accent)}
+.aboutlist{list-style:none;margin:0;padding:0;display:grid;gap:8px;grid-template-columns:1fr}
+@media (min-width:560px){.aboutlist{grid-template-columns:1fr 1fr}}
+.aboutlist li{position:relative;padding-left:24px;font-size:17px;line-height:1.4}
+.aboutlist li::before{content:"✓";position:absolute;left:2px;top:0;color:var(--accent);font-weight:700}
+.aboutlist strong{color:#1F1418}
+.aboutlead{margin:0 0 14px;font-size:20px;line-height:1.5;font-weight:700;font-style:italic;color:#1F1418;max-width:60ch;padding-left:14px;border-left:3px solid var(--accent)}
+.promises{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+.promises li{display:flex;gap:12px;align-items:baseline;font-weight:500}
+.promises li::before{content:"";flex:none;width:18px;border-top:2px dashed var(--accent);transform:translateY(-4px)}
+.signoff{margin:18px 0 0;font-family:"Bodoni Moda",Didot,serif;font-style:italic;font-size:24px;color:var(--accent)}
+.heroadmin{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding-top:6px;border-top:1px solid var(--line)}
+
+h2.sec{margin:0;font-family:"Bodoni Moda",Didot,serif;font-weight:500;font-size:clamp(30px,6vw,44px);line-height:1.05;text-wrap:balance}
+h2.sec em{font-style:italic;font-weight:400;color:var(--accent)}
+.sechead{display:grid;gap:8px;padding-block:40px 18px}
+.sechead p{margin:0;max-width:56ch;color:var(--muted)}
+
+.services{display:grid;grid-template-columns:1fr;border-top:1px solid rgba(58,36,48,.1)}
+@media (min-width:760px){.services{grid-template-columns:1fr 1fr;column-gap:40px}}
+.svc{display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:center;padding-block:16px;border-bottom:1px solid rgba(58,36,48,.1)}
+.svc .sname{font-weight:600;font-size:16px}
+.svc .snote{grid-column:1;font-size:14px;color:var(--muted)}
+.svc .sprice{grid-row:1;grid-column:2;font-family:"Bodoni Moda",Didot,serif;font-size:19px;white-space:nowrap;font-variant-numeric:lining-nums tabular-nums}
+.svc .sask{grid-column:2;grid-row:2;justify-self:end;font-size:14px;font-weight:600;color:var(--wa);text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+.svc .sask svg{width:16px;height:16px}
+.svc .sedit{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-top:6px}
+.svc .sedit input{flex:1;min-width:0;width:120px;border:1px solid var(--line);border-radius:6px;padding:8px 10px;background:var(--bg)}
+.svc .sedit button,.plain{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:8px 12px;font-size:14px;cursor:pointer}
+.svc .sedit .danger,.adminrow .danger{color:var(--danger)}
+.confirm{background:var(--danger)!important;color:#fff!important;border-color:var(--danger)!important}
+.langnote{margin:16px 0 0;padding:14px 16px;background:var(--surface);border-radius:8px;font-size:15px;max-width:70ch}
+.svcadd{display:flex;flex-wrap:wrap;gap:8px;padding-top:14px}
+.svcadd input{flex:1 1 180px;min-width:0;border:1px solid var(--line);border-radius:6px;padding:10px 12px;background:var(--bg)}
+
+.filters{display:flex;gap:8px;overflow-x:auto;padding-block:4px 16px;scrollbar-width:none}
+.chip{flex:none;border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 16px;cursor:pointer;font-weight:500;color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.count{font-size:13px;color:var(--muted);margin:0 0 14px}
+
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px}
+@media (min-width:720px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 22px}}
+@media (min-width:1000px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.card{display:grid;gap:8px;align-content:start}
+.photo{position:relative;aspect-ratio:3/4;max-width:100%;background:var(--accent-soft);overflow:hidden;border-radius:12px}
+.photo img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;left:8px;top:8px;background:var(--surface);color:var(--ink);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;padding:4px 8px;border-radius:3px}
+.card.sold .photo img{filter:grayscale(1);opacity:.55}
+.soldmark{position:absolute;inset:auto 0 42% 0;text-align:center;font-family:"Bodoni Moda",Didot,serif;font-style:italic;font-size:28px;color:var(--sold)}
+.name{margin:4px 0 0;font-weight:600;font-size:15px;line-height:1.3}
+.meta{display:flex;justify-content:space-between;gap:8px;align-items:baseline;font-size:14px;color:var(--muted)}
+.price{font-family:"Bodoni Moda",Didot,serif;font-size:20px;color:var(--ink);font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
+.desc{margin:0;font-size:13.5px;color:var(--muted)}
+.card .btn-wa{padding:10px 12px;font-size:14px;width:100%}
+.diamonds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 10px;padding:8px 0 30px}
+@media (max-width:420px){.dm{font-size:13px}.dm .gem{width:68px;height:68px}}
+@media (min-width:760px){.diamonds{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.dm{display:grid;justify-items:center;gap:20px;overflow-wrap:anywhere;hyphens:auto;text-decoration:none;color:var(--ink);text-align:center;font-weight:600;font-size:14px;line-height:1.25}
+.dm .gem{width:78px;height:78px;transform:rotate(45deg);border-radius:14px;background:linear-gradient(135deg,var(--surface),var(--accent-soft));border:2px solid var(--accent);box-shadow:0 8px 18px rgba(165,59,100,.18);display:grid;place-items:center;margin-top:20px;transition:transform .2s}
+.dm .gem svg{transform:rotate(-45deg);width:40px;height:40px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.dm:hover .gem,.dm:focus-visible .gem{transform:rotate(45deg) scale(1.08);background:var(--accent)}
+.dm:hover .gem svg,.dm:focus-visible .gem svg{stroke:#fff}
+#adresa{background:var(--peach)}
+.addr{display:grid;gap:18px;grid-template-columns:1fr}
+@media (min-width:760px){.addr{grid-template-columns:1.1fr .9fr;align-items:stretch}}
+.mapcard{position:relative;display:block;min-height:220px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#EAF0E6;text-decoration:none}
+.mapcard svg{position:absolute;inset:0;width:100%;height:100%}
+.mapcard .mapbtn{position:absolute;left:12px;bottom:12px;background:var(--surface);color:var(--ink);font-weight:600;font-size:14px;padding:8px 14px;border-radius:999px;box-shadow:var(--shadow)}
+.addrbox{display:grid;gap:12px;align-content:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.addrbox .street{font-family:"Bodoni Moda",Didot,serif;font-size:24px;line-height:1.2;margin:0}
+.addrbox .city{margin:0;color:var(--muted)}
+.addrbox .appt{margin:0;padding:10px 12px;border-radius:10px;background:var(--butter);font-size:15px}
+.addrbtns{display:flex;flex-wrap:wrap;gap:10px}
+.adminrow{display:flex;gap:6px}
+.chgphoto{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:999px;background:var(--accent);color:#fff;font-weight:600;font-size:14px;cursor:pointer}
+.chgphoto input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:200px}
+.adminrow button{flex:1;border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:7px 6px;font-size:13px;cursor:pointer}
+.empty{padding:48px 0;color:var(--muted);text-align:center}
+
+.admin{margin-block:24px 8px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:14px;box-shadow:var(--shadow)}
+.admin h2{margin:0;font-family:"Bodoni Moda",Didot,serif;font-weight:500;font-size:26px}
+.admin p{margin:0;color:var(--muted);font-size:14px}
+.form{display:grid;gap:12px;grid-template-columns:1fr}
+@media (min-width:720px){.form{grid-template-columns:200px 1fr 1fr}}
+.field{display:grid;gap:4px}
+.field label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select{width:100%;border:1px solid var(--line);border-radius:6px;padding:10px 12px;background:var(--bg)}
+.pick{width:100%;max-width:220px;display:grid;place-items:center;aspect-ratio:3/4;border:1.5px dashed var(--line);border-radius:6px;background:var(--bg);cursor:pointer;overflow:hidden;color:var(--muted);text-align:center;padding:10px;font-size:14px}
+@media (max-width:719px){.pick{aspect-ratio:auto;min-height:150px}}
+.pick img{width:100%;height:100%;object-fit:cover}
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn-main{background:var(--accent);color:#fff;border:0;border-radius:999px;padding:12px 22px;font-weight:600;cursor:pointer}
+.btn-main[disabled]{opacity:.5;cursor:default}
+.status{font-size:14px;color:var(--muted)}
+.status.err{color:var(--danger)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-size:14px;max-width:calc(100% - 32px);z-index:5}
+
+footer.bottom{margin-top:40px;padding:22px 20px;border-radius:18px;background:var(--accent-soft);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:var(--muted);font-size:14px}
+footer .sig{font-family:"Bodoni Moda",Didot,serif;font-style:italic;font-size:18px;color:var(--ink)}
+.float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));box-shadow:0 6px 20px rgba(0,0,0,.2);width:56px;height:56px;padding:0;border-radius:50%;z-index:4}
+.float svg{width:26px;height:26px}
+#livrare{background:var(--lav)}
+#retur{background:var(--peach)}
+.shipprice{display:grid;gap:10px;margin:0 0 16px;padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.shipprice .big{font-family:"Bodoni Moda",Didot,serif;font-size:30px;line-height:1;color:var(--accent);font-variant-numeric:lining-nums tabular-nums}
+.shipprice .row{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+.shipprice .sub{color:var(--muted);font-size:15px}
+.shipprice .free{display:inline-block;background:var(--sage);color:#2F5A34;border-radius:999px;padding:4px 12px;font-weight:600;font-size:14px}
+.retopts{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:1fr}
+@media (min-width:760px){.retopts{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.retopts li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:6px;align-content:start}
+.retopts .num{font-family:"Bodoni Moda",Didot,serif;font-size:26px;color:var(--accent);line-height:1}
+.retopts b{font-size:16px}
+.retopts span{color:var(--muted);font-size:15px}
+.retrules{margin:16px 0 0;padding:0 0 0 20px;color:var(--ink);display:grid;gap:6px;max-width:70ch}
+.shipadmin{display:grid;gap:12px;grid-template-columns:1fr}
+@media (min-width:720px){.shipadmin{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.couriers{grid-column:1/-1;border:0;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:760px){.couriers{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.couriers legend{padding:0 0 6px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.courier{display:flex;gap:10px;align-items:center;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:12px 14px;cursor:pointer;font-weight:600;min-height:48px}
+.courier input{accent-color:var(--accent);width:18px;height:18px;margin:0;flex:none}
+.courier:has(input:checked){border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.shipwide{grid-column:1/-1}
+.shipnote{grid-column:1/-1;margin:0;font-size:14px;color:var(--muted)}
+.btn-ship{display:block;text-align:center;font-size:14px;font-weight:600;color:var(--accent);text-decoration:none;padding:4px 0;border:0;background:none;cursor:pointer;width:100%}
+.btn-ship:hover{text-decoration:underline}
+#pareri{background:var(--lav)}
+.reviews{display:grid;gap:14px;grid-template-columns:1fr}
+@media (min-width:760px){.reviews{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.rev{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:10px;align-content:start}
+.rev img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px}
+.rev .rstars{color:#C98A1B;font-size:20px;letter-spacing:2px;line-height:1}
+.rev blockquote{margin:0;font-family:"Bodoni Moda",Didot,serif;font-style:italic;font-size:18px;line-height:1.45}
+.rev .rname{font-weight:600;font-size:14px;color:var(--muted)}
+.rev .danger{justify-self:start;border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:7px 12px;font-size:13px;cursor:pointer;color:var(--danger)}
+.revempty{margin:0;padding:18px;background:var(--surface);border-radius:10px;color:var(--muted)}
+.revadd{display:grid;gap:10px;grid-template-columns:1fr;margin-top:14px;padding:16px;background:var(--surface);border:1.5px dashed var(--accent);border-radius:10px}
+@media (min-width:760px){.revadd{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.revadd h3,.revadd .wide{grid-column:1/-1;margin:0}
+.revform{margin-top:22px;display:grid;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px}
+.revform h3,.share h3{margin:0;font-family:"Bodoni Moda",Didot,serif;font-weight:500;font-size:24px}
+.field textarea{width:100%;min-height:96px;resize:vertical;border:1px solid var(--line);border-radius:6px;padding:10px 12px;background:var(--bg);font:inherit;color:inherit}
+.starpick{display:flex;gap:4px}
+.starpick button{border:0;background:none;padding:2px 4px;font-size:34px;line-height:1;color:#D9CBD1;cursor:pointer;min-width:44px;min-height:44px}
+.starpick button.on{color:#C98A1B}
+.share{margin-top:22px;display:grid;gap:12px;padding:18px;border-radius:10px;background:var(--accent-soft)}
+.share p{margin:0;color:var(--muted)}
+.sharebtns{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn-fb{display:inline-flex;align-items:center;gap:8px;background:#1877F2;color:#fff;text-decoration:none;font-weight:600;border-radius:999px;padding:12px 20px}
+.btn-copy{border:1px solid rgba(165,59,100,.3);background:var(--surface);color:var(--accent);font-weight:600;border-radius:999px;padding:12px 20px;cursor:pointer}
+@media (prefers-reduced-motion:no-preference){.card{animation:rise .5s ease both}@keyframes rise{from{transform:translateY(8px)}to{transform:none}}}
+
+/* ===== Atelier redesign: full-width bands, dark top bar, sticky menu, photo hero ===== */
+:root{--esp:#2A1B17;--esp2:#3B2924;--sand:#F4EEEA;--taupe:#D7CCC8;--rasp:#B3245A;--rasp-d:#8F1A47;--white:#FFFFFF;--gut:max(16px,calc((100% - 1120px)/2))}
+body{background:var(--white)}
+.wrap{max-width:none;padding:0;padding-block:0}
+.topbar{background:var(--esp);color:#EADFD9;font-size:13px}
+.tbin{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;padding-block:6px;padding-inline:var(--gut)}
+.tbitem{display:inline-flex;align-items:center;gap:6px}
+.tbitem svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2}
+.topbar .langbar{margin-left:auto;padding:0;gap:2px}
+.topbar .langbar button{color:#EADFD9;padding:3px 9px}
+.topbar .langbar button[aria-pressed="true"]{background:var(--white);color:var(--esp);border-color:var(--white)}
+@media (max-width:520px){.tbwa{display:none}}
+.sitehead{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--white);border-bottom:1px solid var(--taupe);box-shadow:0 2px 10px rgba(42,27,23,.06)}
+.shin{display:flex;align-items:center;gap:6px 28px;padding-inline:var(--gut);padding-block:10px;flex-wrap:wrap}
+.logo{font-family:"Bodoni Moda",Didot,serif;font-size:24px;font-weight:500;color:var(--esp);text-decoration:none;white-space:nowrap}
+.logo em{color:var(--rasp)}
+.sitehead .jump{flex:1 1 auto;display:flex;flex-wrap:nowrap;overflow-x:auto;gap:4px;scrollbar-width:none;min-width:0}
+.sitehead .jump a{border:0;color:var(--esp);padding:8px 10px;border-radius:6px;white-space:nowrap;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:12.5px;text-decoration:none}
+.sitehead .jump a:hover{background:var(--sand);color:var(--rasp)}
+@media (max-width:760px){.shin{padding-block:8px}.sitehead .jump{flex-basis:100%;margin-inline:-10px}}
+header.top{position:relative;margin:0;border-radius:0;background:var(--esp);min-height:min(78vh,620px);padding:0;display:grid;align-items:end;overflow:hidden}
+@media (min-width:860px){header.top{align-items:center;padding:0}}
+header.top .heroimg{position:absolute;inset:0;margin:0;max-width:none;width:100%;height:100%;aspect-ratio:auto;border-radius:0;box-shadow:none}
+header.top .heroimg::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(32,20,17,.92) 0%,rgba(32,20,17,.55) 50%,rgba(32,20,17,.1) 100%)}
+@media (min-width:860px){header.top .heroimg::after{background:linear-gradient(90deg,rgba(32,20,17,.9) 0%,rgba(32,20,17,.6) 45%,rgba(32,20,17,.05) 80%)}}
+header.top .heroimg img{object-position:60% 30%}
+@media (max-width:859px){header.top{display:block;min-height:0}header.top .heroimg{position:relative;inset:auto;height:auto;aspect-ratio:4/3}header.top .heroimg::after{background:linear-gradient(0deg,rgba(42,27,23,1) 0%,rgba(42,27,23,0) 35%)}header.top .heroimg img{object-position:55% 30%}header.top .herotext{padding-block:8px 36px}}
+header.top .heroimg figcaption{display:none}
+header.top .herotext{position:relative;z-index:1;padding-inline:var(--gut);padding-block:8px 36px;max-width:calc(640px + 2*var(--gut));gap:16px}
+@media (min-width:860px){header.top .herotext{padding-block:80px}}
+header.top .eyebrow{color:#F5B8CE}
+header.top h1.brand{color:var(--white);font-size:clamp(42px,9vw,84px);text-transform:uppercase;letter-spacing:.02em}
+header.top h1.brand em{background:none;-webkit-text-fill-color:#F5B8CE;color:#F5B8CE;text-transform:none}
+header.top .lede{color:#F3E9E4;font-size:18px}
+header.top .phone{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.4);color:var(--white)}
+header.top .phone button{color:#F5B8CE}
+.btn-wa,.btn-main{border-radius:8px}
+.btn-main{background:var(--rasp)}
+.btn-main:hover{background:var(--rasp-d)}
+.main{margin:0;border-radius:0;box-shadow:none;padding-inline:var(--gut);padding-block:16px 56px}
+@media (min-width:860px){.main{padding-block:24px 72px}}
+#despre,#haine,#inregistrare,#adresa{background:var(--white)}
+#croitorie,#pareri,#plata{background:var(--sand)}
+.about.main{padding-top:56px}
+.main .sechead{padding-block:40px 22px}
+.eyebrow{color:var(--rasp);display:inline-flex;align-items:center;gap:10px}
+.main .eyebrow::before{content:"";width:28px;height:2px;background:var(--rasp)}
+h2.sec{color:var(--esp);letter-spacing:.005em;font-size:clamp(28px,5vw,42px)}
+h2.sec em{color:var(--rasp);text-transform:none}
+.dm .gem{border-color:var(--rasp);background:var(--white)}
+.dm .gem svg{stroke:var(--rasp)}
+.dm:hover .gem{background:var(--rasp)}
+.chip[aria-pressed="true"]{background:var(--rasp);border-color:var(--rasp)}
+.admin{margin:24px var(--gut)}
+.regform,.revform,.addrbox,.pay .paylist{border-radius:10px;border-color:var(--taupe)}
+.paylist li{background:var(--white);color:var(--rasp-d);border-color:var(--taupe)}
+.share{background:var(--white);border:1px solid var(--taupe)}
+footer.bottom{margin:0;border-radius:0;background:var(--esp);color:#D9CBC5;padding-inline:var(--gut);padding-block:40px 112px;display:grid;gap:24px;grid-template-columns:1fr}
+@media (min-width:760px){footer.bottom{grid-template-columns:1.3fr 1fr 1fr}}
+.fcol{display:grid;gap:4px;align-content:start;font-size:15px}
+footer .sig{color:var(--white);font-size:26px;font-style:normal}
+footer .sig em{color:#F5B8CE}
+.fsub{color:#BFAFA8}
+.fh{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#F5B8CE;font-weight:700;margin-bottom:4px}
+
+.qwrap{position:fixed;inset:0;z-index:20;background:rgba(32,20,17,.55);display:flex;align-items:flex-end;justify-content:center;padding-top:env(safe-area-inset-top,0px)}
+@media (min-width:700px){.qwrap{align-items:center;padding:24px}}
+.qsheet{background:var(--white);color:var(--esp);width:100%;max-width:560px;max-height:92vh;overflow-y:auto;border-radius:16px 16px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom,0px));display:grid;gap:14px}
+@media (min-width:700px){.qsheet{border-radius:16px;padding:24px}}
+.qhead{display:flex;align-items:center;gap:12px;justify-content:space-between}
+.qhead h3{margin:0;font-family:"Bodoni Moda",Didot,serif;font-weight:500;font-size:24px;color:var(--rasp)}
+.qx{border:1px solid var(--taupe);background:var(--white);border-radius:999px;width:40px;height:40px;font-size:18px;cursor:pointer;flex:none}
+.qlead{margin:0;color:#5E4A44}
+.qfields{display:grid;gap:14px}
+.qf{border:0;margin:0;padding:0;display:grid;gap:8px}
+.qf legend{padding:0 0 6px;font-weight:700;font-size:15px}
+.qopts{display:flex;flex-wrap:wrap;gap:8px}
+.qopt{border:1.5px solid var(--taupe);background:var(--white);color:var(--esp);border-radius:999px;padding:9px 14px;font-weight:600;font-size:14px;cursor:pointer;min-height:42px}
+.qopt[aria-pressed="true"]{background:var(--rasp);border-color:var(--rasp);color:#fff}
+.qphotos{background:var(--sand);border-radius:10px;padding:14px 16px}
+.qphotos p{margin:0 0 8px;font-weight:700}
+.qphotos ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.qsend{justify-self:start;padding:14px 22px;font-size:16px}
+.qvoice{display:inline-flex;gap:8px;align-items:center;justify-self:start;padding:12px 16px;border:1.5px solid var(--wa);border-radius:8px;color:var(--wa);font-weight:700;text-decoration:none}
+.qafter{margin:0;font-size:14px;color:#5E4A44}
+
+.pfwrap{position:fixed;inset:0;z-index:30;background:rgba(32,20,17,.6);display:flex;align-items:flex-end;justify-content:center}
+@media (min-width:700px){.pfwrap{align-items:center;padding:24px}}
+.pfsheet{background:var(--white);color:var(--esp);width:100%;max-width:540px;max-height:92vh;overflow-y:auto;border-radius:16px 16px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom,0px));display:grid;gap:12px}
+@media (min-width:700px){.pfsheet{border-radius:16px;padding:24px}}
+.pfinfo{margin:0;color:#5E4A44}
+.pfsteps{margin:0;padding-left:20px;display:grid;gap:10px;line-height:1.45}
+.pfbtn{position:relative;overflow:hidden;display:inline-flex;align-items:center;margin-top:6px;padding:10px 16px;border-radius:8px;background:var(--rasp);color:#fff;font-weight:700;cursor:pointer}
+.pfbtn input{position:absolute;inset:0;opacity:0;width:100%;height:100%;font-size:200px;cursor:pointer}
+.pfzone{min-height:140px;border:2.5px dashed var(--rasp);border-radius:12px;background:var(--sand);display:grid;place-items:center;text-align:center;padding:16px;font-weight:700;color:var(--rasp);outline:none}
+.pfzone.over{background:#F8DCE7}
+.pfzone img{max-width:100%;max-height:200px}
+.pfmsg{margin:0;font-weight:600}
+.editbtn{justify-self:start;align-self:start;background:#F5B8CE;color:var(--esp);border:0;border-radius:8px;padding:12px 18px;font-weight:700;font-size:15px;cursor:pointer}
+
+.heroimg img:not([src]){visibility:hidden}
+.acct{display:grid;gap:10px;padding-top:12px;border-top:1px solid var(--line)}
+.acct .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.acct input{flex:1 1 200px;min-width:0;border:1px solid var(--line);border-radius:6px;padding:10px 12px;background:var(--bg)}
+.linkbtn{border:0;background:none;color:var(--rasp);font-weight:600;padding:6px 0;cursor:pointer;text-decoration:underline;justify-self:start}
+.loading{opacity:.6}
+</style></head><body><script type="application/json" id="data">{"services": [{"id": "s9", "ro": "Coasere haine pe măsură", "nl": "Kleding op maat naaien", "en": "Clothes sewn to measure", "ru": "Пошив одежды на заказ", "price": ""}, {"id": "s10", "ro": "Modelare constructivă (tipare pe măsură)", "nl": "Patroonconstructie (patronen op maat)", "en": "Pattern making (made-to-measure patterns)", "ru": "Конструирование и моделирование одежды (выкройки)", "price": ""}, {"id": "s1", "ro": "Scurtare pantaloni și blugi", "nl": "Broek en jeans inkorten", "en": "Shorten trousers and jeans", "ru": "Укоротить брюки и джинсы", "price": ""}, {"id": "s2", "ro": "Scurtare rochie sau fustă", "nl": "Jurk of rok inkorten", "en": "Shorten a dress or skirt", "ru": "Укоротить платье или юбку", "price": ""}, {"id": "s3", "ro": "Scurtare mâneci", "nl": "Mouwen inkorten", "en": "Shorten sleeves", "ru": "Укоротить рукава", "price": ""}, {"id": "s4", "ro": "Strâmtare sau lărgire", "nl": "Innemen of uitleggen", "en": "Take in or let out", "ru": "Ушить или расширить", "price": ""}, {"id": "s5", "ro": "Înlocuire fermoar", "nl": "Rits vervangen", "en": "Replace a zipper", "ru": "Замена молнии", "price": ""}, {"id": "s7", "ro": "Reparații și cusături", "nl": "Reparaties en naaiwerk", "en": "Repairs and stitching", "ru": "Ремонт одежды", "price": ""}, {"id": "s12", "ro": "Perne și perdele (coasere, reparare)", "nl": "Kussens en gordijnen (naaien, repareren)", "en": "Cushions and curtains (sewing, repairs)", "ru": "Подушки и шторы (пошив, ремонт)", "price": ""}, {"id": "s8", "ro": "Alte lucrări — întrebați-ne", "nl": "Ander naaiwerk — vraag het ons", "en": "Other sewing work — just ask", "ru": "Другие работы — спрашивайте", "price": ""}], "products": [], "reviews": [], "hero": null, "ship": {"price": "6.95", "free": "", "discount": "20"}}</script><div class="wrap" id="root">
+  <div class="topbar"><div class="tbin"><span class="tbitem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Schiedam</span><span class="tbitem tbwa">WhatsApp +31 6 44 16 23 29</span><div class="langbar" id="langbar" role="group" aria-label="Limba / Taal / Language / Язык">
+    <button type="button" data-lang="ro">RO</button><button type="button" data-lang="nl">NL</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button>
+  </div></div></div>
+  <div class="sitehead"><div class="shin"><a class="logo" href="#top">Cristina <em>Collection</em></a><nav class="jump"><a href="#despre" data-t="jumpAbout">Despre noi</a><a href="#croitorie" data-t="jumpSvc">Croitorie</a><a href="#haine" data-t="jumpShop">Haine de vânzare</a><a href="#pareri" data-t="jumpRev">Păreri</a><a href="#inregistrare" data-t="jumpReg">Înregistrare</a><a href="#plata" data-t="jumpPay">Plată</a><a href="#adresa" data-t="jumpAddr">Adresă</a></nav></div></div>
+  <header class="top hero" id="top">
+      <figure class="heroimg" id="heroFig"><img id="heroImg" alt="Cristina Collection"><figcaption data-t="heroCap">Atelierul Cristinei</figcaption></figure>
+    <div class="herotext">
+      <span class="eyebrow" data-t="eyebrow">Croitoreasă în Olanda</span>
+      <h1 class="brand">Cristina <em>Collection</em></h1>
+      <p class="lede" data-t="lede">Haine pe măsură, ajustări, reparații și haine de vânzare. Scrieți-ne pe WhatsApp.</p>
+      <div class="contact">
+        <a class="btn-wa" id="waTop" target="_blank" rel="noopener" href="https://wa.me/31644162329"><span class="waicon"></span><span data-t="waBtn">Scrieți pe WhatsApp</span></a>
+        <span class="phone"><span id="phoneText">+31 6 44 16 23 29</span><button type="button" id="copyBtn" data-t="copy">Copiază</button></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="admin" id="admin" hidden="">
+    <p class="appnote" id="appNote">Sunteți conectat(ă) ca <b id="who"></b>. Tot ce schimbați aici apare imediat pe site, pentru toată lumea.</p>
+    <h2>Poza de sus</h2>
+    <p>Alege o poză frumoasă pentru partea de sus a site-ului: Cristina la lucru, atelierul sau o haină reușită. Cea mai bună este o poză pe verticală, cu lumină bună.</p>
+    <div class="heroadmin">
+      <div style="flex:1 1 260px"><label class="filelbl" for="h-photo">Alege poza de sus:</label><input type="file" id="h-photo" accept="image/*" class="filein"></div>
+      <button type="button" class="plain" id="heroRemove">Scoate poza</button>
+    </div>
+    <h2 style="margin-top:10px">Adaugă o haină sau o lucrare</h2>
+    <p>Alege poza, scrie numele și prețul, apoi apasă „Publică”. Apare imediat pe site, pentru toată lumea. Pentru poze cu lucrări făcute (reparații, ajustări), alege categoria „Lucrările mele”.</p>
+    <div class="form">
+      <div style="grid-row:span 3;display:grid;gap:8px;align-content:start"><label class="filelbl" for="f-photo">1. Alege poza hainei:</label><input type="file" id="f-photo" accept="image/*" class="filein"><div class="pick" id="pick"><span id="pickText">Poza aleasă apare aici</span></div></div>
+      <div class="field"><label for="f-name">Nume</label><input id="f-name" placeholder="ex. Rochie neagră de seară" maxlength="80"></div>
+      <div class="field"><label for="f-price">Preț (€)</label><input id="f-price" inputmode="decimal" placeholder="ex. 25" maxlength="10"></div>
+      <div class="field"><label for="f-cat">Categorie</label><select id="f-cat"></select></div>
+      <div class="field"><label for="f-size">Mărime</label><input id="f-size" placeholder="ex. M sau 38" maxlength="20"></div>
+      <div class="field" style="grid-column:1/-1"><label for="f-desc">Descriere (opțional)</label><input id="f-desc" placeholder="ex. Nouă, cu etichetă. Material bumbac." maxlength="160"></div>
+      <label class="consent" style="grid-column:1/-1"><input type="checkbox" id="f-sold"><span>Este deja vândută (apare pe site cu „Vândut”)</span></label>
+    </div>
+    <div class="actions">
+      <button class="btn-main" id="addBtn" type="button">Publică</button>
+      <span class="status" id="status" role="status"></span>
+    </div>
+    <div class="acct">
+      <h2 style="font-size:20px">Contul meu</h2>
+      <div class="row"><input id="newPw" type="password" autocomplete="new-password" placeholder="Parolă nouă (cel puțin 8 caractere)"><button type="button" class="plain" id="newPwBtn">Schimbă parola</button></div>
+      <div class="row"><button type="button" class="plain" id="logoutBtn">Ieșire din administrare</button></div>
+    </div>
+  </section>
+
+  <section class="main about" id="despre">
+    <div class="sechead">
+      <span class="eyebrow" data-t="aboutEyebrow">Despre noi</span>
+      <h2 class="sec" data-t-html="aboutTitle">Cu <em>grijă</em>, modă lucrată de mână</h2>
+    </div>
+    <div>
+      <p class="aboutlead" data-t="aboutLead">La Cristina Collection se efectuează cu multă plăcere diferite tipuri de modelare constructivă a confecțiilor vestimentare (fuste, rochii, pantaloni, bluze, geci).</p>
+      <div class="abouttext" data-t-html="aboutText"><p>Ne specializăm în <strong>repararea și modificarea hainelor</strong> dumneavoastră.</p><h3 class="abouth">Haine</h3><ul class="aboutlist"><li><strong>Găuri și rupturi</strong></li><li><strong>Cusături</strong> desfăcute</li><li><strong>Fermoare</strong> noi</li><li><strong>Nasturi</strong> cusuți sau presați</li><li><strong>Lungire și scurtare</strong></li><li><strong>Strâmtare și lărgire</strong></li><li>…și multe altele</li></ul><h3 class="abouth">Perne și perdele</h3><ul class="aboutlist"><li><strong>Perne</strong>: reparare, restaurare și coasere</li><li><strong>Perdele</strong></li><li>Alte lucrări din <strong>țesătură</strong></li></ul></div>
+      <ul class="promises">
+        <li data-t="prom1">Răspundem repede pe WhatsApp</li>
+        <li data-t="prom3">Ne puteți scrie în română, olandeză sau engleză</li>
+      </ul>
+      <p class="signoff">Cristina</p>
+    </div>
+  </section>
+
+  <section class="main" id="croitorie">
+    <div class="sechead">
+      <span class="eyebrow" data-t="svcEyebrow">Servicii</span>
+      <h2 class="sec" data-t-html="svcTitle">Croitorie și <em>modelare constructivă</em></h2>
+      <p data-t="svcLede">Alegeți lucrarea și scrieți-ne pe WhatsApp, cu o poză a hainei dacă puteți. Prețul îl stabilim împreună cu Cristina, cu aproximație, după ce vede haina.</p>
+    </div>
+    <div class="diamonds" id="diamonds"></div>
+    <div class="services" id="services" hidden=""></div>
+    <div class="svcadd" id="svcAdd" hidden="">
+      <input id="n-svc" placeholder="Lucrare nouă, ex. Coasere nasturi" maxlength="80">
+      <input id="n-price" placeholder="Preț, ex. de la €5" maxlength="20">
+      <button type="button" class="plain" id="svcAddBtn">Adaugă lucrarea</button>
+    </div>
+  </section>
+
+  <section class="main" id="haine">
+    <div class="sechead">
+      <span class="eyebrow" data-t="shopEyebrow">Magazin</span>
+      <h2 class="sec" data-t-html="shopTitle">Haine de <em>vânzare</em></h2>
+    </div>
+    <nav class="filters" id="filters" aria-label="Categorii"></nav>
+    <p class="count" id="count"></p>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden="" data-t="empty">Nu sunt haine în această categorie deocamdată.</p>
+  </section>
+
+  <section class="main" id="pareri">
+    <div class="sechead">
+      <span class="eyebrow" data-t="revEyebrow">Păreri</span>
+      <h2 class="sec" data-t-html="revTitle">Ce spun <em>clientele</em></h2>
+      <p data-t="revText">Ați lucrat cu Cristina? Spuneți-ne cum a ieșit.</p>
+    </div>
+    <div class="reviews" id="reviews"></div>
+    <p class="revempty" id="revEmpty" hidden="" data-t="revEmpty">Încă nu sunt păreri. Fiți prima!</p>
+    <div class="revadd" id="revAdd" hidden="">
+      <h3>Adaugă o părere primită (doar tu vezi asta)</h3>
+      <div class="field"><label for="rv-name">Prenumele clientei</label><input id="rv-name" maxlength="40" placeholder="ex. Ana"></div>
+      <div class="field"><label for="rv-stars">Stele</label><select id="rv-stars"><option value="5">★★★★★ 5</option><option value="4">★★★★ 4</option><option value="3">★★★ 3</option><option value="2">★★ 2</option><option value="1">★ 1</option></select></div>
+      <div class="field"><label>Poză (opțional)</label><input type="file" id="rv-photo" accept="image/*" class="filein"><span id="rvPick" style="font-size:13px;color:var(--muted)"></span></div>
+      <div class="field wide"><label for="rv-text">Ce a spus clienta</label><textarea id="rv-text" maxlength="400" placeholder="ex. Pantalonii stau perfect, mulțumesc mult!"></textarea></div>
+      <div class="actions wide"><button type="button" class="btn-main" id="rvAddBtn">Pune părerea pe site</button></div>
+    </div>
+    <form class="revform" id="revForm" novalidate="">
+      <h3 data-t="leaveTitle">Lasă o părere</h3>
+      <div class="field"><label id="starsLbl" data-t="leaveStars">Câte stele dați?</label><div class="starpick" id="starPick" role="radiogroup" aria-labelledby="starsLbl"></div></div>
+      <div class="field"><label for="v-name" data-t="leaveName">Prenume</label><input id="v-name" autocomplete="given-name" maxlength="40"></div>
+      <div class="field"><label for="v-text" data-t="leaveText">Părerea dumneavoastră</label><textarea id="v-text" maxlength="400"></textarea></div>
+      <div class="actions"><button type="submit" class="btn-wa"><span class="waicon"></span><span data-t="leaveBtn">Trimite părerea pe WhatsApp</span></button><span class="status" id="revMsg" role="status"></span></div>
+    </form>
+    <div class="share">
+      <h3 data-t="shareTitle">Trimite unei prietene</h3>
+      <p data-t="shareText">V-a plăcut? Trimiteți site-ul Cristinei unei prietene care are nevoie de o croitoreasă.</p>
+      <div class="sharebtns">
+        <a class="btn-wa" id="shareWa" target="_blank" rel="noopener" href="https://wa.me/"><span class="waicon"></span><span>WhatsApp</span></a>
+        <a class="btn-fb" id="shareFb" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php">Facebook</a>
+        <button type="button" class="btn-copy" id="shareCopy" data-t="shareCopy">Copiază linkul</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="main" id="inregistrare">
+    <div class="sechead">
+      <span class="eyebrow" data-t="regEyebrow">Înregistrare</span>
+      <h2 class="sec" data-t-html="regTitle">Înregistrați-vă la <em>Cristina</em></h2>
+      <p data-t="regText">Lăsați-ne numele și telefonul și vă anunțăm când lucrarea este gata. Datele ajung direct la Cristina pe WhatsApp.</p>
+    </div>
+    <form class="regform" id="regForm" novalidate="">
+      <div class="field"><label for="r-name" data-t="regName">Prenume</label><input id="r-name" autocomplete="given-name" maxlength="50"></div>
+      <div class="field"><label for="r-last" data-t="regLast">Nume de familie</label><input id="r-last" autocomplete="family-name" maxlength="50"></div>
+      <div class="field"><label for="r-phone" data-t="regPhone">Telefon</label><input id="r-phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="25" placeholder="+31 6 ..."></div>
+            <label class="consent"><input type="checkbox" id="r-ok"><span data-t="regConsent">Sunt de acord ca Cristina Collection să mă contacteze pe telefon sau WhatsApp despre lucrările mele.</span></label>
+      <div class="actions"><button type="submit" class="btn-wa"><span class="waicon"></span><span data-t="regBtn">Înregistrare pe WhatsApp</span></button><span class="status" id="regMsg" role="status"></span></div>
+    </form>
+  </section>
+
+  <section class="main pay" id="plata">
+    <div class="sechead">
+      <span class="eyebrow" data-t="payEyebrow">Plată</span>
+      <h2 class="sec" data-t-html="payTitle">Plată <em>simplă</em> și sigură</h2>
+      <p data-t="payText">După ce stabilim prețul, primiți pe WhatsApp un link de plată sigur. Nu trebuie să trimiteți nimănui datele cardului.</p>
+    </div>
+    <ul class="paylist">
+      <li data-t="pay1">iDEAL (Tikkie)</li>
+      <li data-t="pay2">Card bancar</li>
+      <li data-t="pay3">Revolut</li>
+    </ul>
+  </section>
+
+  <section class="main" id="adresa">
+    <div class="sechead">
+      <span class="eyebrow" data-t="addrEyebrow">Adresă</span>
+      <h2 class="sec" data-t-html="addrTitle">Veniți la <em>atelier</em></h2>
+    </div>
+    <div class="addr">
+      <a class="mapcard" id="mapCard" target="_blank" rel="noopener" href="#"><svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="240" fill="#EAF0E6"/><path d="M-10 60 C120 40 220 90 410 70" stroke="#fff" stroke-width="16" fill="none"/><path d="M-10 175 C140 160 260 200 410 180" stroke="#fff" stroke-width="12" fill="none"/><path d="M120 -10 C130 80 110 160 140 250" stroke="#fff" stroke-width="12" fill="none"/><path d="M290 -10 C280 90 300 170 270 250" stroke="#fff" stroke-width="16" fill="none"/><path d="M-10 120 L410 125" stroke="#F7F3EA" stroke-width="7" fill="none"/><rect x="160" y="85" width="90" height="70" rx="6" fill="#DCE6D6"/><rect x="20" y="85" width="80" height="50" rx="6" fill="#DCE6D6"/><rect x="310" y="90" width="70" height="60" rx="6" fill="#DCE6D6"/><path d="M0 215 C100 205 200 230 400 210 L400 240 L0 240Z" fill="#CFE0EE"/><g transform="translate(205 118)"><circle r="26" fill="#A53B64" opacity=".18"/><path d="M0 8 C-14 -6 -14 -24 0 -26 C14 -24 14 -6 0 8Z" fill="#A53B64"/><circle cy="-15" r="5" fill="#fff"/></g></svg><span class="mapbtn" data-t="addrMaps">Deschide harta în Google Maps</span></a>
+      <div class="addrbox">
+        <p class="street">Burgemeester van Haarenlaan 836</p>
+        <p class="city">3119 GW Schiedam</p>
+        <p class="appt" data-t="addrAppt">Vă rugăm să scrieți pe WhatsApp înainte să veniți, ca să stabilim ora.</p>
+        <div class="addrbtns">
+          <a class="btn-main" id="routeBtn" target="_blank" rel="noopener" href="#" style="text-decoration:none" data-t="addrRoute">Arată drumul</a>
+          <a class="btn-wa" id="apptBtn" target="_blank" rel="noopener" href="#"><span class="waicon"></span><span data-t="addrWa">Programare pe WhatsApp</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="qwrap" id="qWrap" hidden="">
+    <div class="qsheet" role="dialog" aria-modal="true" aria-labelledby="qTitle">
+      <div class="qhead"><h3 id="qTitle" tabindex="-1"></h3><button type="button" class="qx" id="qClose" aria-label="Închide">✕</button></div>
+      <p class="qlead" data-t="qLead">Ca Cristina să vă spună prețul corect și cât durează, răspundeți la câteva întrebări:</p>
+      <div id="qFields" class="qfields"></div>
+      <div class="field"><label for="qWhenIn" data-t="qWhen">Până când aveți nevoie? (opțional)</label><input id="qWhenIn" maxlength="60"></div>
+      <div class="field"><label for="qDet" data-t="qDetails">Alte detalii (opțional)</label><textarea id="qDet" maxlength="400"></textarea></div>
+      <div class="qphotos"><p data-t="qPhotos">Faceți aceste poze și trimiteți-le pe WhatsApp:</p><ul id="qPhotoList"></ul></div>
+      <a class="btn-wa qsend" id="qSend" target="_blank" rel="noopener" href="#"><span class="waicon"></span><span data-t="qSend">Trimite pe WhatsApp</span></a>
+      <a class="qvoice" id="qVoice" target="_blank" rel="noopener" href="#"><span aria-hidden="true">🎤</span> <span data-t="qVoice">Nu vreți să scrieți? Trimiteți un mesaj vocal pe WhatsApp</span></a>
+      <p class="qafter" data-t="qAfter">Se deschide WhatsApp cu mesajul gata scris. Atașați pozele cu agrafa și apăsați Trimite.</p>
+    </div>
+  </div>
+
+<div class="pfwrap" id="pfWrap" hidden="">
+    <div class="pfsheet" role="dialog" aria-modal="true" aria-labelledby="pfTitle">
+      <div class="qhead"><h3 id="pfTitle" tabindex="-1">Adaugă poza</h3><button type="button" class="qx" id="pfClose" aria-label="Închide">✕</button></div>
+      <p class="pfinfo">Telefonul nu a deschis galeria din această aplicație. Puneți poza așa:</p>
+      <ol class="pfsteps">
+        <li><b>Încercați din nou:</b> <label class="pfbtn" id="pfPickLbl">Alege din galerie<input type="file" id="pfPick" accept="image/*"></label></li>
+        <li><b>Sau trageți poza:</b> deschideți <b>Galeria</b> pe jumătate de ecran, țineți apăsat pe poză și trageți-o în chenarul de mai jos.</li>
+        <li><b>Sau lipiți poza:</b> în Galerie apăsați <b>Partajare → Copiere</b>, apoi apăsați lung în chenar → <b>Lipire</b>.</li>
+      </ol>
+      <div class="pfzone" id="pfZone" contenteditable="true" role="textbox" aria-label="Lipiți sau trageți poza aici">Trageți sau lipiți poza aici</div>
+      <p class="pfmsg" id="pfMsg" role="status"></p>
+    </div>
+  </div>
+
+<div class="pfwrap" id="pwWrap" hidden="">
+    <form class="pfsheet" id="pwForm" role="dialog" aria-modal="true" aria-labelledby="pwTitle" novalidate="">
+      <div class="qhead"><h3 id="pwTitle" tabindex="-1">Administrare</h3><button type="button" class="qx" id="pwClose" aria-label="Închide">✕</button></div>
+      <div class="field"><label for="pwEmail">Email</label><input id="pwEmail" type="email" autocomplete="username" inputmode="email"></div>
+      <div class="field"><label for="pwIn">Parola</label><input id="pwIn" type="password" autocomplete="current-password"></div>
+      <button type="submit" class="btn-main" id="pwOk" style="justify-self:start">Intră</button>
+      <button type="button" class="linkbtn" id="pwForgot">Am uitat parola</button>
+      <p class="pfmsg" id="pwMsg" role="status"></p>
+    </form>
+  </div>
+
+  <footer class="bottom">
+    <div class="fcol"><span class="sig">Cristina <em>Collection</em></span><span class="fsub" data-t="eyebrow">Croitoreasă în Olanda</span></div>
+    <div class="fcol"><span class="fh" data-t="addrEyebrow">Adresă</span><span>Burgemeester van Haarenlaan 836</span><span>3119 GW Schiedam</span></div>
+    <div class="fcol"><span class="fh">WhatsApp</span><span>+31 6 44 16 23 29</span></div>
+    <button type="button" class="editbtn" id="editBtn">🔒 Administrare</button>
+  </footer>
+</div><a class="btn-wa float" id="waFloat" target="_blank" rel="noopener" href="https://wa.me/31644162329" aria-label="WhatsApp"><span class="waicon"></span></a><script src="supabase.js"></script><script id="app">
+(function(){
+const PHONE="31644162329";
+const CATS=["Rochii","Bluze","Pantaloni","Fuste","Geci","Încălțăminte","Accesorii","Lucrările mele","Altele"];
+const CAT_T={
+  nl:{"Toate":"Alles","Rochii":"Jurken","Bluze":"Tops","Pantaloni":"Broeken","Fuste":"Rokken","Geci":"Jassen","Încălțăminte":"Schoenen","Accesorii":"Accessoires","Lucrările mele":"Mijn werk","Altele":"Overig"},
+  ru:{"Toate":"Все","Rochii":"Платья","Bluze":"Кофты и блузки","Pantaloni":"Брюки","Fuste":"Юбки","Geci":"Куртки и пальто","Încălțăminte":"Обувь","Accesorii":"Аксессуары","Lucrările mele":"Мои работы","Altele":"Другое"},
+  en:{"Toate":"All","Rochii":"Dresses","Bluze":"Tops","Pantaloni":"Trousers","Fuste":"Skirts","Geci":"Jackets","Încălțăminte":"Shoes","Accesorii":"Accessories","Lucrările mele":"My work","Altele":"Other"}
+};
+const T={
+  ro:{jumpReg:"Înregistrare",regEyebrow:"Înregistrare",regTitle:"Înregistrați-vă la <em>Cristina</em>",regText:"Lăsați-ne numele și telefonul și vă anunțăm când lucrarea este gata. Datele ajung direct la Cristina pe WhatsApp.",regName:"Prenume",regLast:"Nume de familie",regPhone:"Telefon",regConsent:"Sunt de acord ca Cristina Collection să mă contacteze pe telefon sau WhatsApp despre lucrările mele.",regBtn:"Înregistrare pe WhatsApp",regErr:"Completați prenumele, numele și telefonul.",regErrEmail:"Adresa de email nu pare corectă.",regErrOk:"Bifați căsuța de acord ca să continuați.",regDone:"Se deschide WhatsApp. Apăsați „Trimite” ca să terminați înregistrarea.",regMsgIntro:"Bună ziua! Vreau să mă înregistrez la Cristina Collection ca să primesc informații despre lucrările mele.",regMsgName:"Nume",regMsgPhone:"Telefon",regMsgOk:"Sunt de acord să fiu contactat(ă).",jumpPay:"Plată",payEyebrow:"Plată",payTitle:"Plată <em>simplă</em> și sigură",payText:"După ce stabilim prețul, primiți pe WhatsApp un link de plată sigur. Nu trebuie să trimiteți nimănui datele cardului.",pay1:"iDEAL (Tikkie)",pay2:"Card bancar",pay3:"Revolut",jumpAbout:"Despre noi",heroCap:"Atelierul Cristinei",aboutEyebrow:"Despre noi",aboutTitle:"Cu <em>grijă</em>, modă lucrată de mână",aboutLead:"La Cristina Collection se efectuează cu multă plăcere diferite tipuri de modelare constructivă a confecțiilor vestimentare (fuste, rochii, pantaloni, bluze, geci).",aboutText:"<p>Ne specializăm în <strong>repararea și modificarea hainelor</strong> dumneavoastră.</p><h3 class=\"abouth\">Haine</h3><ul class=\"aboutlist\"><li><strong>Găuri și rupturi</strong></li><li><strong>Cusături</strong> desfăcute</li><li><strong>Fermoare</strong> noi</li><li><strong>Nasturi</strong> cusuți sau presați</li><li><strong>Lungire și scurtare</strong></li><li><strong>Strâmtare și lărgire</strong></li><li>…și multe altele</li></ul><h3 class=\"abouth\">Perne și perdele</h3><ul class=\"aboutlist\"><li><strong>Perne</strong>: reparare, restaurare și coasere</li><li><strong>Perdele</strong></li><li>Alte lucrări din <strong>țesătură</strong></li></ul>",prom1:"Răspundem repede pe WhatsApp",prom2:"Aflați prețul înainte să începem lucrul",prom3:"Ne puteți scrie în română, rusă, olandeză sau engleză",
+    eyebrow:"Croitoreasă în Olanda",lede:"Haine pe măsură, ajustări, reparații și haine de vânzare. Scrieți-ne pe WhatsApp.",waBtn:"Scrieți pe WhatsApp",copy:"Copiază",copied:"Copiat",selected:"Selectat",jumpSvc:"Croitorie",jumpShop:"Haine de vânzare",svcEyebrow:"Servicii",svcTitle:"Croitorie și <em>modelare constructivă</em>",svcLede:"Alegeți lucrarea și scrieți-ne pe WhatsApp, cu o poză a hainei dacă puteți. Prețul îl stabilim împreună cu Cristina, cu aproximație, după ce vede haina.",langNote:"Poți scrie pe WhatsApp în română sau rusă.",shopEyebrow:"Magazin",shopTitle:"Haine de <em>vânzare</em>",empty:"Nu sunt haine în această categorie deocamdată.",ask:"Întreabă pe WhatsApp",askSvc:"Întreabă",askWork:"Vreau și eu așa ceva",sold:"Vândut",example:"Exemplu",size:"Mărimea",onRequest:"preț la cerere",avail1:"haină disponibilă",availN:"haine disponibile",soldN:"vândute"},
+  nl:{jumpReg:"Aanmelden",regEyebrow:"Aanmelden",regTitle:"Meld u aan bij <em>Cristina</em>",regText:"Laat uw naam en telefoonnummer achter, dan laten wij weten wanneer uw kleding klaar is. De gegevens gaan via WhatsApp rechtstreeks naar Cristina.",regName:"Voornaam",regLast:"Achternaam",regPhone:"Telefoon",regConsent:"Ik ga ermee akkoord dat Cristina Collection contact met mij opneemt via telefoon of WhatsApp over mijn opdrachten.",regBtn:"Aanmelden via WhatsApp",regErr:"Vul uw voornaam, achternaam en telefoon in.",regErrEmail:"Dit e-mailadres lijkt niet juist.",regErrOk:"Vink het vakje aan om verder te gaan.",regDone:"WhatsApp wordt geopend. Druk op Verzenden om de aanmelding af te ronden.",regMsgIntro:"Hallo! Ik wil me aanmelden bij Cristina Collection om informatie over mijn opdrachten te ontvangen.",regMsgName:"Naam",regMsgPhone:"Telefoon",regMsgOk:"Ik ga akkoord met contact.",jumpPay:"Betalen",payEyebrow:"Betalen",payTitle:"Eenvoudig en <em>veilig</em> betalen",payText:"Nadat we de prijs hebben afgesproken, ontvangt u via WhatsApp een veilige betaallink. U hoeft uw kaartgegevens aan niemand te sturen.",pay1:"iDEAL (Tikkie)",pay2:"Bankpas",pay3:"Revolut",jumpAbout:"Over ons",heroCap:"Het atelier van Cristina",aboutEyebrow:"Over ons",aboutTitle:"Met <em>zorg</em> handwerkmode",aboutLead:"Bij Cristina Collection doen wij met veel plezier allerlei soorten patroonconstructie voor kleding (rokken, jurken, broeken, blouses, jassen).",aboutText:"<p>Wij zijn gespecialiseerd in het <strong>repareren en aanpassen van uw kleding</strong>.</p><h3 class=\"abouth\">Kleding</h3><ul class=\"aboutlist\"><li><strong>Gaten en scheuren</strong></li><li>Losse <strong>naden</strong></li><li>Nieuwe <strong>ritsen</strong></li><li><strong>Knopen</strong> aanzetten of persen</li><li><strong>Verlengen en inkorten</strong></li><li><strong>Innemen en uitleggen</strong></li><li>…en nog veel meer</li></ul><h3 class=\"abouth\">Kussens en gordijnen</h3><ul class=\"aboutlist\"><li><strong>Kussens</strong>: repareren, herstellen en naaien</li><li><strong>Gordijnen</strong></li><li>Ander werk met <strong>stof</strong></li></ul>",prom1:"Snel antwoord via WhatsApp",prom2:"U weet de prijs voordat we beginnen",prom3:"Schrijf ons in het Nederlands, Engels, Roemeens of Russisch",
+    eyebrow:"Naaister in Nederland",lede:"Kleding op maat, aanpassingen, reparaties en kleding te koop. Stuur ons een WhatsApp.",waBtn:"Stuur een WhatsApp",copy:"Kopiëren",copied:"Gekopieerd",selected:"Geselecteerd",jumpSvc:"Naaiwerk",jumpShop:"Kleding te koop",svcEyebrow:"Diensten",svcTitle:"Naaiwerk en <em>patroonconstructie</em>",svcLede:"Kies wat u nodig heeft en stuur ons een WhatsApp, het liefst met een foto van het kledingstuk. De prijs spreekt u samen met Cristina af, bij benadering, nadat zij het kledingstuk heeft gezien.",langNote:"U kunt ons gewoon in het Nederlands of Engels schrijven. Een foto van de kleding helpt ook.",shopEyebrow:"Winkel",shopTitle:"Kleding <em>te koop</em>",empty:"Er is nog geen kleding in deze categorie.",ask:"Vraag via WhatsApp",askSvc:"Vragen",askWork:"Dit wil ik ook",sold:"Verkocht",example:"Voorbeeld",size:"Maat",onRequest:"prijs op aanvraag",avail1:"artikel beschikbaar",availN:"artikelen beschikbaar",soldN:"verkocht"},
+  ru:{jumpReg:"Регистрация",regEyebrow:"Регистрация",regTitle:"Регистрация у <em>Кристины</em>",regText:"Оставьте имя и телефон, и мы сообщим, когда ваша работа будет готова. Данные придут Кристине прямо в WhatsApp.",regName:"Имя",regLast:"Фамилия",regPhone:"Телефон",regConsent:"Я согласен(на), чтобы Cristina Collection связывалась со мной по телефону или WhatsApp по поводу моих заказов.",regBtn:"Зарегистрироваться в WhatsApp",regErr:"Заполните имя, фамилию и телефон.",regErrEmail:"Похоже, email указан неверно.",regErrOk:"Отметьте галочку согласия, чтобы продолжить.",regDone:"Открывается WhatsApp. Нажмите «Отправить», чтобы завершить регистрацию.",regMsgIntro:"Здравствуйте! Хочу зарегистрироваться в Cristina Collection, чтобы получать информацию о моих заказах.",regMsgName:"Имя",regMsgPhone:"Телефон",regMsgOk:"Я согласен(на) на связь.",jumpPay:"Оплата",payEyebrow:"Оплата",payTitle:"Простая и <em>безопасная</em> оплата",payText:"Когда мы договоримся о цене, вы получите в WhatsApp безопасную ссылку для оплаты. Данные карты никому отправлять не нужно.",pay1:"iDEAL (Tikkie)",pay2:"Банковская карта",pay3:"Revolut",jumpAbout:"О нас",heroCap:"Мастерская Кристины",aboutEyebrow:"О нас",aboutTitle:"С <em>заботой</em>: мода ручной работы",aboutLead:"В Cristina Collection с большим удовольствием выполняются разные виды конструирования и моделирования одежды (юбки, платья, брюки, блузки, куртки).",aboutText:"<p>Мы специализируемся на <strong>ремонте и переделке вашей одежды</strong>.</p><h3 class=\"abouth\">Одежда</h3><ul class=\"aboutlist\"><li><strong>Дырки и разрывы</strong></li><li>Распустившиеся <strong>швы</strong></li><li>Новые <strong>молнии</strong></li><li><strong>Пуговицы</strong>: пришить или установить</li><li><strong>Удлинение и укорачивание</strong></li><li><strong>Ушивание и расширение</strong></li><li>…и многое другое</li></ul><h3 class=\"abouth\">Подушки и шторы</h3><ul class=\"aboutlist\"><li><strong>Подушки</strong>: ремонт, реставрация и пошив</li><li><strong>Шторы</strong></li><li>Другие работы с <strong>тканью</strong></li></ul>",prom1:"Быстро отвечаем в WhatsApp",prom2:"Цену вы узнаёте до начала работы",prom3:"Пишите нам на русском, румынском, нидерландском или английском",
+    eyebrow:"Швея в Нидерландах",lede:"Одежда на заказ, подгонка, ремонт и одежда на продажу. Напишите нам в WhatsApp.",waBtn:"Написать в WhatsApp",copy:"Копировать",copied:"Скопировано",selected:"Выделено",jumpSvc:"Ателье",jumpShop:"Одежда на продажу",svcEyebrow:"Услуги",svcTitle:"Пошив и <em>конструирование одежды</em>",svcLede:"Выберите услугу и напишите нам в WhatsApp, лучше с фото вещи. Цену вы согласуете с Кристиной, примерно, после того как она увидит вещь.",langNote:"Можно писать нам в WhatsApp на русском языке. Фото вещи тоже поможет.",shopEyebrow:"Магазин",shopTitle:"Одежда <em>на продажу</em>",empty:"В этой категории пока нет одежды.",ask:"Спросить в WhatsApp",askSvc:"Спросить",askWork:"Хочу так же",sold:"Продано",example:"Пример",size:"Размер",onRequest:"цена по запросу",avail1:"вещь в наличии",availN:"вещей в наличии",soldN:"продано"},
+  en:{jumpReg:"Sign up",regEyebrow:"Sign up",regTitle:"Sign up with <em>Cristina</em>",regText:"Leave your name and phone number and we will let you know when your item is ready. Your details go straight to Cristina on WhatsApp.",regName:"First name",regLast:"Last name",regPhone:"Phone",regConsent:"I agree that Cristina Collection may contact me by phone or WhatsApp about my orders.",regBtn:"Sign up on WhatsApp",regErr:"Please fill in your first name, last name and phone.",regErrEmail:"That email address does not look right.",regErrOk:"Tick the consent box to continue.",regDone:"WhatsApp is opening. Press Send to finish signing up.",regMsgIntro:"Hello! I would like to sign up with Cristina Collection to receive updates about my orders.",regMsgName:"Name",regMsgPhone:"Phone",regMsgOk:"I agree to be contacted.",jumpPay:"Payment",payEyebrow:"Payment",payTitle:"Simple, <em>secure</em> payment",payText:"Once we agree on the price, you receive a secure payment link on WhatsApp. You never need to send your card details to anyone.",pay1:"iDEAL (Tikkie)",pay2:"Bank card",pay3:"Revolut",jumpAbout:"About us",heroCap:"Cristina's workshop",aboutEyebrow:"About us",aboutTitle:"With <em>care</em>, handmade fashion",aboutLead:"At Cristina Collection we take great pleasure in all kinds of pattern making and garment construction (skirts, dresses, trousers, blouses, jackets).",aboutText:"<p>We specialise in <strong>repairing and altering your clothes</strong>.</p><h3 class=\"abouth\">Clothes</h3><ul class=\"aboutlist\"><li><strong>Holes and tears</strong></li><li>Loose <strong>seams</strong></li><li>New <strong>zips</strong></li><li><strong>Buttons</strong> sewn or pressed on</li><li><strong>Lengthening and shortening</strong></li><li><strong>Taking in and letting out</strong></li><li>…and much more</li></ul><h3 class=\"abouth\">Cushions and curtains</h3><ul class=\"aboutlist\"><li><strong>Cushions</strong>: repair, restoration and sewing</li><li><strong>Curtains</strong></li><li>Other work with <strong>fabric</strong></li></ul>",prom1:"Quick replies on WhatsApp",prom2:"You know the price before we start",prom3:"Write to us in English, Dutch, Romanian or Russian",
+    eyebrow:"Seamstress in the Netherlands",lede:"Made-to-measure clothes, alterations, repairs and clothes for sale. Send us a WhatsApp message.",waBtn:"Message on WhatsApp",copy:"Copy",copied:"Copied",selected:"Selected",jumpSvc:"Tailoring",jumpShop:"Clothes for sale",svcEyebrow:"Services",svcTitle:"Sewing and <em>pattern making</em>",svcLede:"Choose what you need and send us a WhatsApp message, ideally with a photo of the item. You agree the price together with Cristina, as an estimate, once she has seen the item.",langNote:"Feel free to write in English or Dutch. A photo of the item helps too.",shopEyebrow:"Shop",shopTitle:"Clothes <em>for sale</em>",empty:"No items in this category yet.",ask:"Ask on WhatsApp",askSvc:"Ask",askWork:"I want this too",sold:"Sold",example:"Example",size:"Size",onRequest:"price on request",avail1:"item available",availN:"items available",soldN:"sold"}
+};
+const T_SHIP={"ro": {"jumpShip": "Livrare", "shipEyebrow": "Livrare prin curier", "shipTitle": "Livrare <em>acasă</em>", "shipText": "Trimitem coletul oriunde în Olanda, prin PostNL, DHL sau DPD. Scrie adresa și alege curierul.", "shipNote": "Livrăm doar în Olanda. Cristina îți scrie pe WhatsApp prețul livrării, înainte să trimită coletul.", "shipItem": "Ce comanzi", "shipItemPh": "ex. Rochie midi cu flori, mărimea M", "shipName": "Nume și prenume", "shipPhone": "Telefon", "shipStreet": "Stradă și număr", "shipZip": "Cod poștal", "shipCity": "Oraș", "shipCourier": "Curier", "shipPickup": "Ridic personal", "shipBtn": "Trimite comanda pe WhatsApp", "shipOrder": "Comandă cu livrare", "shipErr": "Completează toate câmpurile.", "shipErrZip": "Codul poștal nu pare corect. Exemplu: 1234 AB.", "shipDone": "Se deschide WhatsApp. Apasă „Trimite” ca mesajul să ajungă la Cristina.", "shipMsgIntro": "Bună ziua! Aș vrea să comand:", "shipMsgCourier": "Livrare", "shipMsgAddr": "Adresa", "shipMsgAsk": "Cât costă livrarea?", "shipMsgPickup": "Vin să ridic personal. Când pot veni?"}, "nl": {"jumpShip": "Bezorging", "shipEyebrow": "Bezorging", "shipTitle": "Thuis <em>bezorgd</em>", "shipText": "Wij versturen uw pakket naar heel Nederland, met PostNL, DHL of DPD. Vul uw adres in en kies de bezorger.", "shipNote": "Wij bezorgen alleen in Nederland. Cristina laat u via WhatsApp de verzendkosten weten voordat het pakket wordt verstuurd.", "shipItem": "Wat wilt u bestellen", "shipItemPh": "bv. Bloemenjurk, maat M", "shipName": "Volledige naam", "shipPhone": "Telefoon", "shipStreet": "Straat en huisnummer", "shipZip": "Postcode", "shipCity": "Plaats", "shipCourier": "Bezorger", "shipPickup": "Zelf ophalen", "shipBtn": "Bestelling sturen via WhatsApp", "shipOrder": "Bestellen met bezorging", "shipErr": "Vul alle velden in.", "shipErrZip": "De postcode lijkt niet te kloppen. Voorbeeld: 1234 AB.", "shipDone": "WhatsApp wordt geopend. Druk op verzenden zodat het bericht bij Cristina aankomt.", "shipMsgIntro": "Hallo! Ik wil graag bestellen:", "shipMsgCourier": "Bezorging", "shipMsgAddr": "Adres", "shipMsgAsk": "Wat zijn de verzendkosten?", "shipMsgPickup": "Ik kom het zelf ophalen. Wanneer kan ik langskomen?"}, "en": {"jumpShip": "Delivery", "shipEyebrow": "Delivery", "shipTitle": "Delivered <em>home</em>", "shipText": "We ship anywhere in the Netherlands with PostNL, DHL or DPD. Enter your address and choose the courier.", "shipNote": "We deliver within the Netherlands only. Cristina will tell you the delivery cost on WhatsApp before sending the parcel.", "shipItem": "What would you like to order", "shipItemPh": "e.g. Floral midi dress, size M", "shipName": "Full name", "shipPhone": "Phone", "shipStreet": "Street and number", "shipZip": "Postcode", "shipCity": "City", "shipCourier": "Courier", "shipPickup": "Pick up myself", "shipBtn": "Send order on WhatsApp", "shipOrder": "Order with delivery", "shipErr": "Please fill in all fields.", "shipErrZip": "The postcode doesn't look right. Example: 1234 AB.", "shipDone": "WhatsApp is opening. Press send so the message reaches Cristina.", "shipMsgIntro": "Hello! I would like to order:", "shipMsgCourier": "Delivery", "shipMsgAddr": "Address", "shipMsgAsk": "How much is delivery?", "shipMsgPickup": "I will pick it up myself. When can I come?"}, "ru": {"jumpShip": "Доставка", "shipEyebrow": "Доставка курьером", "shipTitle": "Доставка <em>на дом</em>", "shipText": "Отправляем посылки по всей Голландии через PostNL, DHL или DPD. Укажите адрес и выберите курьера.", "shipNote": "Доставляем только по Нидерландам. Кристина напишет вам в WhatsApp стоимость доставки до отправки посылки.", "shipItem": "Что заказываете", "shipItemPh": "напр. Платье миди с цветами, размер M", "shipName": "Имя и фамилия", "shipPhone": "Телефон", "shipStreet": "Улица и номер дома", "shipZip": "Почтовый индекс", "shipCity": "Город", "shipCourier": "Курьер", "shipPickup": "Заберу сам(а)", "shipBtn": "Отправить заказ в WhatsApp", "shipOrder": "Заказать с доставкой", "shipErr": "Заполните все поля.", "shipErrZip": "Индекс указан неверно. Пример: 1234 AB.", "shipDone": "Открывается WhatsApp. Нажмите «Отправить», чтобы сообщение дошло до Кристины.", "shipMsgIntro": "Здравствуйте! Хочу заказать:", "shipMsgCourier": "Доставка", "shipMsgAddr": "Адрес", "shipMsgAsk": "Сколько стоит доставка?", "shipMsgPickup": "Заберу сам(а). Когда можно прийти?"}};
+Object.keys(T_SHIP).forEach(l=>Object.assign(T[l],T_SHIP[l]));
+const T_RET={"ro": {"jumpRet": "Retur", "shipText": "Trimitem coletul oriunde în Olanda. Scrie adresa, alege curierul și trimite comanda pe WhatsApp.", "shipNote": "Livrăm doar în Olanda. Pe WhatsApp primești un link de plată pentru haină și livrare. Coletul pleacă după plată.", "shipPriceLbl": "livrare oriunde în Olanda, cu PostNL, DHL sau DPD", "shipPickupFree": "Ridicare personală: gratuit.", "shipFreeFrom": "Livrare gratuită la comenzi de peste {f}", "shipMsgCost": "Cost livrare", "shipMsgFree": "gratuit", "retEyebrow": "Retur și schimb", "retTitle": "Nu se potrivește <em>mărimea?</em>", "retText": "Nicio problemă. Aveți 14 zile să ne spuneți și alegeți ce vi se potrivește:", "ret1t": "Schimbăm mărimea", "ret1d": "Ne trimiteți haina înapoi și vă trimitem altă mărime sau altă haină, dacă o avem.", "ret2t": "Păstrați haina, cu reducere", "ret2d": "Nu mai trimiteți nimic înapoi. Vă dăm înapoi {d}% din prețul hainei. Poate i se potrivește cuiva drag.", "ret3t": "Returnați și primiți banii", "ret3d": "Ne trimiteți haina înapoi și vă dăm toți banii pe haină.", "retR1": "Anunțați-ne pe WhatsApp în cel mult 14 zile de când ați primit haina.", "retR2": "Haina trebuie să fie nepurtată, curată și cu eticheta pe ea.", "retR3": "Banii vă sunt returnați în cel mult 14 zile, după ce primim haina înapoi.", "retR4": "Lucrările de croitorie (scurtări, ajustări, reparații) nu se pot returna, fiindcă sunt făcute pe măsura dumneavoastră.", "retBtn": "Anunță un retur pe WhatsApp", "retMsg": "Bună ziua! Am primit o comandă și aș vrea un retur sau un schimb. Haina:"}, "nl": {"jumpRet": "Retour", "shipText": "Wij versturen uw pakket naar heel Nederland. Vul uw adres in, kies de bezorger en stuur de bestelling via WhatsApp.", "shipNote": "Wij bezorgen alleen in Nederland. Via WhatsApp ontvangt u een betaallink voor de kleding en de verzending. Het pakket wordt verstuurd na betaling.", "shipPriceLbl": "bezorging in heel Nederland, met PostNL, DHL of DPD", "shipPickupFree": "Zelf ophalen: gratis.", "shipFreeFrom": "Gratis bezorging vanaf {f}", "shipMsgCost": "Verzendkosten", "shipMsgFree": "gratis", "retEyebrow": "Retour en ruilen", "retTitle": "Past de maat <em>niet?</em>", "retText": "Geen probleem. U heeft 14 dagen om het ons te laten weten, en u kiest wat u het beste past:", "ret1t": "Andere maat", "ret1d": "U stuurt het kledingstuk terug en wij sturen een andere maat of een ander stuk, als we het hebben.", "ret2t": "Houden, met korting", "ret2d": "U hoeft niets terug te sturen. U krijgt {d}% van de prijs terug. Misschien past het iemand anders in uw omgeving.", "ret3t": "Terugsturen, geld terug", "ret3d": "U stuurt het kledingstuk terug en krijgt het volledige bedrag voor het kledingstuk terug.", "retR1": "Laat het ons binnen 14 dagen na ontvangst weten via WhatsApp.", "retR2": "Het kledingstuk moet ongedragen en schoon zijn, met het label er nog aan.", "retR3": "U krijgt uw geld binnen 14 dagen terug, nadat wij het kledingstuk hebben ontvangen.", "retR4": "Naaiwerk (inkorten, aanpassen, repareren) kan niet worden geretourneerd, omdat het op maat is gemaakt.", "retBtn": "Retour melden via WhatsApp", "retMsg": "Hallo! Ik heb een bestelling ontvangen en wil graag retourneren of ruilen. Het kledingstuk:"}, "en": {"jumpRet": "Returns", "shipText": "We ship anywhere in the Netherlands. Enter your address, choose the courier and send the order on WhatsApp.", "shipNote": "We deliver within the Netherlands only. On WhatsApp you get a payment link for the item and delivery. The parcel ships after payment.", "shipPriceLbl": "delivery anywhere in the Netherlands, with PostNL, DHL or DPD", "shipPickupFree": "Pick up yourself: free.", "shipFreeFrom": "Free delivery on orders over {f}", "shipMsgCost": "Delivery cost", "shipMsgFree": "free", "retEyebrow": "Returns and exchanges", "retTitle": "Wrong <em>size?</em>", "retText": "No problem. You have 14 days to let us know, and you choose what suits you:", "ret1t": "Exchange the size", "ret1d": "Send the item back and we send you another size or another item, if we have it.", "ret2t": "Keep it, with a discount", "ret2d": "Nothing to send back. We refund {d}% of the item price. Maybe it fits someone close to you.", "ret3t": "Return it for a refund", "ret3d": "Send the item back and we refund the full amount for the item.", "retR1": "Tell us on WhatsApp within 14 days of receiving the item.", "retR2": "The item must be unworn, clean and with the label still attached.", "retR3": "You get your money back within 14 days after we receive the item.", "retR4": "Tailoring work (shortening, alterations, repairs) cannot be returned, because it is made to your measurements.", "retBtn": "Report a return on WhatsApp", "retMsg": "Hello! I received an order and would like a return or exchange. The item:"}, "ru": {"jumpRet": "Возврат", "shipText": "Отправляем посылки по всем Нидерландам. Укажите адрес, выберите курьера и отправьте заказ в WhatsApp.", "shipNote": "Доставляем только по Нидерландам. В WhatsApp вы получите ссылку для оплаты одежды и доставки. Посылка отправляется после оплаты.", "shipPriceLbl": "доставка по всем Нидерландам: PostNL, DHL или DPD", "shipPickupFree": "Самовывоз: бесплатно.", "shipFreeFrom": "Бесплатная доставка при заказе от {f}", "shipMsgCost": "Стоимость доставки", "shipMsgFree": "бесплатно", "retEyebrow": "Возврат и обмен", "retTitle": "Не подошёл <em>размер?</em>", "retText": "Ничего страшного. У вас есть 14 дней, чтобы сообщить нам, и вы выбираете, как удобнее:", "ret1t": "Обменять размер", "ret1d": "Вы отправляете вещь обратно, а мы высылаем другой размер или другую вещь, если она есть.", "ret2t": "Оставить со скидкой", "ret2d": "Ничего не нужно отправлять. Мы вернём {d}% стоимости вещи. Возможно, она подойдёт кому-то из близких.", "ret3t": "Вернуть и получить деньги", "ret3d": "Вы отправляете вещь обратно, и мы возвращаем полную стоимость вещи.", "retR1": "Сообщите нам в WhatsApp в течение 14 дней после получения вещи.", "retR2": "Вещь должна быть неношеной, чистой и с этикеткой.", "retR3": "Деньги возвращаются в течение 14 дней после того, как мы получим вещь.", "retR4": "Работы швеи (укорачивание, подгонка, ремонт) возврату не подлежат, так как сделаны по вашим меркам.", "retBtn": "Сообщить о возврате в WhatsApp", "retMsg": "Здравствуйте! Я получил(а) заказ и хочу сделать возврат или обмен. Вещь:"}};
+Object.keys(T_RET).forEach(l=>Object.assign(T[l],T_RET[l]));
+const T_REV={"ro": {"jumpRev": "Păreri", "revEyebrow": "Păreri", "revTitle": "Ce spun <em>clientele</em>", "revText": "Ați lucrat cu Cristina? Spuneți-ne cum a ieșit.", "revEmpty": "Încă nu sunt păreri. Fiți prima!", "leaveTitle": "Lasă o părere", "leaveStars": "Câte stele dați?", "leaveName": "Prenume", "leaveText": "Părerea dumneavoastră", "leaveBtn": "Trimite părerea pe WhatsApp", "leaveErrStars": "Alegeți câte stele dați.", "leaveErr": "Scrieți prenumele și părerea.", "leaveDone": "Se deschide WhatsApp. Apăsați „Trimite”. Mulțumim frumos!", "leaveMsgIntro": "Bună ziua! Vreau să las o părere despre Cristina Collection.", "leaveMsgStars": "Stele", "leaveMsgName": "Nume", "star": "stea", "stars": "stele", "shareTitle": "Trimite unei prietene", "shareText": "V-a plăcut? Trimiteți site-ul Cristinei unei prietene care are nevoie de o croitoreasă.", "shareCopy": "Copiază linkul", "shareCopied": "Linkul a fost copiat", "shareMsg": "Uite ce croitoreasă bună am găsit: Cristina Collection. Haine și croitorie în Olanda."}, "nl": {"jumpRev": "Reviews", "revEyebrow": "Reviews", "revTitle": "Wat klanten <em>zeggen</em>", "revText": "Heeft u iets laten maken bij Cristina? Vertel ons hoe het is geworden.", "revEmpty": "Nog geen reviews. Wees de eerste!", "leaveTitle": "Laat een review achter", "leaveStars": "Hoeveel sterren geeft u?", "leaveName": "Voornaam", "leaveText": "Uw mening", "leaveBtn": "Review sturen via WhatsApp", "leaveErrStars": "Kies het aantal sterren.", "leaveErr": "Vul uw voornaam en uw mening in.", "leaveDone": "WhatsApp wordt geopend. Druk op Verzenden. Hartelijk dank!", "leaveMsgIntro": "Hallo! Ik wil graag een review achterlaten voor Cristina Collection.", "leaveMsgStars": "Sterren", "leaveMsgName": "Naam", "star": "ster", "stars": "sterren", "shareTitle": "Deel met een vriendin", "shareText": "Tevreden? Stuur de website van Cristina naar iemand die een goede naaister zoekt.", "shareCopy": "Link kopiëren", "shareCopied": "Link gekopieerd", "shareMsg": "Kijk, ik heb een goede naaister gevonden: Cristina Collection. Kleding en naaiwerk in Nederland."}, "en": {"jumpRev": "Reviews", "revEyebrow": "Reviews", "revTitle": "What clients <em>say</em>", "revText": "Had something made by Cristina? Tell us how it turned out.", "revEmpty": "No reviews yet. Be the first!", "leaveTitle": "Leave a review", "leaveStars": "How many stars?", "leaveName": "First name", "leaveText": "Your review", "leaveBtn": "Send review on WhatsApp", "leaveErrStars": "Please choose the number of stars.", "leaveErr": "Please fill in your first name and your review.", "leaveDone": "WhatsApp is opening. Press Send. Thank you!", "leaveMsgIntro": "Hello! I would like to leave a review for Cristina Collection.", "leaveMsgStars": "Stars", "leaveMsgName": "Name", "star": "star", "stars": "stars", "shareTitle": "Share with a friend", "shareText": "Happy with it? Send Cristina's website to a friend who needs a good seamstress.", "shareCopy": "Copy link", "shareCopied": "Link copied", "shareMsg": "Look, I found a great seamstress: Cristina Collection. Clothing and tailoring in the Netherlands."}, "ru": {"jumpRev": "Отзывы", "revEyebrow": "Отзывы", "revTitle": "Что говорят <em>клиентки</em>", "revText": "Шили что-то у Кристины? Расскажите, как получилось.", "revEmpty": "Отзывов пока нет. Будьте первой!", "leaveTitle": "Оставить отзыв", "leaveStars": "Сколько звёзд вы ставите?", "leaveName": "Имя", "leaveText": "Ваш отзыв", "leaveBtn": "Отправить отзыв в WhatsApp", "leaveErrStars": "Выберите количество звёзд.", "leaveErr": "Напишите имя и отзыв.", "leaveDone": "Открывается WhatsApp. Нажмите «Отправить». Большое спасибо!", "leaveMsgIntro": "Здравствуйте! Хочу оставить отзыв о Cristina Collection.", "leaveMsgStars": "Звёзды", "leaveMsgName": "Имя", "star": "звезда", "stars": "звёзд", "shareTitle": "Отправить подруге", "shareText": "Понравилось? Отправьте сайт Кристины подруге, которой нужна хорошая швея.", "shareCopy": "Копировать ссылку", "shareCopied": "Ссылка скопирована", "shareMsg": "Смотри, какую хорошую швею я нашла: Cristina Collection. Одежда и ателье в Нидерландах."}};
+Object.keys(T_REV).forEach(l=>Object.assign(T[l],T_REV[l]));
+const T_ADDR={"ro": {"jumpAddr": "Adresă", "addrEyebrow": "Adresă", "addrTitle": "Veniți la <em>atelier</em>", "addrMaps": "Deschide harta în Google Maps", "addrAppt": "Vă rugăm să scrieți pe WhatsApp înainte să veniți, ca să stabilim ora.", "addrRoute": "Arată drumul", "addrWa": "Programare pe WhatsApp", "addrMsg": "Bună ziua! Aș vrea să vin la atelier. Când pot veni?"}, "nl": {"jumpAddr": "Adres", "addrEyebrow": "Adres", "addrTitle": "Kom langs in het <em>atelier</em>", "addrMaps": "Open de kaart in Google Maps", "addrAppt": "Stuur ons eerst een WhatsApp, dan spreken we een tijd af.", "addrRoute": "Route", "addrWa": "Afspraak via WhatsApp", "addrMsg": "Hallo! Ik wil graag langskomen in het atelier. Wanneer kan ik komen?"}, "en": {"jumpAddr": "Address", "addrEyebrow": "Address", "addrTitle": "Visit the <em>workshop</em>", "addrMaps": "Open the map in Google Maps", "addrAppt": "Please send a WhatsApp message before you come, so we can agree on a time.", "addrRoute": "Directions", "addrWa": "Book on WhatsApp", "addrMsg": "Hello! I would like to visit the workshop. When can I come?"}, "ru": {"jumpAddr": "Адрес", "addrEyebrow": "Адрес", "addrTitle": "Приходите в <em>ателье</em>", "addrMaps": "Открыть карту в Google Maps", "addrAppt": "Пожалуйста, напишите в WhatsApp перед визитом, чтобы договориться о времени.", "addrRoute": "Проложить маршрут", "addrWa": "Записаться в WhatsApp", "addrMsg": "Здравствуйте! Хочу прийти в ателье. Когда можно прийти?"}};
+Object.keys(T_ADDR).forEach(l=>Object.assign(T[l],T_ADDR[l]));
+const ADDR="Burgemeester van Haarenlaan 836, 3119 GW Schiedam, Netherlands";
+const SITE="https://igorturcanu.github.io/cristina-collection/";
+const SB_URL="https://mngjveyvtehsxmftnjei.supabase.co",SB_KEY="sb_publishable_HbE5pxHANOGtpzNDRi_Yjw_VS5NnZER";
+const sb=(window.supabase&&window.supabase.createClient)?window.supabase.createClient(SB_URL,SB_KEY):null;
+let loaded=false,loadOk=false,firstLoad=null;
+const WA_SVG='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>';
+let state=JSON.parse(document.getElementById("data").textContent);
+if(!state.services)state.services=[];
+if(!state.reviews)state.reviews=[];
+if(!state.ship)state.ship={price:"6.95",free:"",discount:"20"};
+let filter="Toate", isAdmin=false, artifactApi=null, pendingPhoto=null, busy=false, rating=0, pendingRevPhoto=null;
+const $=id=>document.getElementById(id);
+
+document.querySelectorAll(".waicon").forEach(s=>s.outerHTML=WA_SVG);
+
+let lang="ro";
+try{const s=localStorage.getItem("cc-lang");if(s&&T[s])lang=s;else{const b=(navigator.language||"").slice(0,2).toLowerCase();lang=T[b]?b:(b==="ro"||b==="mo"?"ro":"nl");}}catch(e){const b=(navigator.language||"").slice(0,2).toLowerCase();lang=T[b]?b:"nl";}
+const t=k=>(T[lang]&&T[lang][k])||T.ro[k];
+const catName=c=>(CAT_T[lang]&&CAT_T[lang][c])||c;
+const svcName=(s,l)=>s[l||lang]||s.ro;
+
+function applyLang(){
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-t]").forEach(e=>e.textContent=t(e.dataset.t));
+  document.querySelectorAll("[data-t-html]").forEach(e=>e.innerHTML=t(e.dataset.tHtml));
+  document.querySelectorAll("#langbar button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===lang));
+  $("waTop").href=waGeneral();$("waFloat").href=waGeneral();
+  render();
+}
+
+// ---- WhatsApp messages: in the visitor's language, plus a Romanian line for Cristina ----
+function wa(text){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(text);}
+function roLine(s){return (lang==="ro"||lang==="ru")?"":"\n\n(RO) "+s;}
+function waGeneral(){
+  const m={ro:"Bună ziua! Am văzut site-ul Cristina Collection și aș vrea mai multe detalii.",nl:"Hallo! Ik zag de website van Cristina Collection en heb een vraag.",en:"Hello! I saw the Cristina Collection website and have a question.",ru:"Здравствуйте! Я увидел(а) сайт Cristina Collection, и у меня есть вопрос."}[lang];
+  return wa(m+roLine("Client nou de pe site. Vrea detalii."));
+}
+function waProduct(p){
+  const pr=fmtPrice(p.price,"ro"), sz=p.size?` (${t("size").toLowerCase()} ${p.size})`:"";
+  if(p.cat==="Lucrările mele"){
+    const m={ro:`Bună ziua! Am văzut lucrarea „${p.name}” pe site. Aș vrea și eu ceva asemănător.`,nl:`Hallo! Ik zag “${p.name}” op uw website. Ik wil graag iets vergelijkbaars laten maken.`,en:`Hello! I saw “${p.name}” on your website. I would like something similar made.`,ru:`Здравствуйте! Я увидел(а) на сайте работу «${p.name}». Хочу заказать что-то похожее.`}[lang];
+    return wa(m+roLine(`Clientul vrea o lucrare ca „${p.name}”.`));
+  }
+  const m={ro:`Bună ziua! Mă interesează: ${p.name}${sz}, ${pr}. Mai este disponibilă?`,nl:`Hallo! Ik heb interesse in: ${p.name}${sz}, ${fmtPrice(p.price,"nl")}. Is het nog beschikbaar?`,en:`Hello! I am interested in: ${p.name}${sz}, ${fmtPrice(p.price,"en")}. Is it still available?`,ru:`Здравствуйте! Меня интересует: ${p.name}${sz}, ${fmtPrice(p.price,"ru")}. Ещё в наличии?`}[lang];
+  return wa(m+roLine(`Clientul întreabă de: ${p.name}${p.size?" (mărimea "+p.size+")":""}, ${pr}.`));
+}
+function waService(s){
+  const m={ro:`Bună ziua! Aș vrea: ${svcName(s,"ro")}. Cât costă și când ar fi gata?`,nl:`Hallo! Ik wil graag: ${svcName(s,"nl")}. Wat kost het en wanneer is het klaar?`,en:`Hello! I would like: ${svcName(s,"en")}. How much is it and when would it be ready?`,ru:`Здравствуйте! Мне нужно: ${svcName(s,"ru")}. Сколько стоит и когда будет готово?`}[lang];
+  return wa(m+roLine(`Clientul vrea: ${svcName(s,"ro")}. Întreabă prețul și termenul.`));
+}
+function fmtPrice(v,l){const s=String(v||"").trim();if(!s)return (T[l||lang]||T.ro).onRequest;return /^\d+([.,]\d+)?$/.test(s)?"€"+s:s;}
+
+function artSVG(kind){
+  const col={dress:["#E9C9D6","#8A2D57"],coat:["#E7DCCB","#8C6A45"],sweater:["#D8DEE9","#4A5E86"]}[kind]||["#E9E1E6","#76646F"];
+  const shapes={
+    dress:'<path d="M122 70c10 12 46 12 56 0l14 10-12 34 36 132H84l36-132-12-34z"/>',
+    coat:'<path d="M112 64h76l36 22 14 118-24 4-8-70v152H96V138l-8 70-24-4 14-118z"/>',
+    sweater:'<path d="M116 80h68l44 20 18 96-26 6-18-60v110H100V142l-18 60-26-6 18-96z"/>'
+  }[kind]||'';
+  return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400"><rect width="300" height="400" fill="'+col[0]+'"/><g fill="'+col[1]+'" opacity=".85">'+shapes+'</g></svg>');
+}
+function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
+function confirmBtn(btn,label,action){
+  btn.onclick=()=>{if(btn.classList.contains("confirm")){action();}else{btn.classList.add("confirm");btn.textContent="Sigur? Apasă iar";setTimeout(()=>{btn.classList.remove("confirm");btn.textContent=label;},4000);}};
+}
+
+const DIAMONDS=[
+  ["s1",'<path d="M7 3h10l1 18h-4l-2-11-2 11H6z"/><path d="M7 7h10"/>'],
+  ["s5",'<path d="M12 2v20"/><path d="M9 5h3M12 8h3M9 11h3M12 14h3M9 17h3"/><rect x="10" y="18" width="4" height="4" rx="1"/>'],
+  ["s2",'<path d="M9 3h6l-1 5 5 13H5l5-13z"/><path d="M9 3c1 2 5 2 6 0"/>'],
+  ["s4",'<path d="M4 20 20 4"/><circle cx="18.5" cy="5.5" r="1.2"/><path d="M3 9c4-3 8 3 12 0"/><path d="M9 21c3-4 9-1 12-5"/>'],
+  ["s7",'<rect x="7" y="3" width="10" height="4" rx="1"/><rect x="7" y="17" width="10" height="4" rx="1"/><path d="M9 7v10M15 7v10M9 10h6M9 13h6"/>'],
+  ["s10",'<path d="M3 17 17 3l4 4L7 21H3z"/><path d="M7 13l2 2M10 10l2 2M13 7l2 2"/>']
+];
+const QCFG={"s1": {"photos": [["Pantalonii purtați, din față, cu încălțămintea cu care îi purtați", "De broek aan, van voren, met de schoenen die u erbij draagt", "The trousers on you, from the front, with the shoes you wear them with", "Брюки на вас, спереди, с обувью, с которой вы их носите"], ["Tivul de jos, de aproape", "De zoom onderaan, van dichtbij", "The bottom hem, close up", "Низ брюк крупным планом"]], "fields": [{"id": "type", "label": ["Ce fel?", "Wat voor broek?", "What kind?", "Какие?"], "opts": [["Pantaloni", "Broek", "Trousers", "Брюки"], ["Blugi", "Jeans", "Jeans", "Джинсы"], ["Pantaloni de costum", "Pantalon", "Suit trousers", "Костюмные брюки"]]}, {"id": "cm", "label": ["Cu câți cm?", "Hoeveel cm?", "How many cm?", "На сколько см?"], "opts": [["1–2 cm", "1–2 cm", "1–2 cm", "1–2 см"], ["3–5 cm", "3–5 cm", "3–5 cm", "3–5 см"], ["Peste 5 cm", "Meer dan 5 cm", "More than 5 cm", "Больше 5 см"], ["Nu știu", "Weet ik niet", "Not sure", "Не знаю"]]}]}, "s5": {"photos": [["Fermoarul, de aproape", "De rits, van dichtbij", "The zip, close up", "Молния крупным планом"], ["Toată haina", "Het hele kledingstuk", "The whole garment", "Вся вещь целиком"]], "fields": [{"id": "garment", "label": ["La ce haină?", "Bij welk kledingstuk?", "Which garment?", "На какой вещи?"], "opts": [["Pantaloni", "Broek", "Trousers", "Брюки"], ["Blugi", "Jeans", "Jeans", "Джинсы"], ["Fustă", "Rok", "Skirt", "Юбка"], ["Rochie", "Jurk", "Dress", "Платье"], ["Geacă", "Jas", "Jacket", "Куртка"], ["Palton", "Mantel", "Coat", "Пальто"], ["Altceva", "Iets anders", "Something else", "Другое"]]}, {"id": "zip", "label": ["Ce fel de fermoar?", "Wat voor rits?", "What kind of zip?", "Какая молния?"], "opts": [["Ascuns", "Blinde rits", "Invisible", "Потайная"], ["Vizibil, metalic", "Zichtbaar, metaal", "Visible, metal", "Обычная, металлическая"], ["Vizibil, plastic", "Zichtbaar, plastic", "Visible, plastic", "Обычная, пластиковая"], ["Nu știu", "Weet ik niet", "Not sure", "Не знаю"]]}]}, "s2": {"photos": [["Haina purtată, din față și din lateral", "Het kledingstuk aan, van voren en van opzij", "The garment on you, front and side", "Вещь на вас, спереди и сбоку"], ["Tivul, de aproape", "De zoom, van dichtbij", "The hem, close up", "Подол крупным планом"]], "fields": [{"id": "garment", "label": ["Ce haină?", "Welk kledingstuk?", "Which garment?", "Какая вещь?"], "opts": [["Rochie", "Jurk", "Dress", "Платье"], ["Fustă", "Rok", "Skirt", "Юбка"]]}, {"id": "cm", "label": ["Cu câți cm?", "Hoeveel cm?", "How many cm?", "На сколько см?"], "opts": [["1–2 cm", "1–2 cm", "1–2 cm", "1–2 см"], ["3–5 cm", "3–5 cm", "3–5 cm", "3–5 см"], ["Peste 5 cm", "Meer dan 5 cm", "More than 5 cm", "Больше 5 см"], ["Nu știu", "Weet ik niet", "Not sure", "Не знаю"]]}, {"id": "lining", "label": ["Are căptușeală?", "Heeft het een voering?", "Does it have a lining?", "Есть подкладка?"], "opts": [["Da", "Ja", "Yes", "Да"], ["Nu", "Nee", "No", "Нет"], ["Nu știu", "Weet ik niet", "Not sure", "Не знаю"]]}]}, "s4": {"photos": [["Haina purtată, din față și din lateral", "Het kledingstuk aan, van voren en van opzij", "The garment on you, front and side", "Вещь на вас, спереди и сбоку"], ["Locul unde vreți schimbarea", "De plek die aangepast moet worden", "The spot you want changed", "Место, которое нужно изменить"]], "fields": [{"id": "garment", "label": ["Ce haină?", "Welk kledingstuk?", "Which garment?", "Какая вещь?"], "opts": [["Pantaloni", "Broek", "Trousers", "Брюки"], ["Rochie", "Jurk", "Dress", "Платье"], ["Fustă", "Rok", "Skirt", "Юбка"], ["Bluză", "Blouse", "Blouse", "Блузка"], ["Cămașă", "Overhemd", "Shirt", "Рубашка"], ["Geacă", "Jas", "Jacket", "Куртка"], ["Palton", "Mantel", "Coat", "Пальто"]]}, {"id": "action", "label": ["Ce doriți?", "Wat wilt u?", "What do you need?", "Что нужно?"], "opts": [["Strâmtare", "Innemen", "Take in", "Ушить"], ["Lărgire", "Uitleggen", "Let out", "Расширить"]]}, {"id": "area", "label": ["Unde?", "Waar?", "Where?", "Где?"], "opts": [["Talie", "Taille", "Waist", "Талия"], ["Șolduri", "Heupen", "Hips", "Бёдра"], ["Mâneci", "Mouwen", "Sleeves", "Рукава"], ["Spate", "Rug", "Back", "Спина"], ["Altă zonă", "Ergens anders", "Somewhere else", "Другое место"]]}]}, "s7": {"photos": [["Locul deteriorat, de aproape", "De beschadigde plek, van dichtbij", "The damaged spot, close up", "Повреждённое место крупным планом"], ["Toată haina", "Het hele kledingstuk", "The whole garment", "Вся вещь целиком"]], "fields": [{"id": "problem", "label": ["Ce s-a întâmplat?", "Wat is er aan de hand?", "What happened?", "Что случилось?"], "opts": [["Gaură", "Gat", "Hole", "Дырка"], ["Ruptură", "Scheur", "Tear", "Разрыв"], ["Cusătură desfăcută", "Losse naad", "Loose seam", "Разошёлся шов"], ["Nasture", "Knoop", "Button", "Пуговица"], ["Altceva", "Iets anders", "Something else", "Другое"]]}, {"id": "fabric", "label": ["Ce material?", "Welke stof?", "What fabric?", "Какая ткань?"], "opts": [["Bumbac", "Katoen", "Cotton", "Хлопок"], ["Blugi (denim)", "Denim", "Denim", "Джинсовая ткань"], ["Lână", "Wol", "Wool", "Шерсть"], ["Mătase", "Zijde", "Silk", "Шёлк"], ["Voal", "Voile", "Voile", "Вуаль"], ["Nu știu", "Weet ik niet", "Not sure", "Не знаю"]]}]}, "s10": {"photos": [["Modelul dorit (o poză de pe internet sau din revistă)", "Het gewenste model (een foto van internet of uit een tijdschrift)", "The style you want (a photo from the internet or a magazine)", "Желаемая модель (фото из интернета или журнала)"], ["Materialul, dacă îl aveți deja", "De stof, als u die al heeft", "The fabric, if you already have it", "Ткань, если она у вас уже есть"]], "fields": [{"id": "garment", "label": ["Ce haină doriți?", "Welk kledingstuk wilt u?", "Which garment?", "Какую вещь хотите?"], "opts": [["Rochie", "Jurk", "Dress", "Платье"], ["Fustă", "Rok", "Skirt", "Юбка"], ["Pantaloni", "Broek", "Trousers", "Брюки"], ["Bluză", "Blouse", "Top", "Блузка"], ["Geacă", "Jas", "Jacket", "Куртка"], ["Palton", "Mantel", "Coat", "Пальто"]]}, {"id": "fab", "label": ["Materialul", "De stof", "The fabric", "Ткань"], "opts": [["Am materialul", "Ik heb de stof", "I have the fabric", "Ткань у меня есть"], ["Nu am material", "Ik heb geen stof", "I don't have fabric", "Ткани нет"]]}]}};
+const T_Q={"ro": {"qLead": "Ca Cristina să vă spună prețul corect și cât durează, răspundeți la câteva întrebări:", "qPhotos": "Faceți aceste poze și trimiteți-le pe WhatsApp:", "qWhen": "Până când aveți nevoie? (opțional)", "qWhenPh": "ex. vineri, 24 octombrie", "qDetails": "Alte detalii (opțional)", "qSend": "Trimite pe WhatsApp", "qAfter": "Se deschide WhatsApp cu mesajul gata scris. Atașați pozele cu agrafa și apăsați Trimite.", "qClose": "Închide", "qHello": "Bună ziua! Am nevoie de:", "qMsgWhen": "Până când", "qMsgDetails": "Detalii", "qMsgPhotos": "Vă trimit pozele imediat. Cât ar costa și cât durează?"}, "nl": {"qLead": "Beantwoord een paar vragen, dan kan Cristina u de juiste prijs en levertijd geven:", "qPhotos": "Maak deze foto's en stuur ze via WhatsApp:", "qWhen": "Wanneer heeft u het nodig? (optioneel)", "qWhenPh": "bv. vrijdag 24 oktober", "qDetails": "Andere details (optioneel)", "qSend": "Verstuur via WhatsApp", "qAfter": "WhatsApp opent met het bericht al ingevuld. Voeg de foto's toe met de paperclip en druk op Verzenden.", "qClose": "Sluiten", "qHello": "Hallo! Ik heb nodig:", "qMsgWhen": "Nodig voor", "qMsgDetails": "Details", "qMsgPhotos": "Ik stuur de foto's meteen. Wat kost het en hoe lang duurt het?"}, "en": {"qLead": "Answer a few questions so Cristina can give you the right price and time:", "qPhotos": "Take these photos and send them on WhatsApp:", "qWhen": "When do you need it? (optional)", "qWhenPh": "e.g. Friday 24 October", "qDetails": "Other details (optional)", "qSend": "Send on WhatsApp", "qAfter": "WhatsApp opens with the message ready. Attach the photos with the paperclip and press Send.", "qClose": "Close", "qHello": "Hello! I need:", "qMsgWhen": "Needed by", "qMsgDetails": "Details", "qMsgPhotos": "I'll send the photos right away. How much would it cost and how long does it take?"}, "ru": {"qLead": "Ответьте на несколько вопросов, чтобы Кристина назвала точную цену и срок:", "qPhotos": "Сделайте эти фото и отправьте их в WhatsApp:", "qWhen": "К какому сроку нужно? (необязательно)", "qWhenPh": "напр. пятница, 24 октября", "qDetails": "Другие детали (необязательно)", "qSend": "Отправить в WhatsApp", "qAfter": "Откроется WhatsApp с готовым сообщением. Прикрепите фото скрепкой и нажмите «Отправить».", "qClose": "Закрыть", "qHello": "Здравствуйте! Мне нужно:", "qMsgWhen": "Срок", "qMsgDetails": "Детали", "qMsgPhotos": "Сейчас пришлю фото. Сколько это будет стоить и сколько времени займёт?"}};
+Object.keys(T_Q).forEach(l=>Object.assign(T[l],T_Q[l]));
+Object.keys({}).forEach(()=>{});const T_V={"ro": {"qVoice": "Nu vreți să scrieți? Trimiteți un mesaj vocal pe WhatsApp", "qVoiceMsg": "Bună ziua! Vă trimit un mesaj vocal despre:"}, "nl": {"qVoice": "Liever niet typen? Stuur een spraakbericht via WhatsApp", "qVoiceMsg": "Hallo! Ik stuur een spraakbericht over:"}, "en": {"qVoice": "Rather not type? Send a voice message on WhatsApp", "qVoiceMsg": "Hello! I'm sending a voice message about:"}, "ru": {"qVoice": "Не хотите писать? Отправьте голосовое в WhatsApp", "qVoiceMsg": "Здравствуйте! Отправляю голосовое сообщение про:"}};Object.keys(T_V).forEach(l=>Object.assign(T[l],T_V[l]));
+const LI={ro:0,nl:1,en:2,ru:3};
+let qSvc=null,qSel={},qLast=null;
+function qBuildLink(){
+  const sv=state.services.find(x=>x.id===qSvc);if(!sv)return;
+  const c=QCFG[qSvc],i=LI[lang]??0;
+  const lines=[t("qHello")+" "+svcName(sv)];const ro=["Clientul are nevoie de: "+svcName(sv,"ro")];
+  c.fields.forEach(f=>{const v=qSel[f.id];if(v!=null){lines.push(f.label[i]+" "+f.opts[v][i]);ro.push(f.label[0]+" "+f.opts[v][0]);}});
+  const w=$("qWhenIn").value.trim(),d=$("qDet").value.trim();
+  if(w){lines.push(t("qMsgWhen")+": "+w);ro.push("Până când: "+w);}
+  if(d){lines.push(t("qMsgDetails")+": "+d);}
+  lines.push("",t("qMsgPhotos"));
+  $("qVoice").href=wa(t("qVoiceMsg")+" "+svcName(sv)+roLine("Clientul trimite un mesaj vocal despre: "+svcName(sv,"ro")+"."));
+  $("qSend").href=wa(lines.join("\n")+roLine(ro.join("\n")+"\nTrimite pozele pe WhatsApp."));
+}
+function qRender(){
+  const c=QCFG[qSvc],i=LI[lang]??0,box=$("qFields");box.innerHTML="";
+  const sv=state.services.find(x=>x.id===qSvc);$("qTitle").textContent=sv?svcName(sv).replace(/\s*\(.*\)$/,""):"";
+  c.fields.forEach(f=>{
+    const fs=el("fieldset","qf");fs.append(el("legend",null,f.label[i]));
+    const row=el("div","qopts");
+    f.opts.forEach((o,k)=>{const b=el("button","qopt",o[i]);b.type="button";b.setAttribute("aria-pressed",qSel[f.id]===k);
+      b.onclick=()=>{qSel[f.id]=qSel[f.id]===k?null:k;qRender();};row.append(b);});
+    fs.append(row);box.append(fs);
+  });
+  const ul=$("qPhotoList");ul.innerHTML="";c.photos.forEach(ph=>ul.append(el("li",null,ph[i])));
+  $("qWhenIn").placeholder=t("qWhenPh");$("qClose").setAttribute("aria-label",t("qClose"));
+  qBuildLink();
+}
+function qOpen(id,from){qSvc=id;qSel={};qLast=from||null;$("qWhenIn").value="";$("qDet").value="";$("qWrap").hidden=false;qRender();$("qTitle").focus();}
+function qCloseFn(){$("qWrap").hidden=true;qSvc=null;if(qLast)qLast.focus();}
+function renderDiamonds(){
+  const box=$("diamonds");if(!box)return;box.innerHTML="";
+  DIAMONDS.forEach(([id,icon])=>{
+    const sv=state.services.find(x=>x.id===id);if(!sv)return;
+    const a=el("a","dm");a.href=waService(sv);a.target="_blank";a.rel="noopener";if(QCFG[id])a.onclick=e=>{e.preventDefault();qOpen(id,a);};
+    const g=el("span","gem");g.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+icon+'</svg>';
+    a.append(g,el("span",null,svcName(sv).replace(/\s*\(.*\)$/,"").replace(/ — .*$/,"")));
+    box.append(a);
+  });
+}
+function renderServices(){
+  renderDiamonds();
+  const box=$("services");box.innerHTML="";
+  state.services.forEach(s=>{
+    const row=el("div","svc");
+    row.append(el("span","sname",svcName(s)));
+    row.append(el("span","sprice",fmtPrice(s.price)));
+    const a=el("a","sask");a.href=waService(s);a.target="_blank";a.rel="noopener";a.innerHTML=WA_SVG;a.append(" "+t("askSvc"));row.append(a);
+    if(false){
+      const ed=el("div","sedit");
+      const inp=el("input");inp.value=s.price||"";inp.placeholder="Preț, ex. 10 sau de la €8";inp.id="price-"+s.id;inp.setAttribute("aria-label","Preț pentru "+s.ro);
+      const sv=el("button",null,"Salvează prețul");sv.type="button";sv.onclick=()=>(st=>{st.services.find(x=>x.id===s.id).price=inp.value.trim();},"Prețul a fost salvat.");
+      const del=el("button","danger","Șterge");del.type="button";confirmBtn(del,"Șterge",()=>(st=>{st.services=st.services.filter(x=>x.id!==s.id);},"Lucrarea a fost ștearsă."));
+      ed.append(inp,sv,del);row.append(ed);
+    }
+    box.append(row);
+  });
+  $("svcAdd").hidden=true;
+}
+function renderFilters(){
+  const present=new Set(state.products.map(p=>p.cat));
+  const list=["Toate",...CATS.filter(c=>present.has(c))];
+  if(!list.includes(filter))filter="Toate";
+  const nav=$("filters");nav.innerHTML="";
+  list.forEach(c=>{const b=el("button","chip",catName(c));b.type="button";b.setAttribute("aria-pressed",c===filter);b.onclick=()=>{filter=c;render();};nav.append(b);});
+}
+function heroArt(){
+  const dark=false;
+  const bg=dark?"#2A1F2B":"#EBDDE4", fg=dark?"#E68BB2":"#8A2D57", soft=dark?"#3A2A38":"#DCC7D2";
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><rect width="400" height="500" fill="'+bg+'"/>'+
+    '<circle cx="330" cy="90" r="120" fill="'+soft+'"/>'+
+    '<g fill="'+fg+'"><path d="M160 92c0-14 80-14 80 0l6 30c34 12 44 40 38 78l-14 70c-6 30 6 60 12 90H132c6-30 18-60 12-90l-14-70c-6-38 4-66 38-78z" opacity=".9"/>'+
+    '<rect x="194" y="380" width="12" height="70"/><rect x="150" y="446" width="100" height="10" rx="5"/><rect x="186" y="70" width="28" height="26" rx="6"/></g>'+
+    '<path d="M136 230c40 18 88 18 128 0" stroke="'+bg+'" stroke-width="3" stroke-dasharray="8 7" fill="none"/>'+
+    '<path d="M290 330l70-120" stroke="'+fg+'" stroke-width="3"/><circle cx="360" cy="208" r="4" fill="none" stroke="'+fg+'" stroke-width="2"/>'+
+    '<path d="M290 330c-40 30-110 40-170 60" stroke="'+fg+'" stroke-width="1.5" stroke-dasharray="6 6" fill="none"/></svg>';
+  return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);
+}
+function renderHero(){
+  const img=$("heroImg");
+  const src=(state.hero&&state.hero.img)||(loaded?heroArt():"");
+  if(src){if(img.getAttribute("src")!==src)img.src=src;}else img.removeAttribute("src");
+  $("heroRemove").hidden=!(state.hero&&state.hero.img);
+}
+function euro(v){const n=parseFloat(String(v||"").replace(",","."));if(isNaN(n))return "";return "€"+(n%1?n.toFixed(2):String(n)).replace(".",lang==="en"?".":",");}
+function shipCost(){return euro(state.ship.price)||"—";}
+function renderReviews(){
+  const box=$("reviews");box.innerHTML="";
+  state.reviews.forEach(r=>{
+    const c=el("article","rev");
+    if(r.img){const im=new Image();im.src=r.img;im.alt="";im.loading="lazy";c.append(im);}
+    const n=Math.max(1,Math.min(5,parseInt(r.stars)||5));
+    const st=el("div","rstars","★".repeat(n)+"☆".repeat(5-n));st.setAttribute("role","img");st.setAttribute("aria-label",n+" / 5");c.append(st);
+    c.append(el("blockquote",null,"„"+r.text+"”"));
+    c.append(el("div","rname","— "+r.name));
+    if(isAdmin){const d=el("button","danger","Șterge");d.type="button";confirmBtn(d,"Șterge",()=>run(async()=>{must(await sb.from("reviews").delete().eq("id",r.id));dropPhoto(r.img);},"Părerea a fost ștearsă."));c.append(d);}
+    box.append(c);
+  });
+  $("revEmpty").hidden=state.reviews.length>0;
+  $("revAdd").hidden=!isAdmin;
+}
+function renderStars(){
+  const box=$("starPick");box.innerHTML="";
+  for(let i=1;i<=5;i++){const b=el("button",i<=rating?"on":"","★");b.type="button";b.setAttribute("role","radio");b.setAttribute("aria-checked",i===rating);b.setAttribute("aria-label",i+" "+(i===1?t("star"):t("stars")));b.onclick=()=>{rating=i;renderStars();};box.append(b);}
+}
+function renderShare(){
+  const msg=t("shareMsg")+" "+SITE;
+  $("shareWa").href="https://wa.me/?text="+encodeURIComponent(msg);
+  $("shareFb").href="https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(SITE);
+}
+function renderAddr(){
+  const q=encodeURIComponent(ADDR);
+  $("mapCard").href="https://www.google.com/maps/search/?api=1&query="+q;
+  $("routeBtn").href="https://www.google.com/maps/dir/?api=1&destination="+q;
+  $("apptBtn").href=wa(t("addrMsg")+roLine("Clientul vrea să vină la atelier. Întreabă când."));
+}
+function render(){
+  if(qSvc&&!$("qWrap").hidden)qRender();
+  renderHero();renderAddr();renderServices();renderFilters();renderReviews();renderStars();renderShare();
+  const grid=$("grid");grid.innerHTML="";
+  const items=state.products.filter(p=>filter==="Toate"||p.cat===filter);
+  const forSale=items.filter(p=>p.cat!=="Lucrările mele");
+  const avail=forSale.filter(p=>!p.sold).length, soldN=forSale.length-avail;
+  $("count").textContent=forSale.length?`${avail} ${avail===1?t("avail1"):t("availN")}${soldN?" · "+soldN+" "+t("soldN"):""}`:"";
+  $("empty").hidden=items.length>0;
+  items.forEach(p=>{
+    const work=p.cat==="Lucrările mele";
+    const c=el("article","card"+(p.sold?" sold":""));
+    const ph=el("div","photo");
+    const img=new Image();img.alt=p.name;img.loading="lazy";img.src=p.img||artSVG(p.art);ph.append(img);
+    ph.append(el("span","tag",p.example?t("example"):catName(p.cat)));
+    if(p.sold)ph.append(el("span","soldmark",t("sold")));
+    c.append(ph);
+    c.append(el("h3","name",p.name));
+    if(!work||p.price){const m=el("div","meta");m.append(el("span",null,p.size?t("size")+" "+p.size:""));m.append(el("span","price",fmtPrice(p.price)));c.append(m);}
+    if(p.desc)c.append(el("p","desc",p.desc));
+    if(!p.sold){const a=el("a","btn-wa");a.href=waProduct(p);a.target="_blank";a.rel="noopener";a.innerHTML=WA_SVG;a.append(" "+(work?t("askWork"):t("ask")));c.append(a);}
+    if(isAdmin){
+      const r=el("div","adminrow");
+      if(!work){const s=el("button",null,p.sold?"Pune înapoi":"Marchează vândut");s.type="button";s.onclick=()=>run(async()=>{must(await sb.from("products").update({sold:!p.sold}).eq("id",p.id));},p.sold?"Din nou disponibilă.":"Marcată ca vândută.");r.append(s);}
+      const d=el("button","danger","Șterge");d.type="button";confirmBtn(d,"Șterge",()=>run(async()=>{must(await sb.from("products").delete().eq("id",p.id));dropPhoto(p.img);},"Ștearsă de pe site."));
+      r.append(d);
+      const ch=el("label","chgphoto");ch.append("📷 "+(p.img?"Schimbă poza":"Adaugă poză"));
+      const fi=document.createElement("input");fi.type="file";fi.accept="image/*";fi.setAttribute("aria-label","Alege poza pentru "+p.name);ch.append(fi);
+      fi.onchange=async e=>{
+        const f=e.target.files&&e.target.files[0];if(!f)return;
+        setStatus("Se pregătește poza…");
+        try{const img=await compress(f);run(async()=>{const url=await upload(img);must(await sb.from("products").update({photo:url}).eq("id",p.id));dropPhoto(p.img);},"Poza a fost pusă la „"+p.name+"”.");}
+        catch(_){setStatus("Poza nu a putut fi citită. Încearcă altă poză.",true);}
+        e.target.value="";
+      };
+      photoGuard(fi,"Poză pentru „"+p.name+"”");
+      c.append(ch);c.append(r);
+    }
+    grid.append(c);
+  });
+}
+
+function toast(msg){const d=el("div","toast",msg);document.body.append(d);setTimeout(()=>d.remove(),3500);}
+function setStatus(m,err){const s=$("status");s.textContent=m;s.classList.toggle("err",!!err);if(err||m)toast(m);}
+// ---- data from Supabase ----
+function must(r){if(r&&r.error)throw r.error;return r?r.data:null;}
+function fromP(r){return {id:r.id,name:r.name,cat:r.cat||"Altele",size:r.size||"",price:r.price==null?"":String(r.price),desc:r.descr||"",sold:!!r.sold,img:r.photo||""};}
+function fromR(r){return {id:r.id,name:r.name,text:r.body||"",stars:r.stars||5,img:r.photo||""};}
+async function loadData(){
+  if(!sb){loaded=true;render();return;}
+  try{
+    const [p,r,h]=await Promise.all([
+      sb.from("products").select("*").order("sort",{ascending:true}).order("created_at",{ascending:false}),
+      sb.from("reviews").select("*").order("created_at",{ascending:false}),
+      sb.from("settings").select("value").eq("key","hero").maybeSingle()]);
+    state.products=(must(p)||[]).map(fromP);state.reviews=(must(r)||[]).map(fromR);
+    const hv=must(h);state.hero=hv&&hv.value&&hv.value.img?{img:hv.value.img}:null;loadOk=true;
+  }catch(e){console.error(e);loadOk=false;}
+  loaded=true;render();
+}
+async function upload(dataUrl){
+  const b=await (await fetch(dataUrl)).blob();
+  const path="p/"+Date.now().toString(36)+Math.random().toString(36).slice(2,8)+".jpg";
+  must(await sb.storage.from("photos").upload(path,b,{contentType:"image/jpeg",cacheControl:"31536000"}));
+  return sb.storage.from("photos").getPublicUrl(path).data.publicUrl;
+}
+function dropPhoto(url){const k="/object/public/photos/";if(url&&url.includes(k))sb.storage.from("photos").remove([decodeURIComponent(url.split(k)[1])]).catch(()=>{});}
+async function run(fn,okMsg){
+  if(busy)return;
+  busy=true;$("addBtn").disabled=true;setStatus("Se salvează…");
+  try{await fn();await loadData();setStatus(okMsg);return true;}
+  catch(e){
+    console.error(e);const m=String((e&&(e.message||e.error_description))||"");
+    if(/JWT|session|auth|row-level|permission|401|403/i.test(m))setStatus("Nu s-a salvat: nu sunteți conectat(ă) ca administrator. Ieșiți și intrați din nou.",true);
+    else if(/size|large|413/i.test(m))setStatus("Poza este prea mare. Încercați altă poză.",true);
+    else setStatus("Nu s-a putut salva. Verificați internetul și încercați din nou.",true);
+    return false;
+  }finally{busy=false;$("addBtn").disabled=false;}
+}
+// first login on the new site: bring over what was on the old page
+async function seedIfEmpty(){
+  await firstLoad;if(!loadOk)return;
+  if(state.products.length||state.reviews.length||state.hero)return;
+  await run(async()=>{
+    must(await sb.from("settings").upsert({key:"hero",value:{img:"img/hero.jpg"}}));
+    must(await sb.from("products").insert({name:"Palton de lână, bej",cat:"Geci",size:"L",price:60,descr:"",sold:false,photo:"img/palton.jpg"}));
+    must(await sb.from("reviews").insert({name:"Cristina Cruz",stars:5,body:"Am scurtat două fuste la Cristina și chiar dacă au dat complicații din cauza materialului, ea a găsit soluția potrivită. Este o adevărată profesionistă! Recomandat"}));
+  },"Datele de pe vechiul site au fost mutate aici.");
+}
+
+function compress(file,max,q){
+  max=max||900;q=q||0.72;
+  return new Promise((res,rej)=>{
+    const r=new FileReader();
+    r.onload=()=>{const im=new Image();im.onload=()=>{
+      const sc=Math.min(1,max/Math.max(im.width,im.height));
+      const cv=document.createElement("canvas");cv.width=Math.round(im.width*sc);cv.height=Math.round(im.height*sc);
+      cv.getContext("2d").drawImage(im,0,0,cv.width,cv.height);res(cv.toDataURL("image/jpeg",q));
+    };im.onerror=()=>rej(new Error("img"));im.src=r.result;};
+    r.onerror=()=>rej(new Error("read"));r.readAsDataURL(file);
+  });
+}
+
+function setupAdmin(email){
+  if(isAdmin)return;
+  isAdmin=true;$("admin").hidden=false;$("who").textContent=email||"";$("editBtn").hidden=true;
+  $("newPwBtn").onclick=async()=>{
+    const v=$("newPw").value;if(v.length<8){setStatus("Parola nouă trebuie să aibă cel puțin 8 caractere.",true);return;}
+    const {error}=await sb.auth.updateUser({password:v});
+    if(error)setStatus("Parola nu s-a schimbat. Încercați din nou.",true);else{$("newPw").value="";setStatus("Parola a fost schimbată. Data viitoare intrați cu parola nouă.");}
+  };
+  $("logoutBtn").onclick=async()=>{await sb.auth.signOut();location.hash="";location.reload();};
+  if(lang!=="ro"){lang="ro";}
+  applyLang();
+  const sel=$("f-cat");sel.innerHTML="";CATS.forEach(c=>{const o=el("option",null,c);o.value=c;sel.append(o);});
+  $("f-photo").onchange=async e=>{
+    const f=e.target.files&&e.target.files[0];if(!f)return;
+    $("pick").innerHTML='<span>Se pregătește poza…</span>';
+    try{pendingPhoto=await compress(f);const pk=$("pick");pk.innerHTML="";const im=new Image();im.src=pendingPhoto;im.alt="Poza aleasă";pk.append(im);}
+    catch(_){pendingPhoto=null;$("pick").innerHTML='<span>Poza nu a putut fi citită. Încearcă altă poză (JPG sau PNG) sau trimite-o lui Claude în chat.</span>';}
+  };
+  $("addBtn").onclick=()=>{
+    const name=$("f-name").value.trim();
+    if(!pendingPhoto){setStatus("Alege mai întâi poza hainei (pasul 1, butonul roz de sus).",true);return;}
+    if(!name){setStatus("Scrie numele.",true);$("f-name").focus();return;}
+    const pr=parseFloat($("f-price").value.trim().replace(",","."));
+    const row={name,cat:$("f-cat").value,size:$("f-size").value.trim(),price:isNaN(pr)?null:pr,descr:$("f-desc").value.trim(),sold:$("f-sold").checked};
+    const photo=pendingPhoto;
+    run(async()=>{row.photo=await upload(photo);must(await sb.from("products").insert(row));},"Gata! „"+name+"” este pe site.").then(ok=>{if(ok){pendingPhoto=null;["f-name","f-price","f-size","f-desc"].forEach(i=>$(i).value="");$("f-sold").checked=false;$("f-photo").value="";$("pick").innerHTML='<span id="pickText">Poza aleasă apare aici</span>';}});
+  };
+  $("h-photo").onchange=async e=>{
+    const f=e.target.files&&e.target.files[0];if(!f)return;
+    setStatus("Se pregătește poza de sus…");
+    try{const img=await compress(f,1600,0.8);run(async()=>{const url=await upload(img);must(await sb.from("settings").upsert({key:"hero",value:{img:url}}));if(state.hero)dropPhoto(state.hero.img);},"Poza de sus a fost pusă pe site.");}
+    catch(_){setStatus("Poza nu a putut fi citită. Încearcă altă poză.",true);}
+    e.target.value="";
+  };
+  confirmBtn($("heroRemove"),"Scoate poza",()=>run(async()=>{must(await sb.from("settings").delete().eq("key","hero"));if(state.hero)dropPhoto(state.hero.img);},"Poza de sus a fost scoasă."));
+  $("rv-photo").onchange=async e=>{
+    const f=e.target.files&&e.target.files[0];if(!f)return;
+    $("rvPick").textContent="Se pregătește poza…";
+    try{pendingRevPhoto=await compress(f,800,0.72);$("rvPick").textContent="Poză aleasă ✓";}
+    catch(_){pendingRevPhoto=null;$("rvPick").textContent="Poza nu a putut fi citită";}
+  };
+  // paste/drop alternative for devices where the file picker does not open
+  [["h-photo"],["f-photo"],["rv-photo"]].forEach(([id])=>{
+    const inp=$(id);if(!inp)return;
+    const z=el("div","pastezone","Sau: copiați poza din galerie și lipiți-o aici (apăsați lung aici → Lipește).");
+    z.contentEditable="true";z.setAttribute("role","textbox");z.setAttribute("aria-label","Lipește poza aici");
+    const take=f=>{if(f&&/^image\//.test(f.type)){inp.onchange({target:{files:[f],value:""}});z.textContent="Poza a fost preluată ✓";return true;}return false;};
+    z.addEventListener("paste",e=>{e.preventDefault();const it=[...(e.clipboardData&&e.clipboardData.items||[])].find(i=>i.kind==="file"&&/^image\//.test(i.type));if(!take(it&&it.getAsFile()))z.textContent="Nu am găsit o poză. Copiați poza (nu textul) și încercați din nou.";});
+    z.addEventListener("dragover",e=>e.preventDefault());
+    z.addEventListener("drop",e=>{e.preventDefault();take(e.dataTransfer.files&&e.dataTransfer.files[0]);});
+    z.addEventListener("input",()=>{const im=z.querySelector("img");if(im&&im.src.startsWith("data:image")){fetch(im.src).then(r=>r.blob()).then(b=>take(new File([b],"poza.jpg",{type:b.type||"image/jpeg"})));}});
+    inp.after(z);
+  });
+  photoGuard($("h-photo"),"Poza de sus");photoGuard($("f-photo"),"Poza hainei");photoGuard($("rv-photo"),"Poza pentru părere");
+  $("rvAddBtn").onclick=()=>{
+    const name=$("rv-name").value.trim(), text=$("rv-text").value.trim();
+    if(!name||!text){setStatus("Scrie prenumele și părerea clientei.",true);return;}
+    const row={name,body:text,stars:parseInt($("rv-stars").value)||5};const ph=pendingRevPhoto;
+    run(async()=>{if(ph)row.photo=await upload(ph);must(await sb.from("reviews").insert(row));},"Părerea lui "+name+" este pe site.").then(ok=>{if(ok){pendingRevPhoto=null;$("rv-name").value="";$("rv-text").value="";$("rvPick").textContent="";}});
+  };
+  $("svcAddBtn").onclick=()=>{
+    const n=$("n-svc").value.trim();if(!n){setStatus("Scrie numele lucrării.",true);return;}
+    const s={id:"s"+Date.now().toString(36),ro:n,price:$("n-price").value.trim()};
+    setStatus("Lucrările se schimbă prin Claude.",true);
+  };
+}
+
+// ---- sign-up form: sends the details to Cristina on WhatsApp ----
+$("regForm").onsubmit=e=>{
+  e.preventDefault();
+  const msg=$("regMsg"), fn=$("r-name").value.trim(), ln=$("r-last").value.trim(), n=(fn+" "+ln).trim(), ph=$("r-phone").value.trim();
+  const say=(k,err)=>{msg.textContent=t(k);msg.classList.toggle("err",!!err);};
+  if(!fn||!ln||!ph){say("regErr",true);return;}
+  if(!$("r-ok").checked){say("regErrOk",true);return;}
+  const text=t("regMsgIntro")+"\n"+t("regMsgName")+": "+n+"\n"+t("regMsgPhone")+": "+ph+"\n"+t("regMsgOk")+roLine("Client nou înregistrat pe site: "+n+", telefon "+ph+". A fost de acord să fie contactat.");
+  const a=document.createElement("a");a.href=wa(text);a.target="_blank";a.rel="noopener";document.body.append(a);a.click();a.remove();
+  say("regDone");
+};
+// ---- review form: sends the review to Cristina on WhatsApp ----
+$("revForm").onsubmit=e=>{
+  e.preventDefault();
+  const msg=$("revMsg"), n=$("v-name").value.trim(), tx=$("v-text").value.trim();
+  const say=(k,err)=>{msg.textContent=t(k);msg.classList.toggle("err",!!err);};
+  if(!rating){say("leaveErrStars",true);return;}
+  if(!n||!tx){say("leaveErr",true);return;}
+  const stars="★".repeat(rating)+"☆".repeat(5-rating)+" ("+rating+"/5)";
+  const text=t("leaveMsgIntro")+"\n"+t("leaveMsgStars")+": "+stars+"\n"+t("leaveMsgName")+": "+n+"\n\n"+tx+roLine("Părere nouă de la "+n+": "+rating+" stele. O poți pune pe site din panou.");
+  const a=document.createElement("a");a.href=wa(text);a.target="_blank";a.rel="noopener";document.body.append(a);a.click();a.remove();
+  say("leaveDone");
+};
+$("shareCopy").onclick=async()=>{
+  const b=$("shareCopy");
+  try{await navigator.clipboard.writeText(SITE);b.textContent=t("shareCopied");}
+  catch(e){window.prompt(t("shareCopy"),SITE);}
+  setTimeout(()=>b.textContent=t("shareCopy"),2000);
+};
+$("qClose").onclick=qCloseFn;
+$("qWrap").addEventListener("click",e=>{if(e.target===$("qWrap"))qCloseFn();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("qWrap").hidden)qCloseFn();});
+$("qWhenIn").addEventListener("input",qBuildLink);$("qDet").addEventListener("input",qBuildLink);
+// ---- photo fallback: when the gallery does not open, offer drag & drop / paste ----
+let pfCb=null;
+function pfTake(f){
+  if(!f||!/^image\//.test(f.type||"")){$("pfMsg").textContent="Nu am primit o poză. Încercați din nou cu o poză din Galerie.";return false;}
+  const cb=pfCb;pfClose();if(cb)cb(f);return true;
+}
+function pfOpen(title,cb){pfCb=cb;$("pfTitle").textContent=title||"Adaugă poza";$("pfMsg").textContent="";$("pfZone").textContent="Trageți sau lipiți poza aici";$("pfWrap").hidden=false;}
+function pfClose(){$("pfWrap").hidden=true;pfCb=null;}
+function pfFromImgEl(z){const im=z.querySelector("img");if(!im)return;const src=im.src||"";
+  if(/^(data:|blob:)/.test(src)){fetch(src).then(r=>r.blob()).then(b=>pfTake(new File([b],"poza.jpg",{type:b.type||"image/jpeg"}))).catch(()=>{$("pfMsg").textContent="Poza nu a putut fi citită. Încercați altă metodă.";});}
+  else{$("pfMsg").textContent="Poza nu a putut fi preluată așa. Încercați să o trageți din Galerie.";z.textContent="Trageți sau lipiți poza aici";}}
+function photoGuard(inp,title){
+  if(!inp||inp.dataset.guard)return;inp.dataset.guard="1";
+  inp.addEventListener("click",()=>{
+    let left=false;const onBlur=()=>{left=true;};const onVis=()=>{if(document.hidden)left=true;};
+    window.addEventListener("blur",onBlur,{once:true});document.addEventListener("visibilitychange",onVis);
+    setTimeout(()=>{window.removeEventListener("blur",onBlur);document.removeEventListener("visibilitychange",onVis);
+      if(!left)pfOpen(title,f=>inp.onchange({target:{files:[f],value:""}}));},1400);
+  });
+}
+$("pfClose").onclick=pfClose;
+$("pfWrap").addEventListener("click",e=>{if(e.target===$("pfWrap"))pfClose();});
+$("pfPick").onchange=e=>{const f=e.target.files&&e.target.files[0];e.target.value="";if(f)pfTake(f);};
+(function(){const z=$("pfZone");
+  z.addEventListener("dragover",e=>{e.preventDefault();z.classList.add("over");});
+  z.addEventListener("dragleave",()=>z.classList.remove("over"));
+  z.addEventListener("drop",e=>{e.preventDefault();z.classList.remove("over");const f=e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files[0];if(f){pfTake(f);return;}setTimeout(()=>pfFromImgEl(z),50);});
+  z.addEventListener("paste",e=>{const it=[...((e.clipboardData&&e.clipboardData.items)||[])].find(i=>i.kind==="file"&&/^image\//.test(i.type));if(it){e.preventDefault();pfTake(it.getAsFile());}else setTimeout(()=>pfFromImgEl(z),50);});
+  z.addEventListener("input",()=>pfFromImgEl(z));
+})();
+// ---- admin login (Supabase accounts for Igor and Cristina) ----
+async function becomeAdmin(user){
+  let ok=false;try{const {data}=await sb.rpc("is_admin");ok=data===true;}catch(_){}
+  if(!ok){await sb.auth.signOut();return false;}
+  setupAdmin(user&&user.email);seedIfEmpty();return true;
+}
+function openLogin(){$("pwMsg").textContent="";$("pwIn").value="";$("pwWrap").hidden=false;$("pwEmail").focus();}
+$("editBtn").onclick=openLogin;
+$("pwClose").onclick=()=>{$("pwWrap").hidden=true;};
+$("pwForm").onsubmit=async e=>{
+  e.preventDefault();
+  if(!sb){$("pwMsg").textContent="Nu se poate conecta. Verificați internetul.";return;}
+  const email=$("pwEmail").value.trim(),pw=$("pwIn").value;
+  if(!email||!pw){$("pwMsg").textContent="Scrieți emailul și parola.";return;}
+  $("pwOk").disabled=true;$("pwMsg").textContent="Se verifică…";
+  const {data,error}=await sb.auth.signInWithPassword({email,password:pw});
+  $("pwOk").disabled=false;
+  if(error){const em=String(error.message||"");$("pwMsg").textContent=/fetch|network/i.test(em)||!error.status?"Nu se poate conecta. Verificați internetul.":/confirm/i.test(em)?"Contul nu este confirmat încă.":"Email sau parolă greșită.";return;}
+  if(!(await becomeAdmin(data.user))){$("pwMsg").textContent="Acest cont nu are drept de administrare.";return;}
+  $("pwWrap").hidden=true;window.scrollTo({top:0,behavior:"smooth"});setStatus("Bine ați venit!");
+};
+$("pwForgot").onclick=async()=>{
+  const email=$("pwEmail").value.trim();
+  if(!email){$("pwMsg").textContent="Scrieți mai întâi emailul, apoi apăsați „Am uitat parola”.";return;}
+  const {error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:location.origin+location.pathname});
+  $("pwMsg").textContent=error?"Nu s-a putut trimite emailul. Încercați mai târziu.":"V-am trimis un email. Deschideți linkul din email ca să alegeți o parolă nouă.";
+};
+// ---- boot ----
+document.querySelectorAll("#langbar button").forEach(b=>b.onclick=()=>{lang=b.dataset.lang;try{localStorage.setItem("cc-lang",lang);}catch(e){}applyLang();});
+applyLang();
+$("copyBtn").onclick=async()=>{
+  const b=$("copyBtn");
+  try{await navigator.clipboard.writeText("+"+PHONE);b.textContent=t("copied");}
+  catch(e){const r=document.createRange();r.selectNodeContents($("phoneText"));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent=t("selected");}
+  setTimeout(()=>b.textContent=t("copy"),2000);
+};
+firstLoad=loadData();
+if(sb){
+  sb.auth.onAuthStateChange((ev,session)=>{
+    if(ev==="PASSWORD_RECOVERY"){
+      setTimeout(async()=>{const v=prompt("Scrieți parola nouă (cel puțin 8 caractere):");
+        if(v&&v.length>=8){const {error}=await sb.auth.updateUser({password:v});alert(error?"Parola nu s-a schimbat.":"Parola a fost schimbată.");if(!error)becomeAdmin(session&&session.user);}},50);
+    }
+  });
+  sb.auth.getSession().then(({data})=>{const u=data&&data.session&&data.session.user;if(u)becomeAdmin(u);else if(location.hash==="#admin")openLogin();});
+}
+})();
+</script></body></html>
