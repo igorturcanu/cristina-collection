@@ -148,7 +148,7 @@ h2.sec em{font-style:italic;font-weight:400;color:var(--accent)}
 .addrbox .city{margin:0;color:var(--muted)}
 .addrbox .appt{margin:0;padding:10px 12px;border-radius:10px;background:var(--butter);font-size:15px}
 .addrbtns{display:flex;flex-wrap:wrap;gap:10px}
-.adminrow{display:flex;gap:6px}
+.adminrow{display:flex;flex-wrap:wrap;gap:6px}
 .chgphoto{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:999px;background:var(--accent);color:#fff;font-weight:600;font-size:14px;cursor:pointer}
 .chgphoto input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:200px}
 .adminrow button{flex:1;border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:7px 6px;font-size:13px;cursor:pointer}
@@ -677,6 +677,7 @@ function artSVG(kind){
   }[kind]||'';
   return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400"><rect width="300" height="400" fill="'+col[0]+'"/><g fill="'+col[1]+'" opacity=".85">'+shapes+'</g></svg>');
 }
+function catArt(c){return c==="Pantaloni"?"img/pantaloni.svg":c==="Fuste"?"img/fusta.svg":artSVG({"Geci":"coat","Rochii":"dress","Bluze":"sweater"}[c]);}
 function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
 function confirmBtn(btn,label,action){
   btn.onclick=()=>{if(btn.classList.contains("confirm")){action();}else{btn.classList.add("confirm");btn.textContent="Sigur? Apasă iar";setTimeout(()=>{btn.classList.remove("confirm");btn.textContent=label;},4000);}};
@@ -858,7 +859,7 @@ function render(){
     const work=p.cat==="Lucrările mele";
     const c=el("article","card"+(p.sold?" sold":""));
     const ph=el("div","photo");
-    const img=new Image();img.alt=p.name;img.loading="lazy";img.src=p.img||artSVG(p.art);ph.append(img);
+    const img=new Image();img.alt=p.name;img.loading="lazy";img.src=p.img||catArt(p.cat);ph.append(img);
     ph.append(el("span","tag",p.example?t("example"):catName(p.cat)));
     if(p.sold)ph.append(el("span","soldmark",t("sold")));
     c.append(ph);
@@ -869,7 +870,8 @@ function render(){
     if(isAdmin){
       const r=el("div","adminrow");
       if(!work){const s=el("button",null,p.sold?"Pune înapoi":"Marchează vândut");s.type="button";s.onclick=()=>run(async()=>{must(await sb.from("products").update({sold:!p.sold}).eq("id",p.id));},p.sold?"Din nou disponibilă.":"Marcată ca vândută.");r.append(s);}
-      const d=el("button","danger","Șterge");d.type="button";confirmBtn(d,"Șterge",()=>run(async()=>{must(await sb.from("products").delete().eq("id",p.id));dropPhoto(p.img);},"Ștearsă de pe site."));
+      if(p.img){const dp=el("button",null,"Șterge poza");dp.type="button";confirmBtn(dp,"Șterge poza",()=>run(async()=>{must(await sb.from("products").update({photo:null}).eq("id",p.id));dropPhoto(p.img);},"Poza a fost ștearsă. Haina a rămas pe site."));r.append(dp);}
+      const d=el("button","danger","Șterge haina");d.type="button";confirmBtn(d,"Șterge haina",()=>run(async()=>{must(await sb.from("products").delete().eq("id",p.id));dropPhoto(p.img);},"Haina a fost ștearsă de pe site."));
       r.append(d);
       const ch=el("label","chgphoto");ch.append("📷 "+(p.img?"Schimbă poza":"Adaugă poză"));
       const fi=document.createElement("input");fi.type="file";fi.accept="image/*";fi.setAttribute("aria-label","Alege poza pentru "+p.name);ch.append(fi);
