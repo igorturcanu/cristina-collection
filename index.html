@@ -334,11 +334,28 @@ footer .sig em{color:#F5B8CE}
 .acct input{flex:1 1 200px;min-width:0;border:1px solid var(--line);border-radius:6px;padding:10px 12px;background:var(--bg)}
 .linkbtn{border:0;background:none;color:var(--rasp);font-weight:600;padding:6px 0;cursor:pointer;text-decoration:underline;justify-self:start}
 .loading{opacity:.6}
+#lucrari{background:var(--sand)}
+.works{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (min-width:720px){.works{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}}
+@media (min-width:1000px){.works{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.work{display:grid;gap:8px;align-content:start;margin:0}
+.work .wimg{aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:var(--white)}
+.work .wimg img{width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+.work figcaption{font-weight:600;font-size:15px;line-height:1.3}
+.work .wask{font-size:14px;font-weight:600;color:var(--wa);text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+.work .wask svg{width:16px;height:16px}
+.work .danger{justify-self:start;border:1px solid var(--line);background:var(--white);border-radius:6px;padding:7px 12px;font-size:13px;cursor:pointer;color:var(--danger)}
+.workadd{display:grid;gap:12px;margin-bottom:22px;padding:16px;background:var(--white);border:1.5px dashed var(--rasp);border-radius:10px}
+.workadd h3{margin:0;font-family:"Bodoni Moda",Didot,serif;font-weight:500;font-size:22px}
+.workadd p{margin:0;color:var(--muted);font-size:14px}
+.workpick{justify-self:start;padding:0 22px;min-height:48px}
+.lightbox{position:fixed;inset:0;z-index:40;background:rgba(20,12,10,.92);display:grid;place-items:center;padding:16px;cursor:zoom-out}
+.lightbox img{max-width:100%;max-height:92vh;border-radius:8px}
 </style></head><body><script type="application/json" id="data">{"services": [{"id": "s9", "ro": "Coasere haine pe măsură", "nl": "Kleding op maat naaien", "en": "Clothes sewn to measure", "ru": "Пошив одежды на заказ", "price": ""}, {"id": "s10", "ro": "Modelare constructivă (tipare pe măsură)", "nl": "Patroonconstructie (patronen op maat)", "en": "Pattern making (made-to-measure patterns)", "ru": "Конструирование и моделирование одежды (выкройки)", "price": ""}, {"id": "s1", "ro": "Scurtare pantaloni și blugi", "nl": "Broek en jeans inkorten", "en": "Shorten trousers and jeans", "ru": "Укоротить брюки и джинсы", "price": ""}, {"id": "s2", "ro": "Scurtare rochie sau fustă", "nl": "Jurk of rok inkorten", "en": "Shorten a dress or skirt", "ru": "Укоротить платье или юбку", "price": ""}, {"id": "s3", "ro": "Scurtare mâneci", "nl": "Mouwen inkorten", "en": "Shorten sleeves", "ru": "Укоротить рукава", "price": ""}, {"id": "s4", "ro": "Strâmtare sau lărgire", "nl": "Innemen of uitleggen", "en": "Take in or let out", "ru": "Ушить или расширить", "price": ""}, {"id": "s5", "ro": "Înlocuire fermoar", "nl": "Rits vervangen", "en": "Replace a zipper", "ru": "Замена молнии", "price": ""}, {"id": "s7", "ro": "Reparații și cusături", "nl": "Reparaties en naaiwerk", "en": "Repairs and stitching", "ru": "Ремонт одежды", "price": ""}, {"id": "s12", "ro": "Perne și perdele (coasere, reparare)", "nl": "Kussens en gordijnen (naaien, repareren)", "en": "Cushions and curtains (sewing, repairs)", "ru": "Подушки и шторы (пошив, ремонт)", "price": ""}, {"id": "s8", "ro": "Alte lucrări — întrebați-ne", "nl": "Ander naaiwerk — vraag het ons", "en": "Other sewing work — just ask", "ru": "Другие работы — спрашивайте", "price": ""}], "products": [], "reviews": [], "hero": null, "ship": {"price": "6.95", "free": "", "discount": "20"}}</script><div class="wrap" id="root">
   <div class="topbar"><div class="tbin"><span class="tbitem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Schiedam</span><span class="tbitem tbwa">WhatsApp +31 6 44 16 23 29</span><div class="langbar" id="langbar" role="group" aria-label="Limba / Taal / Language / Язык">
     <button type="button" data-lang="ro">RO</button><button type="button" data-lang="nl">NL</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button>
   </div></div></div>
-  <div class="sitehead"><div class="shin"><a class="logo" href="#top">Cristina <em>Collection</em></a><nav class="jump"><a href="#despre" data-t="jumpAbout">Despre noi</a><a href="#croitorie" data-t="jumpSvc">Croitorie</a><a href="#haine" data-t="jumpShop">Haine de vânzare</a><a href="#pareri" data-t="jumpRev">Păreri</a><a href="#inregistrare" data-t="jumpReg">Înregistrare</a><a href="#plata" data-t="jumpPay">Plată</a><a href="#adresa" data-t="jumpAddr">Adresă</a></nav></div></div>
+  <div class="sitehead"><div class="shin"><a class="logo" href="#top">Cristina <em>Collection</em></a><nav class="jump"><a href="#despre" data-t="jumpAbout">Despre noi</a><a href="#croitorie" data-t="jumpSvc">Croitorie</a><a href="#lucrari" data-t="jumpWork">Lucrări făcute</a><a href="#haine" data-t="jumpShop">Haine de vânzare</a><a href="#pareri" data-t="jumpRev">Păreri</a><a href="#inregistrare" data-t="jumpReg">Înregistrare</a><a href="#plata" data-t="jumpPay">Plată</a><a href="#adresa" data-t="jumpAddr">Adresă</a></nav></div></div>
   <header class="top hero" id="top">
       <figure class="heroimg" id="heroFig"><img id="heroImg" alt="Cristina Collection"><figcaption data-t="heroCap">Atelierul Cristinei</figcaption></figure>
     <div class="herotext">
@@ -361,7 +378,7 @@ footer .sig em{color:#F5B8CE}
       <button type="button" class="plain" id="heroRemove">Scoate poza</button>
     </div>
     <h2 style="margin-top:10px">Adaugă o haină sau o lucrare</h2>
-    <p>Alege poza, scrie numele și prețul, apoi apasă „Publică”. Apare imediat pe site, pentru toată lumea. Pentru poze cu lucrări făcute (reparații, ajustări), alege categoria „Lucrările mele”.</p>
+    <p>Alege poza, scrie numele și prețul, apoi apasă „Publică”. Apare imediat pe site, pentru toată lumea. Pozele cu lucrări făcute se pun mai jos, la „Haine făcute de Cristina”.</p>
     <div class="form">
       <div style="grid-row:span 3;display:grid;gap:8px;align-content:start"><label class="filelbl" for="f-photo">1. Alege poza hainei:</label><input type="file" id="f-photo" accept="image/*" class="filein"><div class="pick" id="pick"><span id="pickText">Poza aleasă apare aici</span></div></div>
       <div class="field"><label for="f-name">Nume</label><input id="f-name" placeholder="ex. Rochie neagră de seară" maxlength="80"></div>
@@ -411,6 +428,23 @@ footer .sig em{color:#F5B8CE}
       <input id="n-price" placeholder="Preț, ex. de la €5" maxlength="20">
       <button type="button" class="plain" id="svcAddBtn">Adaugă lucrarea</button>
     </div>
+  </section>
+
+  <section class="main" id="lucrari">
+    <div class="sechead">
+      <span class="eyebrow" data-t="workEyebrow">Portofoliu</span>
+      <h2 class="sec" data-t-html="workTitle">Haine <em>făcute</em> de Cristina</h2>
+      <p data-t="workText">Câteva lucrări terminate: haine cusute pe măsură, ajustări și reparații. Vă place ceva? Scrieți-ne pe WhatsApp.</p>
+    </div>
+    <div class="workadd" id="workAdd" hidden="">
+      <h3>Adaugă poze cu lucrări făcute</h3>
+      <p>Puteți alege mai multe poze deodată. Numele este opțional (ex. „Rochie de seară cusută pe măsură”).</p>
+      <label class="chgphoto workpick">📷 Alege pozele<input type="file" id="w-photo" accept="image/*" multiple></label>
+      <div class="field"><label for="w-name">Nume (opțional)</label><input id="w-name" maxlength="80" placeholder="ex. Rochie cusută pe măsură"></div>
+      <div class="actions"><button type="button" class="btn-main" id="wAddBtn" disabled>Pune pe site</button><span class="status" id="wMsg" role="status"></span></div>
+    </div>
+    <div class="works" id="works"></div>
+    <p class="empty" id="worksEmpty" hidden="" data-t="workEmpty">În curând: poze cu lucrările Cristinei.</p>
   </section>
 
   <section class="main" id="haine">
@@ -577,6 +611,11 @@ const T_REV={"ro": {"jumpRev": "Păreri", "revEyebrow": "Păreri", "revTitle": "
 Object.keys(T_REV).forEach(l=>Object.assign(T[l],T_REV[l]));
 const T_ADDR={"ro": {"jumpAddr": "Adresă", "addrEyebrow": "Adresă", "addrTitle": "Veniți la <em>atelier</em>", "addrMaps": "Deschide harta în Google Maps", "addrAppt": "Vă rugăm să scrieți pe WhatsApp înainte să veniți, ca să stabilim ora.", "addrRoute": "Arată drumul", "addrWa": "Programare pe WhatsApp", "addrMsg": "Bună ziua! Aș vrea să vin la atelier. Când pot veni?"}, "nl": {"jumpAddr": "Adres", "addrEyebrow": "Adres", "addrTitle": "Kom langs in het <em>atelier</em>", "addrMaps": "Open de kaart in Google Maps", "addrAppt": "Stuur ons eerst een WhatsApp, dan spreken we een tijd af.", "addrRoute": "Route", "addrWa": "Afspraak via WhatsApp", "addrMsg": "Hallo! Ik wil graag langskomen in het atelier. Wanneer kan ik komen?"}, "en": {"jumpAddr": "Address", "addrEyebrow": "Address", "addrTitle": "Visit the <em>workshop</em>", "addrMaps": "Open the map in Google Maps", "addrAppt": "Please send a WhatsApp message before you come, so we can agree on a time.", "addrRoute": "Directions", "addrWa": "Book on WhatsApp", "addrMsg": "Hello! I would like to visit the workshop. When can I come?"}, "ru": {"jumpAddr": "Адрес", "addrEyebrow": "Адрес", "addrTitle": "Приходите в <em>ателье</em>", "addrMaps": "Открыть карту в Google Maps", "addrAppt": "Пожалуйста, напишите в WhatsApp перед визитом, чтобы договориться о времени.", "addrRoute": "Проложить маршрут", "addrWa": "Записаться в WhatsApp", "addrMsg": "Здравствуйте! Хочу прийти в ателье. Когда можно прийти?"}};
 Object.keys(T_ADDR).forEach(l=>Object.assign(T[l],T_ADDR[l]));
+const T_WORK={ro:{jumpWork:"Lucrări făcute",workEyebrow:"Portofoliu",workTitle:"Haine <em>făcute</em> de Cristina",workText:"Câteva lucrări terminate: haine cusute pe măsură, ajustări și reparații. Vă place ceva? Scrieți-ne pe WhatsApp.",workEmpty:"În curând: poze cu lucrările Cristinei."},
+nl:{jumpWork:"Ons werk",workEyebrow:"Portfolio",workTitle:"Door Cristina <em>gemaakt</em>",workText:"Een paar afgeronde opdrachten: kleding op maat, aanpassingen en reparaties. Iets gezien dat u mooi vindt? Stuur ons een WhatsApp.",workEmpty:"Binnenkort: foto's van Cristina's werk."},
+en:{jumpWork:"Our work",workEyebrow:"Portfolio",workTitle:"Made by <em>Cristina</em>",workText:"Some finished work: made-to-measure clothes, alterations and repairs. See something you like? Send us a WhatsApp message.",workEmpty:"Coming soon: photos of Cristina's work."},
+ru:{jumpWork:"Наши работы",workEyebrow:"Портфолио",workTitle:"Сшито <em>Кристиной</em>",workText:"Несколько готовых работ: пошив на заказ, подгонка и ремонт. Понравилось? Напишите нам в WhatsApp.",workEmpty:"Скоро здесь появятся фото работ Кристины."}};
+Object.keys(T_WORK).forEach(l=>Object.assign(T[l],T_WORK[l]));
 const ADDR="Burgemeester van Haarenlaan 836, 3119 GW Schiedam, Netherlands";
 const SITE="https://igorturcanu.github.io/cristina-collection/";
 const SB_URL="https://mngjveyvtehsxmftnjei.supabase.co",SB_KEY="sb_publishable_HbE5pxHANOGtpzNDRi_Yjw_VS5NnZER";
@@ -714,8 +753,43 @@ function renderServices(){
   });
   $("svcAdd").hidden=true;
 }
+function renderWorks(){
+  const box=$("works");box.innerHTML="";
+  const list=state.products.filter(p=>p.cat==="Lucrările mele"&&p.img);
+  list.forEach(p=>{
+    const f=el("figure","work");const w=el("div","wimg");
+    const im=new Image();im.src=p.img;im.alt=p.name||"";im.loading="lazy";
+    im.onclick=()=>{const lb=el("div","lightbox");const big=new Image();big.src=p.img;big.alt=p.name||"";lb.append(big);lb.onclick=()=>lb.remove();document.body.append(lb);};
+    w.append(im);f.append(w);
+    if(p.name&&p.name!=="Lucrare")f.append(el("figcaption",null,p.name));
+    const a=el("a","wask");a.href=waProduct(p);a.target="_blank";a.rel="noopener";a.innerHTML=WA_SVG;a.append(" "+t("askWork"));f.append(a);
+    if(isAdmin){const d=el("button","danger","Șterge");d.type="button";confirmBtn(d,"Șterge",()=>run(async()=>{must(await sb.from("products").delete().eq("id",p.id));dropPhoto(p.img);},"Poza a fost ștearsă."));f.append(d);}
+    box.append(f);
+  });
+  $("worksEmpty").hidden=list.length>0;
+  $("lucrari").hidden=!isAdmin&&loaded&&list.length===0;
+  $("workAdd").hidden=!isAdmin;
+}
+let pendingWorks=[];
+function setupWorks(){
+  const msg=$("wMsg");
+  $("w-photo").onchange=async e=>{
+    const fs=[...(e.target.files||[])];if(!fs.length)return;
+    msg.textContent="Se pregătesc pozele…";$("wAddBtn").disabled=true;
+    pendingWorks=[];for(const f of fs){try{pendingWorks.push(await compress(f,1200,0.78));}catch(_){}}
+    msg.textContent=pendingWorks.length?(pendingWorks.length===1?"1 poză aleasă ✓":pendingWorks.length+" poze alese ✓"):"Pozele nu au putut fi citite. Încercați altele.";
+    $("wAddBtn").disabled=!pendingWorks.length;
+  };
+  photoGuard($("w-photo"),"Poze cu lucrări făcute");
+  $("wAddBtn").onclick=()=>{
+    if(!pendingWorks.length){msg.textContent="Alegeți mai întâi pozele.";return;}
+    const name=$("w-name").value.trim()||"Lucrare",photos=pendingWorks.slice();
+    run(async()=>{for(const ph of photos){const url=await upload(ph);must(await sb.from("products").insert({name,cat:"Lucrările mele",photo:url,sold:false}));}},
+      photos.length===1?"Lucrarea este pe site.":photos.length+" lucrări sunt pe site.").then(ok=>{if(ok){pendingWorks=[];$("w-name").value="";$("w-photo").value="";msg.textContent="";$("wAddBtn").disabled=true;}});
+  };
+}
 function renderFilters(){
-  const present=new Set(state.products.map(p=>p.cat));
+  const present=new Set(state.products.filter(p=>p.cat!=="Lucrările mele").map(p=>p.cat));
   const list=["Toate",...CATS.filter(c=>present.has(c))];
   if(!list.includes(filter))filter="Toate";
   const nav=$("filters");nav.innerHTML="";
@@ -773,9 +847,9 @@ function renderAddr(){
 }
 function render(){
   if(qSvc&&!$("qWrap").hidden)qRender();
-  renderHero();renderAddr();renderServices();renderFilters();renderReviews();renderStars();renderShare();
+  renderHero();renderAddr();renderServices();renderWorks();renderFilters();renderReviews();renderStars();renderShare();
   const grid=$("grid");grid.innerHTML="";
-  const items=state.products.filter(p=>filter==="Toate"||p.cat===filter);
+  const items=state.products.filter(p=>p.cat!=="Lucrările mele"&&(filter==="Toate"||p.cat===filter));
   const forSale=items.filter(p=>p.cat!=="Lucrările mele");
   const avail=forSale.filter(p=>!p.sold).length, soldN=forSale.length-avail;
   $("count").textContent=forSale.length?`${avail} ${avail===1?t("avail1"):t("availN")}${soldN?" · "+soldN+" "+t("soldN"):""}`:"";
@@ -885,7 +959,7 @@ function setupAdmin(email){
   $("logoutBtn").onclick=async()=>{await sb.auth.signOut();location.hash="";location.reload();};
   if(lang!=="ro"){lang="ro";}
   applyLang();
-  const sel=$("f-cat");sel.innerHTML="";CATS.forEach(c=>{const o=el("option",null,c);o.value=c;sel.append(o);});
+  const sel=$("f-cat");sel.innerHTML="";CATS.filter(c=>c!=="Lucrările mele").forEach(c=>{const o=el("option",null,c);o.value=c;sel.append(o);});
   $("f-photo").onchange=async e=>{
     const f=e.target.files&&e.target.files[0];if(!f)return;
     $("pick").innerHTML='<span>Se pregătește poza…</span>';
@@ -927,6 +1001,7 @@ function setupAdmin(email){
     z.addEventListener("input",()=>{const im=z.querySelector("img");if(im&&im.src.startsWith("data:image")){fetch(im.src).then(r=>r.blob()).then(b=>take(new File([b],"poza.jpg",{type:b.type||"image/jpeg"})));}});
     inp.after(z);
   });
+  setupWorks();
   photoGuard($("h-photo"),"Poza de sus");photoGuard($("f-photo"),"Poza hainei");photoGuard($("rv-photo"),"Poza pentru părere");
   $("rvAddBtn").onclick=()=>{
     const name=$("rv-name").value.trim(), text=$("rv-text").value.trim();
