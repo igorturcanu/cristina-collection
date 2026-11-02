@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="ro"><head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18143106397"></script>
+<html lang="ro"><head><!-- Google tag (gtag.js) + Consent Mode v2 -->
 <script>
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
+function ccConsent(v){var x=v?'granted':'denied';gtag('consent','update',{ad_storage:x,ad_user_data:x,ad_personalization:x,analytics_storage:x});}
+try{if(localStorage.getItem('cc-consent')==='granted')ccConsent(true);}catch(e){}
 gtag('js',new Date());
 gtag('config','AW-18143106397');
 // Conversie: clic pe orice link WhatsApp către Cristina
@@ -12,7 +14,30 @@ document.addEventListener('click',function(e){
   if(!a)return;
   gtag('event','conversion',{'send_to':'AW-18143106397/MvkVCNnsz6odEN2qp8tD'});
 },true);
+// Banner cookie-uri (ro / nl / ru / en)
+document.addEventListener('DOMContentLoaded',function(){
+  var st=null;try{st=localStorage.getItem('cc-consent');}catch(e){}
+  if(st==='granted'||st==='denied')return;
+  var L={
+    ro:['Folosim cookie-uri pentru a măsura anunțurile noastre (Google Ads). Acceptați?','Accept','Refuz'],
+    nl:['We gebruiken cookies om onze advertenties te meten (Google Ads). Akkoord?','Accepteren','Weigeren'],
+    ru:['Мы используем cookie для измерения эффективности рекламы (Google Ads). Согласны?','Принять','Отклонить'],
+    en:['We use cookies to measure our ads (Google Ads). Do you agree?','Accept','Decline']
+  };
+  var l='nl';try{var sv=localStorage.getItem('cc-lang');var nv=(navigator.language||'').slice(0,2).toLowerCase();l=L[sv]?sv:(L[nv]?nv:'nl');}catch(e){}
+  var t=L[l];
+  var d=document.createElement('div');
+  d.setAttribute('role','dialog');
+  d.style.cssText='position:fixed;left:12px;right:12px;bottom:12px;z-index:99999;background:#2a2024;color:#fff;padding:14px 16px;border-radius:12px;font:15px/1.4 system-ui,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.35);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;max-width:620px;margin:0 auto';
+  d.innerHTML='<span style="flex:1 1 240px"></span><span style="display:flex;gap:8px"><button type="button" data-v="0" style="padding:8px 14px;border-radius:8px;border:1px solid #fff;background:transparent;color:#fff;font:inherit;cursor:pointer"></button><button type="button" data-v="1" style="padding:8px 14px;border-radius:8px;border:0;background:#fff;color:#2a2024;font:inherit;font-weight:600;cursor:pointer"></button></span>';
+  d.firstChild.textContent=t[0];
+  var bt=d.querySelectorAll('button');bt[0].textContent=t[2];bt[1].textContent=t[1];
+  d.onclick=function(e){var b=e.target.closest('button');if(!b)return;var ok=b.dataset.v==='1';try{localStorage.setItem('cc-consent',ok?'granted':'denied');}catch(x){}ccConsent(ok);d.remove();};
+  document.body.appendChild(d);
+});
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18143106397"></script>
+
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Cristina Collection – croitorie în Schiedam</title><meta name="description" content="Croitorie, reparații și ajustări de haine în Schiedam. Haine pe măsură și haine de vânzare. Scrieți-ne pe WhatsApp."><meta property="og:title" content="Cristina Collection – croitorie în Schiedam"><meta property="og:description" content="Reparații, ajustări și haine pe măsură. Scrieți-ne pe WhatsApp."><meta property="og:image" content="https://igorturcanu.github.io/cristina-collection/img/hero.jpg"><meta property="og:url" content="https://igorturcanu.github.io/cristina-collection/"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%E2%9C%82%EF%B8%8F%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,400;1,6..96,600&family=Figtree:wght@400;500;600;700&display=swap"><style id="css">
 :root{
   --bg:#FBF6EE; --surface:#FFFDF9; --ink:#3A2430; --muted:#7A6570; --line:#EEDFD6;
