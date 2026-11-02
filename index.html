@@ -377,6 +377,27 @@ footer .sig em{color:#F5B8CE}
 @media (max-width:859px){.aboutcta{display:none}}
 .meta .price.ask{font-family:inherit;font-size:13.5px;color:var(--muted);font-style:italic}
 .diamonds{padding-bottom:0}
+.svcgrid{display:grid;grid-template-columns:1fr;gap:12px;padding:6px 0 0}
+@media (min-width:560px){.svcgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
+@media (min-width:980px){.svcgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}}
+.svccard{--c1:#B3245A;--c2:#E0567F;position:relative;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;gap:4px 16px;align-items:center;padding:18px;border-radius:16px;background:#fff;color:var(--esp);text-decoration:none;border:1px solid rgba(179,36,90,.10);box-shadow:0 1px 2px rgba(42,27,23,.05),0 8px 24px rgba(42,27,23,.06);transition:transform .2s,box-shadow .2s,border-color .2s;overflow:hidden}
+.svccard::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(180deg,var(--c1),var(--c2))}
+.svccard:hover,.svccard:focus-visible{transform:translateY(-3px);box-shadow:0 14px 34px rgba(179,36,90,.16);border-color:rgba(179,36,90,.28)}
+.svccard:nth-child(2){--c1:#C2410C;--c2:#F59E0B}
+.svccard:nth-child(3){--c1:#7C3AED;--c2:#C084FC}
+.svccard:nth-child(4){--c1:#0F766E;--c2:#2DD4BF}
+.svccard:nth-child(5){--c1:#1D4ED8;--c2:#60A5FA}
+.svccard:nth-child(6){--c1:#9D174D;--c2:#F472B6}
+.svcicon{grid-row:1/3;width:58px;height:58px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--c1),var(--c2));box-shadow:0 8px 18px -6px var(--c1)}
+.svcicon svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.svctext{display:grid;gap:3px;min-width:0}
+.svctext strong{font-size:16.5px;line-height:1.25;font-weight:700}
+.svctext small{font-size:14px;color:#6E5A54;line-height:1.35}
+.svcgo{grid-column:2;font-size:13.5px;font-weight:700;color:var(--c1);margin-top:4px}
+.svcsteps{list-style:none;margin:22px 0 0;padding:16px;display:grid;gap:10px;grid-template-columns:1fr;background:#fff;border-radius:14px;border:1px dashed rgba(179,36,90,.35)}
+@media (min-width:760px){.svcsteps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.svcsteps li{display:flex;gap:10px;align-items:center;font-weight:600;font-size:15px}
+.svcsteps b{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--rasp);color:#fff;font-size:14px}
 .photo.zoomable{cursor:zoom-in}
 .spinbadge{position:absolute;right:8px;top:8px;background:var(--rasp);color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;padding:4px 8px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.2)}
 .spinadd{background:var(--esp)!important}
@@ -496,7 +517,8 @@ footer .sig em{color:#F5B8CE}
       <h2 class="sec" data-t-html="svcTitle">Croitorie și <em>modelare constructivă</em></h2>
       <p data-t="svcLede">Alegeți lucrarea și scrieți-ne pe WhatsApp, cu o poză a hainei dacă puteți. Prețul îl stabilim împreună cu Cristina, cu aproximație, după ce vede haina.</p>
     </div>
-    <div class="diamonds" id="diamonds"></div>
+    <div class="svcgrid" id="diamonds"></div>
+    <ol class="svcsteps"><li><b>1</b><span data-t="step1">Alegeți lucrarea</span></li><li><b>2</b><span data-t="step2">Trimiteți o poză pe WhatsApp</span></li><li><b>3</b><span data-t="step3">Primiți prețul și termenul</span></li></ol>
     <div class="services" id="services" hidden=""></div>
     <div class="svcadd" id="svcAdd" hidden="">
       <input id="n-svc" placeholder="Lucrare nouă, ex. Coasere nasturi" maxlength="80">
@@ -687,6 +709,7 @@ Object.keys(T_REV).forEach(l=>Object.assign(T[l],T_REV[l]));
 const T_ADDR={"ro": {"jumpAddr": "Adresă", "addrEyebrow": "Adresă", "addrTitle": "Veniți la <em>atelier</em>", "addrMaps": "Deschide harta în Google Maps", "addrAppt": "Vă rugăm să scrieți pe WhatsApp înainte să veniți, ca să stabilim ora.", "addrRoute": "Arată drumul", "addrWa": "Programare pe WhatsApp", "addrMsg": "Bună ziua! Aș vrea să vin la atelier. Când pot veni?"}, "nl": {"jumpAddr": "Adres", "addrEyebrow": "Adres", "addrTitle": "Kom langs in het <em>atelier</em>", "addrMaps": "Open de kaart in Google Maps", "addrAppt": "Stuur ons eerst een WhatsApp, dan spreken we een tijd af.", "addrRoute": "Route", "addrWa": "Afspraak via WhatsApp", "addrMsg": "Hallo! Ik wil graag langskomen in het atelier. Wanneer kan ik komen?"}, "en": {"jumpAddr": "Address", "addrEyebrow": "Address", "addrTitle": "Visit the <em>workshop</em>", "addrMaps": "Open the map in Google Maps", "addrAppt": "Please send a WhatsApp message before you come, so we can agree on a time.", "addrRoute": "Directions", "addrWa": "Book on WhatsApp", "addrMsg": "Hello! I would like to visit the workshop. When can I come?"}, "ru": {"jumpAddr": "Адрес", "addrEyebrow": "Адрес", "addrTitle": "Приходите в <em>ателье</em>", "addrMaps": "Открыть карту в Google Maps", "addrAppt": "Пожалуйста, напишите в WhatsApp перед визитом, чтобы договориться о времени.", "addrRoute": "Проложить маршрут", "addrWa": "Записаться в WhatsApp", "addrMsg": "Здравствуйте! Хочу прийти в ателье. Когда можно прийти?"}};
 Object.keys(T_ADDR).forEach(l=>Object.assign(T[l],T_ADDR[l]));
 const T_SPIN={ro:{spinOpen:"Vezi haina din toate părțile",zoomOpen:"Vezi poza mare",spinHint:"Trageți cu degetul stânga–dreapta ca să întoarceți haina."},nl:{spinOpen:"Bekijk het kledingstuk van alle kanten",zoomOpen:"Bekijk de grote foto",spinHint:"Sleep met uw vinger naar links of rechts om het kledingstuk te draaien."},en:{spinOpen:"See the item from all sides",zoomOpen:"See the large photo",spinHint:"Drag left or right to turn the item."},ru:{spinOpen:"Посмотреть вещь со всех сторон",zoomOpen:"Открыть большое фото",spinHint:"Проведите пальцем влево или вправо, чтобы повернуть вещь."}};Object.keys(T_SPIN).forEach(l=>Object.assign(T[l],T_SPIN[l]));
+const T_SVC={"ro": {"svcGo": "Cere prețul", "sd_s1": "Tiv curat, ca din fabrică", "sd_s5": "Fermoar nou, ascuns sau vizibil", "sd_s2": "Lungimea potrivită pentru dumneavoastră", "sd_s4": "Haina stă perfect pe corp", "sd_s7": "Găuri, rupturi, cusături desfăcute", "sd_s10": "Tipare și haine cusute pe măsură", "step1": "Alegeți lucrarea", "step2": "Trimiteți o poză pe WhatsApp", "step3": "Primiți prețul și termenul"}, "nl": {"svcGo": "Vraag de prijs", "sd_s1": "Nette zoom, als nieuw", "sd_s5": "Nieuwe rits, verborgen of zichtbaar", "sd_s2": "De juiste lengte voor u", "sd_s4": "Een perfecte pasvorm", "sd_s7": "Gaten, scheuren, losse naden", "sd_s10": "Patronen en kleding op maat", "step1": "Kies wat u nodig heeft", "step2": "Stuur een foto via WhatsApp", "step3": "Ontvang prijs en levertijd"}, "en": {"svcGo": "Get a price", "sd_s1": "A clean, factory-style hem", "sd_s5": "New zip, hidden or visible", "sd_s2": "The right length for you", "sd_s4": "A perfect fit", "sd_s7": "Holes, tears, loose seams", "sd_s10": "Patterns and made-to-measure clothes", "step1": "Choose the job", "step2": "Send a photo on WhatsApp", "step3": "Get the price and timing"}, "ru": {"svcGo": "Узнать цену", "sd_s1": "Аккуратный подгиб, как с фабрики", "sd_s5": "Новая молния, потайная или видимая", "sd_s2": "Нужная вам длина", "sd_s4": "Идеальная посадка по фигуре", "sd_s7": "Дырки, разрывы, распоротые швы", "sd_s10": "Выкройки и пошив по меркам", "step1": "Выберите услугу", "step2": "Пришлите фото в WhatsApp", "step3": "Получите цену и срок"}};Object.keys(T_SVC).forEach(l=>Object.assign(T[l],T_SVC[l]));
 const T_UI={"ro": {"trust1": "Atelier în Schiedam", "trust2": "Răspund repede pe WhatsApp", "trust3": "RO · NL · EN · RU", "aboutCta": "Scrieți-mi pe WhatsApp", "fAppt": "Programări doar pe WhatsApp"}, "nl": {"trust1": "Atelier in Schiedam", "trust2": "Snel antwoord via WhatsApp", "trust3": "NL · EN · RO · RU", "aboutCta": "Stuur mij een WhatsApp", "fAppt": "Afspraken alleen via WhatsApp"}, "en": {"trust1": "Workshop in Schiedam", "trust2": "Quick replies on WhatsApp", "trust3": "EN · NL · RO · RU", "aboutCta": "Message me on WhatsApp", "fAppt": "Appointments via WhatsApp only"}, "ru": {"trust1": "Ателье в Схидаме", "trust2": "Быстро отвечаю в WhatsApp", "trust3": "RU · RO · NL · EN", "aboutCta": "Напишите мне в WhatsApp", "fAppt": "Запись только через WhatsApp"}};Object.keys(T_UI).forEach(l=>Object.assign(T[l],T_UI[l]));
 const T_WORK={ro:{jumpWork:"Lucrări făcute",workEyebrow:"Portofoliu",workTitle:"Haine <em>făcute</em> de Cristina",workText:"Câteva lucrări terminate: haine cusute pe măsură, ajustări și reparații. Vă place ceva? Scrieți-ne pe WhatsApp.",workEmpty:"În curând: poze cu lucrările Cristinei."},
 nl:{jumpWork:"Ons werk",workEyebrow:"Portfolio",workTitle:"Door Cristina <em>gemaakt</em>",workText:"Een paar afgeronde opdrachten: kleding op maat, aanpassingen en reparaties. Iets gezien dat u mooi vindt? Stuur ons een WhatsApp.",workEmpty:"Binnenkort: foto's van Cristina's werk."},
@@ -806,9 +829,10 @@ function renderDiamonds(){
   const box=$("diamonds");if(!box)return;box.innerHTML="";
   DIAMONDS.forEach(([id,icon])=>{
     const sv=state.services.find(x=>x.id===id);if(!sv)return;
-    const a=el("a","dm");a.href=waService(sv);a.target="_blank";a.rel="noopener";if(QCFG[id])a.onclick=e=>{e.preventDefault();qOpen(id,a);};
-    const g=el("span","gem");g.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+icon+'</svg>';
-    a.append(g,el("span",null,svcName(sv).replace(/\s*\(.*\)$/,"").replace(/ — .*$/,"")));
+    const a=el("a","svccard");a.href=waService(sv);a.target="_blank";a.rel="noopener";if(QCFG[id])a.onclick=e=>{e.preventDefault();qOpen(id,a);};
+    const g=el("span","svcicon");g.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+icon+'</svg>';
+    const tx=el("span","svctext");tx.append(el("strong",null,svcName(sv).replace(/\s*\(.*\)$/,"").replace(/ — .*$/,"")),el("small",null,t("sd_"+id)));
+    a.append(g,tx,el("span","svcgo",t("svcGo")+" →"));
     box.append(a);
   });
 }
