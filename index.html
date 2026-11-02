@@ -380,6 +380,13 @@ footer .sig em{color:#F5B8CE}
 .photo.zoomable{cursor:zoom-in}
 .spinbadge{position:absolute;right:8px;top:8px;background:var(--rasp);color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;padding:4px 8px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.2)}
 .spinadd{background:var(--esp)!important}
+.vidadd{background:#5B4A44!important}
+.admintools{display:grid;gap:8px}
+.workpicks{display:flex;flex-wrap:wrap;gap:10px}
+.work .wimg{position:relative}
+.vidthumb{width:100%;height:100%;object-fit:cover;display:block}
+.vidbadge{position:absolute;left:8px;bottom:8px;border:0;background:rgba(32,20,17,.82);color:#fff;font-weight:700;font-size:13px;padding:7px 12px;border-radius:999px;cursor:pointer}
+.vidplayer{width:100%;max-height:78vh;border-radius:8px;background:#000}
 .spinwrap{position:fixed;inset:0;z-index:50;background:rgba(20,12,10,.94);display:grid;place-items:center;padding:12px}
 .spinbox{position:relative;width:min(100%,640px);display:grid;gap:10px;justify-items:center}
 .spinstage{width:100%;aspect-ratio:3/4;max-height:78vh;display:grid;place-items:center;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab}
@@ -506,8 +513,8 @@ footer .sig em{color:#F5B8CE}
     </div>
     <div class="workadd" id="workAdd" hidden="">
       <h3>Adaugă poze cu lucrări făcute</h3>
-      <p>Puteți alege mai multe poze deodată. Numele este opțional (ex. „Rochie de seară cusută pe măsură”).</p>
-      <label class="chgphoto workpick">📷 Alege pozele<input type="file" id="w-photo" accept="image/*" multiple></label>
+      <p>Puteți alege mai multe poze deodată, sau un video (maximum 50 MB, cam 30 de secunde). Scrieți întâi numele, dacă vreți (ex. „Rochie de seară cusută pe măsură”).</p>
+      <div class="workpicks"><label class="chgphoto workpick">📷 Alege pozele<input type="file" id="w-photo" accept="image/*" multiple></label><label class="chgphoto workpick vidadd">🎬 Pune un video<input type="file" id="w-video" accept="video/*"></label></div>
       <div class="field"><label for="w-name">Nume (opțional)</label><input id="w-name" maxlength="80" placeholder="ex. Rochie cusută pe măsură"></div>
       <div class="actions"><button type="button" class="btn-main" id="wAddBtn" disabled>Pune pe site</button><span class="status" id="wMsg" role="status"></span></div>
     </div>
@@ -826,15 +833,13 @@ function renderServices(){
 }
 function renderWorks(){
   const box=$("works");box.innerHTML="";
-  const list=state.products.filter(p=>p.cat==="Lucrările mele"&&p.img);
+  const list=state.products.filter(p=>p.cat==="Lucrările mele"&&(p.img||p.video||isAdmin));
   list.forEach(p=>{
     const f=el("figure","work");const w=el("div","wimg");
-    const im=new Image();im.src=p.img;im.alt=p.name||"";im.loading="lazy";
-    im.onclick=()=>{const lb=el("div","lightbox");const big=new Image();big.src=p.img;big.alt=p.name||"";lb.append(big);lb.onclick=()=>lb.remove();document.body.append(lb);};
-    w.append(im);f.append(w);
+    mediaThumb(p,w,p.name&&p.name!=="Lucrare"?p.name:t("workEyebrow"));f.append(w);
     if(p.name&&p.name!=="Lucrare")f.append(el("figcaption",null,p.name));
     const a=el("a","wask");a.href=waProduct(p);a.target="_blank";a.rel="noopener";a.innerHTML=WA_SVG;a.append(" "+t("askWork"));f.append(a);
-    if(isAdmin){const d=el("button","danger","Șterge");d.type="button";confirmBtn(d,"Șterge",()=>run(async()=>{must(await sb.from("products").delete().eq("id",p.id));dropPhoto(p.img);},"Poza a fost ștearsă."));f.append(d);}
+    if(isAdmin)f.append(adminTools(p,true));
     box.append(f);
   });
   $("worksEmpty").hidden=list.length>0;
@@ -852,12 +857,84 @@ function setupWorks(){
     $("wAddBtn").disabled=!pendingWorks.length;
   };
   photoGuard($("w-photo"),"Poze cu lucrări făcute");
+  $("w-video").onchange=e=>{
+    const f=e.target.files&&e.target.files[0];e.target.value="";if(!f)return;
+    if(f.size>50e6){msg.textContent="Video-ul are "+Math.round(f.size/1e6)+" MB. Maximum este 50 MB: alegeți un video mai scurt.";return;}
+    const name=$("w-name").value.trim()||"Lucrare";msg.textContent="Se urcă video-ul… poate dura un minut.";
+    run(async()=>{const url=await uploadFile(f);must(await sb.from("products").insert({name,cat:"Lucrările mele",video:url,sold:false}));},"Video-ul este pe site.").then(ok=>{if(ok){$("w-name").value="";msg.textContent="";}else msg.textContent="";});
+  };
+  photoGuard($("w-video"),"Video cu o lucrare");
   $("wAddBtn").onclick=()=>{
     if(!pendingWorks.length){msg.textContent="Alegeți mai întâi pozele.";return;}
     const name=$("w-name").value.trim()||"Lucrare",photos=pendingWorks.slice();
     run(async()=>{for(const ph of photos){const url=await upload(ph);must(await sb.from("products").insert({name,cat:"Lucrările mele",photo:url,sold:false}));}},
       photos.length===1?"Lucrarea este pe site.":photos.length+" lucrări sunt pe site.").then(ok=>{if(ok){pendingWorks=[];$("w-name").value="";$("w-photo").value="";msg.textContent="";$("wAddBtn").disabled=true;}});
   };
+}
+function adminTools(p,work){
+  const c=el("div","admintools");
+      const r=el("div","adminrow");
+      if(!work){const s=el("button",null,p.sold?"Pune înapoi":"Marchează vândut");s.type="button";s.onclick=()=>run(async()=>{must(await sb.from("products").update({sold:!p.sold}).eq("id",p.id));},p.sold?"Din nou disponibilă.":"Marcată ca vândută.");r.append(s);}
+      if(p.img){const dp=el("button",null,"Șterge poza");dp.type="button";confirmBtn(dp,"Șterge poza",()=>run(async()=>{must(await sb.from("products").update({photo:null}).eq("id",p.id));dropPhoto(p.img);},"Poza a fost ștearsă. Haina a rămas pe site."));r.append(dp);}
+      const d=el("button","danger",(work?"Șterge lucrarea":"Șterge haina"));d.type="button";confirmBtn(d,(work?"Șterge lucrarea":"Șterge haina"),()=>run(async()=>{must(await sb.from("products").delete().eq("id",p.id));dropPhoto(p.img);},(work?"Lucrarea a fost ștearsă.":"Haina a fost ștearsă de pe site.")));
+      r.append(d);
+      const ch=el("label","chgphoto");ch.append("📷 "+(p.img?"Schimbă poza":"Adaugă poză"));
+      const fi=document.createElement("input");fi.type="file";fi.accept="image/*";fi.setAttribute("aria-label","Alege poza pentru "+p.name);ch.append(fi);
+      fi.onchange=async e=>{
+        const f=e.target.files&&e.target.files[0];if(!f)return;
+        setStatus("Se pregătește poza…");
+        try{const img=await compress(f);run(async()=>{const url=await upload(img);must(await sb.from("products").update({photo:url}).eq("id",p.id));dropPhoto(p.img);},"Poza a fost pusă la „"+p.name+"”.");}
+        catch(_){setStatus("Poza nu a putut fi citită. Încearcă altă poză.",true);}
+        e.target.value="";
+      };
+      photoGuard(fi,"Poză pentru „"+p.name+"”");
+      const sp=el("label","chgphoto spinadd");sp.append("🔄 "+(p.extra.length?"Adaugă poze 360° ("+(p.extra.length+(p.img?1:0))+")":"Adaugă poze 360°"));
+      const si=document.createElement("input");si.type="file";si.accept="image/*";si.multiple=true;si.setAttribute("aria-label","Poze din toate părțile pentru "+p.name);sp.append(si);
+      si.onchange=async e=>{
+        const fs=[...(e.target.files||[])];e.target.value="";if(!fs.length)return;
+        setStatus("Se pregătesc "+fs.length+" poze…");
+        const imgs=[];for(const f of fs){try{imgs.push(await compress(f,1000,0.76));}catch(_){}}
+        if(!imgs.length){setStatus("Pozele nu au putut fi citite.",true);return;}
+        run(async()=>{const urls=[];for(const im of imgs)urls.push(await upload(im));
+          if(!p.img){must(await sb.from("products").update({photo:urls[0],photos:[...p.extra,...urls.slice(1)]}).eq("id",p.id));}
+          else must(await sb.from("products").update({photos:[...p.extra,...urls]}).eq("id",p.id));},
+          "Pozele 360° au fost puse la „"+p.name+"”.");
+      };
+      photoGuard(si,"Poze 360° pentru „"+p.name+"”");
+      c.append(ch);c.append(sp);
+      if(p.extra.length){const cl=el("button",null,"Scoate pozele 360°");cl.type="button";confirmBtn(cl,"Scoate pozele 360°",()=>run(async()=>{must(await sb.from("products").update({photos:[]}).eq("id",p.id));p.extra.forEach(dropPhoto);},"Pozele 360° au fost scoase. Poza principală a rămas."));r.append(cl);}
+      const vl=el("label","chgphoto vidadd");vl.append("🎬 "+(p.video?"Schimbă video":"Adaugă video"));
+      const vi=document.createElement("input");vi.type="file";vi.accept="video/*";vi.setAttribute("aria-label","Video pentru "+p.name);vl.append(vi);
+      vi.onchange=e=>{
+        const f=e.target.files&&e.target.files[0];e.target.value="";if(!f)return;
+        if(f.size>50e6){setStatus("Video-ul are "+Math.round(f.size/1e6)+" MB. Maximum este 50 MB: alegeți un video mai scurt (până la ~30 de secunde).",true);return;}
+        setStatus("Se urcă video-ul… poate dura un minut.");
+        run(async()=>{const url=await uploadFile(f);must(await sb.from("products").update({video:url}).eq("id",p.id));dropPhoto(p.video);},"Video-ul a fost pus la „"+p.name+"”.");
+      };
+      photoGuard(vi,"Video pentru „"+p.name+"”");
+      c.append(vl);
+      if(p.video){const dv=el("button",null,"Scoate video");dv.type="button";confirmBtn(dv,"Scoate video",()=>run(async()=>{must(await sb.from("products").update({video:null}).eq("id",p.id));dropPhoto(p.video);},"Video-ul a fost scos."));r.append(dv);}
+      c.append(r);
+  return c;
+}
+function videoOpen(url,name){
+  spinClose();
+  const wrap=el("div","spinwrap");wrap.setAttribute("role","dialog");wrap.setAttribute("aria-modal","true");wrap.setAttribute("aria-label",name);
+  const box=el("div","spinbox");const v=document.createElement("video");v.src=url;v.controls=true;v.playsInline=true;v.autoplay=true;v.muted=true;v.loop=true;v.className="vidplayer";
+  const x=el("button","spinx","✕");x.type="button";x.setAttribute("aria-label",t("qClose"));
+  box.append(x,v,el("p","spintitle",name));wrap.append(box);document.body.append(wrap);
+  const st={wrap};spin=st;st.esc=e=>{if(e.key==="Escape")spinClose();};document.addEventListener("keydown",st.esc);
+  x.onclick=spinClose;wrap.onclick=e=>{if(e.target===wrap)spinClose();};x.focus();
+}
+function mediaThumb(p,box,name){
+  const frames=[p.img,...p.extra].filter(Boolean);
+  if(p.img||!p.video){const img=new Image();img.alt=name;img.loading="lazy";img.src=p.img||catArt(p.cat);box.append(img);}
+  else{const v=document.createElement("video");v.src=p.video+"#t=0.5";v.muted=true;v.playsInline=true;v.preload="metadata";v.className="vidthumb";box.append(v);}
+  const open=()=>{if(frames.length)spinOpen(frames,name);else if(p.video)videoOpen(p.video,name);};
+  if(frames.length||p.video){box.classList.add("zoomable");box.tabIndex=0;box.setAttribute("role","button");box.setAttribute("aria-label",(frames.length>1?t("spinOpen"):t("zoomOpen"))+": "+name);
+    box.onclick=open;box.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}};}
+  if(frames.length>1){const b=el("span","spinbadge","360°");b.title=t("spinOpen");box.append(b);}
+  if(p.video){const vb=el("button","vidbadge","▶ Video");vb.type="button";vb.onclick=e=>{e.stopPropagation();videoOpen(p.video,name);};box.append(vb);}
 }
 // ---- 360° viewer: drag / swipe to turn the garment, arrows, auto-turn ----
 let spin=null;
@@ -964,51 +1041,15 @@ function render(){
     const work=p.cat==="Lucrările mele";
     const c=el("article","card"+(p.sold?" sold":""));
     const ph=el("div","photo");
-    const img=new Image();img.alt=p.name;img.loading="lazy";img.src=p.img||catArt(p.cat);ph.append(img);
+    mediaThumb(p,ph,p.name);
     ph.append(el("span","tag",p.example?t("example"):catName(p.cat)));
     if(p.sold)ph.append(el("span","soldmark",t("sold")));
-    const frames=[p.img,...p.extra].filter(Boolean);
-    if(frames.length){ph.classList.add("zoomable");ph.tabIndex=0;ph.setAttribute("role","button");ph.setAttribute("aria-label",(frames.length>1?t("spinOpen"):t("zoomOpen"))+": "+p.name);
-      ph.onclick=()=>spinOpen(frames,p.name);ph.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();spinOpen(frames,p.name);}};}
-    if(frames.length>1){const b=el("span","spinbadge","360°");b.title=t("spinOpen");ph.append(b);}
     c.append(ph);
     c.append(el("h3","name",p.name));
     if(!work||p.price){const m=el("div","meta");m.append(el("span",null,p.size?t("size")+" "+p.size:""));m.append(el("span",String(p.price||"").trim()?"price":"price ask",fmtPrice(p.price)));c.append(m);}
     if(p.desc)c.append(el("p","desc",p.desc));
     if(!p.sold){const a=el("a","btn-wa");a.href=waProduct(p);a.target="_blank";a.rel="noopener";a.innerHTML=WA_SVG;a.append(" "+(work?t("askWork"):t("ask")));c.append(a);}
-    if(isAdmin){
-      const r=el("div","adminrow");
-      if(!work){const s=el("button",null,p.sold?"Pune înapoi":"Marchează vândut");s.type="button";s.onclick=()=>run(async()=>{must(await sb.from("products").update({sold:!p.sold}).eq("id",p.id));},p.sold?"Din nou disponibilă.":"Marcată ca vândută.");r.append(s);}
-      if(p.img){const dp=el("button",null,"Șterge poza");dp.type="button";confirmBtn(dp,"Șterge poza",()=>run(async()=>{must(await sb.from("products").update({photo:null}).eq("id",p.id));dropPhoto(p.img);},"Poza a fost ștearsă. Haina a rămas pe site."));r.append(dp);}
-      const d=el("button","danger","Șterge haina");d.type="button";confirmBtn(d,"Șterge haina",()=>run(async()=>{must(await sb.from("products").delete().eq("id",p.id));dropPhoto(p.img);},"Haina a fost ștearsă de pe site."));
-      r.append(d);
-      const ch=el("label","chgphoto");ch.append("📷 "+(p.img?"Schimbă poza":"Adaugă poză"));
-      const fi=document.createElement("input");fi.type="file";fi.accept="image/*";fi.setAttribute("aria-label","Alege poza pentru "+p.name);ch.append(fi);
-      fi.onchange=async e=>{
-        const f=e.target.files&&e.target.files[0];if(!f)return;
-        setStatus("Se pregătește poza…");
-        try{const img=await compress(f);run(async()=>{const url=await upload(img);must(await sb.from("products").update({photo:url}).eq("id",p.id));dropPhoto(p.img);},"Poza a fost pusă la „"+p.name+"”.");}
-        catch(_){setStatus("Poza nu a putut fi citită. Încearcă altă poză.",true);}
-        e.target.value="";
-      };
-      photoGuard(fi,"Poză pentru „"+p.name+"”");
-      const sp=el("label","chgphoto spinadd");sp.append("🔄 "+(p.extra.length?"Adaugă poze 360° ("+(p.extra.length+(p.img?1:0))+")":"Adaugă poze 360°"));
-      const si=document.createElement("input");si.type="file";si.accept="image/*";si.multiple=true;si.setAttribute("aria-label","Poze din toate părțile pentru "+p.name);sp.append(si);
-      si.onchange=async e=>{
-        const fs=[...(e.target.files||[])];e.target.value="";if(!fs.length)return;
-        setStatus("Se pregătesc "+fs.length+" poze…");
-        const imgs=[];for(const f of fs){try{imgs.push(await compress(f,1000,0.76));}catch(_){}}
-        if(!imgs.length){setStatus("Pozele nu au putut fi citite.",true);return;}
-        run(async()=>{const urls=[];for(const im of imgs)urls.push(await upload(im));
-          if(!p.img){must(await sb.from("products").update({photo:urls[0],photos:[...p.extra,...urls.slice(1)]}).eq("id",p.id));}
-          else must(await sb.from("products").update({photos:[...p.extra,...urls]}).eq("id",p.id));},
-          "Pozele 360° au fost puse la „"+p.name+"”.");
-      };
-      photoGuard(si,"Poze 360° pentru „"+p.name+"”");
-      c.append(ch);c.append(sp);
-      if(p.extra.length){const cl=el("button",null,"Scoate pozele 360°");cl.type="button";confirmBtn(cl,"Scoate pozele 360°",()=>run(async()=>{must(await sb.from("products").update({photos:[]}).eq("id",p.id));p.extra.forEach(dropPhoto);},"Pozele 360° au fost scoase. Poza principală a rămas."));r.append(cl);}
-      c.append(r);
-    }
+    if(isAdmin)c.append(adminTools(p,work));
     grid.append(c);
   });
 }
@@ -1017,7 +1058,7 @@ function toast(msg){const d=el("div","toast",msg);document.body.append(d);setTim
 function setStatus(m,err){const s=$("status");s.textContent=m;s.classList.toggle("err",!!err);if(err||m)toast(m);}
 // ---- data from Supabase ----
 function must(r){if(r&&r.error)throw r.error;return r?r.data:null;}
-function fromP(r){return {id:r.id,name:r.name,cat:r.cat||"Altele",size:r.size||"",price:r.price==null?"":String(r.price),desc:r.descr||"",sold:!!r.sold,img:r.photo||"",extra:Array.isArray(r.photos)?r.photos.filter(Boolean):[]};}
+function fromP(r){return {id:r.id,name:r.name,cat:r.cat||"Altele",size:r.size||"",price:r.price==null?"":String(r.price),desc:r.descr||"",sold:!!r.sold,img:r.photo||"",extra:Array.isArray(r.photos)?r.photos.filter(Boolean):[],video:r.video||""};}
 function fromR(r){return {id:r.id,name:r.name,text:r.body||"",stars:r.stars||5,img:r.photo||""};}
 async function loadData(){
   if(!sb){loaded=true;render();return;}
@@ -1036,6 +1077,12 @@ async function upload(dataUrl){
   const ty=/^image\/(jpeg|png|webp)$/.test(b.type)?b.type:"image/jpeg",ext={"image/png":"png","image/webp":"webp"}[ty]||"jpg";
   const path="p/"+Date.now().toString(36)+Math.random().toString(36).slice(2,8)+"."+ext;
   must(await sb.storage.from("photos").upload(path,b,{contentType:ty,cacheControl:"31536000"}));
+  return sb.storage.from("photos").getPublicUrl(path).data.publicUrl;
+}
+async function uploadFile(f){
+  const ext=((f.name||"").split(".").pop()||"mp4").toLowerCase().replace(/[^a-z0-9]/g,"")||"mp4";
+  const path="v/"+Date.now().toString(36)+Math.random().toString(36).slice(2,8)+"."+ext;
+  must(await sb.storage.from("photos").upload(path,f,{contentType:f.type||"video/mp4",cacheControl:"31536000"}));
   return sb.storage.from("photos").getPublicUrl(path).data.publicUrl;
 }
 function dropPhoto(url){const k="/object/public/photos/";if(url&&url.includes(k))sb.storage.from("photos").remove([decodeURIComponent(url.split(k)[1])]).catch(()=>{});}
