@@ -377,6 +377,21 @@ footer .sig em{color:#F5B8CE}
 @media (max-width:859px){.aboutcta{display:none}}
 .meta .price.ask{font-family:inherit;font-size:13.5px;color:var(--muted);font-style:italic}
 .diamonds{padding-bottom:0}
+.photo.zoomable{cursor:zoom-in}
+.spinbadge{position:absolute;right:8px;top:8px;background:var(--rasp);color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;padding:4px 8px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.spinadd{background:var(--esp)!important}
+.spinwrap{position:fixed;inset:0;z-index:50;background:rgba(20,12,10,.94);display:grid;place-items:center;padding:12px}
+.spinbox{position:relative;width:min(100%,640px);display:grid;gap:10px;justify-items:center}
+.spinstage{width:100%;aspect-ratio:3/4;max-height:78vh;display:grid;place-items:center;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab}
+.spinstage:active{cursor:grabbing}
+.spinstage img{grid-area:1/1;max-width:100%;max-height:78vh;object-fit:contain;border-radius:8px;pointer-events:none}
+.spinx{position:absolute;right:0;top:0;z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.92);font-size:18px;cursor:pointer}
+.spintitle{margin:0;color:#fff;font-weight:600}
+.spinbar{display:flex;gap:8px;align-items:center}
+.spinbtn{min-width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.5);background:none;color:#fff;font-size:20px;cursor:pointer;padding:0 14px}
+.spinplay{font-size:14px;font-weight:700;background:var(--rasp);border-color:var(--rasp)}
+.spincnt{color:#D9CBC5;font-size:13px;min-width:44px;text-align:center}
+.spinhint{margin:0;color:#BFAFA8;font-size:13px;text-align:center}
 @media (max-width:760px){.sitehead .jump{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}}
 
 .heroimg img:not([src]){visibility:hidden}
@@ -664,6 +679,7 @@ const T_REV={"ro": {"jumpRev": "Păreri", "revEyebrow": "Păreri", "revTitle": "
 Object.keys(T_REV).forEach(l=>Object.assign(T[l],T_REV[l]));
 const T_ADDR={"ro": {"jumpAddr": "Adresă", "addrEyebrow": "Adresă", "addrTitle": "Veniți la <em>atelier</em>", "addrMaps": "Deschide harta în Google Maps", "addrAppt": "Vă rugăm să scrieți pe WhatsApp înainte să veniți, ca să stabilim ora.", "addrRoute": "Arată drumul", "addrWa": "Programare pe WhatsApp", "addrMsg": "Bună ziua! Aș vrea să vin la atelier. Când pot veni?"}, "nl": {"jumpAddr": "Adres", "addrEyebrow": "Adres", "addrTitle": "Kom langs in het <em>atelier</em>", "addrMaps": "Open de kaart in Google Maps", "addrAppt": "Stuur ons eerst een WhatsApp, dan spreken we een tijd af.", "addrRoute": "Route", "addrWa": "Afspraak via WhatsApp", "addrMsg": "Hallo! Ik wil graag langskomen in het atelier. Wanneer kan ik komen?"}, "en": {"jumpAddr": "Address", "addrEyebrow": "Address", "addrTitle": "Visit the <em>workshop</em>", "addrMaps": "Open the map in Google Maps", "addrAppt": "Please send a WhatsApp message before you come, so we can agree on a time.", "addrRoute": "Directions", "addrWa": "Book on WhatsApp", "addrMsg": "Hello! I would like to visit the workshop. When can I come?"}, "ru": {"jumpAddr": "Адрес", "addrEyebrow": "Адрес", "addrTitle": "Приходите в <em>ателье</em>", "addrMaps": "Открыть карту в Google Maps", "addrAppt": "Пожалуйста, напишите в WhatsApp перед визитом, чтобы договориться о времени.", "addrRoute": "Проложить маршрут", "addrWa": "Записаться в WhatsApp", "addrMsg": "Здравствуйте! Хочу прийти в ателье. Когда можно прийти?"}};
 Object.keys(T_ADDR).forEach(l=>Object.assign(T[l],T_ADDR[l]));
+const T_SPIN={ro:{spinOpen:"Vezi haina din toate părțile",zoomOpen:"Vezi poza mare",spinHint:"Trageți cu degetul stânga–dreapta ca să întoarceți haina."},nl:{spinOpen:"Bekijk het kledingstuk van alle kanten",zoomOpen:"Bekijk de grote foto",spinHint:"Sleep met uw vinger naar links of rechts om het kledingstuk te draaien."},en:{spinOpen:"See the item from all sides",zoomOpen:"See the large photo",spinHint:"Drag left or right to turn the item."},ru:{spinOpen:"Посмотреть вещь со всех сторон",zoomOpen:"Открыть большое фото",spinHint:"Проведите пальцем влево или вправо, чтобы повернуть вещь."}};Object.keys(T_SPIN).forEach(l=>Object.assign(T[l],T_SPIN[l]));
 const T_UI={"ro": {"trust1": "Atelier în Schiedam", "trust2": "Răspund repede pe WhatsApp", "trust3": "RO · NL · EN · RU", "aboutCta": "Scrieți-mi pe WhatsApp", "fAppt": "Programări doar pe WhatsApp"}, "nl": {"trust1": "Atelier in Schiedam", "trust2": "Snel antwoord via WhatsApp", "trust3": "NL · EN · RO · RU", "aboutCta": "Stuur mij een WhatsApp", "fAppt": "Afspraken alleen via WhatsApp"}, "en": {"trust1": "Workshop in Schiedam", "trust2": "Quick replies on WhatsApp", "trust3": "EN · NL · RO · RU", "aboutCta": "Message me on WhatsApp", "fAppt": "Appointments via WhatsApp only"}, "ru": {"trust1": "Ателье в Схидаме", "trust2": "Быстро отвечаю в WhatsApp", "trust3": "RU · RO · NL · EN", "aboutCta": "Напишите мне в WhatsApp", "fAppt": "Запись только через WhatsApp"}};Object.keys(T_UI).forEach(l=>Object.assign(T[l],T_UI[l]));
 const T_WORK={ro:{jumpWork:"Lucrări făcute",workEyebrow:"Portofoliu",workTitle:"Haine <em>făcute</em> de Cristina",workText:"Câteva lucrări terminate: haine cusute pe măsură, ajustări și reparații. Vă place ceva? Scrieți-ne pe WhatsApp.",workEmpty:"În curând: poze cu lucrările Cristinei."},
 nl:{jumpWork:"Ons werk",workEyebrow:"Portfolio",workTitle:"Door Cristina <em>gemaakt</em>",workText:"Een paar afgeronde opdrachten: kleding op maat, aanpassingen en reparaties. Iets gezien dat u mooi vindt? Stuur ons een WhatsApp.",workEmpty:"Binnenkort: foto's van Cristina's werk."},
@@ -843,6 +859,41 @@ function setupWorks(){
       photos.length===1?"Lucrarea este pe site.":photos.length+" lucrări sunt pe site.").then(ok=>{if(ok){pendingWorks=[];$("w-name").value="";$("w-photo").value="";msg.textContent="";$("wAddBtn").disabled=true;}});
   };
 }
+// ---- 360° viewer: drag / swipe to turn the garment, arrows, auto-turn ----
+let spin=null;
+function spinOpen(frames,name){
+  spinClose();
+  const wrap=el("div","spinwrap");wrap.setAttribute("role","dialog");wrap.setAttribute("aria-modal","true");wrap.setAttribute("aria-label",name);
+  const box=el("div","spinbox");const stage=el("div","spinstage");
+  const imgs=frames.map((src,i)=>{const im=new Image();im.src=src;im.alt=name;im.draggable=false;if(i)im.hidden=true;stage.append(im);return im;});
+  const x=el("button","spinx","✕");x.type="button";x.setAttribute("aria-label",t("qClose"));
+  const title=el("p","spintitle",name);
+  box.append(x,stage,title);
+  const st={i:0,imgs,wrap,timer:null};spin=st;
+  const show=i=>{st.i=(i%imgs.length+imgs.length)%imgs.length;imgs.forEach((im,k)=>im.hidden=k!==st.i);if(cnt)cnt.textContent=(st.i+1)+" / "+imgs.length;};
+  let cnt=null;
+  if(imgs.length>1){
+    const bar=el("div","spinbar");
+    const prev=el("button","spinbtn","‹");prev.type="button";prev.setAttribute("aria-label","‹");prev.onclick=()=>{stop();show(st.i-1);};
+    const play=el("button","spinbtn spinplay","▶ 360°");play.type="button";
+    const next=el("button","spinbtn","›");next.type="button";next.setAttribute("aria-label","›");next.onclick=()=>{stop();show(st.i+1);};
+    cnt=el("span","spincnt","");
+    const stop=()=>{if(st.timer){clearInterval(st.timer);st.timer=null;play.textContent="▶ 360°";}};
+    play.onclick=()=>{if(st.timer){stop();return;}play.textContent="❚❚";st.timer=setInterval(()=>show(st.i+1),Math.max(90,1400/imgs.length));};
+    bar.append(prev,play,next,cnt);box.append(bar,el("p","spinhint",t("spinHint")));
+    let sx=null,si=0;
+    stage.addEventListener("pointerdown",e=>{sx=e.clientX;si=st.i;stop();stage.setPointerCapture(e.pointerId);});
+    stage.addEventListener("pointermove",e=>{if(sx==null)return;const step=Math.max(18,stage.clientWidth/(imgs.length*1.2));show(si-Math.round((e.clientX-sx)/step));});
+    const up=()=>{sx=null;};stage.addEventListener("pointerup",up);stage.addEventListener("pointercancel",up);
+    st.key=e=>{if(e.key==="ArrowLeft"){stop();show(st.i-1);}if(e.key==="ArrowRight"){stop();show(st.i+1);}};
+    document.addEventListener("keydown",st.key);
+    show(0);
+  }
+  st.esc=e=>{if(e.key==="Escape")spinClose();};document.addEventListener("keydown",st.esc);
+  x.onclick=spinClose;wrap.onclick=e=>{if(e.target===wrap)spinClose();};
+  wrap.append(box);document.body.append(wrap);x.focus();
+}
+function spinClose(){if(!spin)return;if(spin.timer)clearInterval(spin.timer);if(spin.key)document.removeEventListener("keydown",spin.key);document.removeEventListener("keydown",spin.esc);spin.wrap.remove();spin=null;}
 function renderFilters(){
   const present=new Set(state.products.filter(p=>p.cat!=="Lucrările mele").map(p=>p.cat));
   const list=["Toate",...CATS.filter(c=>present.has(c))];
@@ -916,6 +967,10 @@ function render(){
     const img=new Image();img.alt=p.name;img.loading="lazy";img.src=p.img||catArt(p.cat);ph.append(img);
     ph.append(el("span","tag",p.example?t("example"):catName(p.cat)));
     if(p.sold)ph.append(el("span","soldmark",t("sold")));
+    const frames=[p.img,...p.extra].filter(Boolean);
+    if(frames.length){ph.classList.add("zoomable");ph.tabIndex=0;ph.setAttribute("role","button");ph.setAttribute("aria-label",(frames.length>1?t("spinOpen"):t("zoomOpen"))+": "+p.name);
+      ph.onclick=()=>spinOpen(frames,p.name);ph.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();spinOpen(frames,p.name);}};}
+    if(frames.length>1){const b=el("span","spinbadge","360°");b.title=t("spinOpen");ph.append(b);}
     c.append(ph);
     c.append(el("h3","name",p.name));
     if(!work||p.price){const m=el("div","meta");m.append(el("span",null,p.size?t("size")+" "+p.size:""));m.append(el("span",String(p.price||"").trim()?"price":"price ask",fmtPrice(p.price)));c.append(m);}
@@ -937,7 +992,22 @@ function render(){
         e.target.value="";
       };
       photoGuard(fi,"Poză pentru „"+p.name+"”");
-      c.append(ch);c.append(r);
+      const sp=el("label","chgphoto spinadd");sp.append("🔄 "+(p.extra.length?"Adaugă poze 360° ("+(p.extra.length+(p.img?1:0))+")":"Adaugă poze 360°"));
+      const si=document.createElement("input");si.type="file";si.accept="image/*";si.multiple=true;si.setAttribute("aria-label","Poze din toate părțile pentru "+p.name);sp.append(si);
+      si.onchange=async e=>{
+        const fs=[...(e.target.files||[])];e.target.value="";if(!fs.length)return;
+        setStatus("Se pregătesc "+fs.length+" poze…");
+        const imgs=[];for(const f of fs){try{imgs.push(await compress(f,1000,0.76));}catch(_){}}
+        if(!imgs.length){setStatus("Pozele nu au putut fi citite.",true);return;}
+        run(async()=>{const urls=[];for(const im of imgs)urls.push(await upload(im));
+          if(!p.img){must(await sb.from("products").update({photo:urls[0],photos:[...p.extra,...urls.slice(1)]}).eq("id",p.id));}
+          else must(await sb.from("products").update({photos:[...p.extra,...urls]}).eq("id",p.id));},
+          "Pozele 360° au fost puse la „"+p.name+"”.");
+      };
+      photoGuard(si,"Poze 360° pentru „"+p.name+"”");
+      c.append(ch);c.append(sp);
+      if(p.extra.length){const cl=el("button",null,"Scoate pozele 360°");cl.type="button";confirmBtn(cl,"Scoate pozele 360°",()=>run(async()=>{must(await sb.from("products").update({photos:[]}).eq("id",p.id));p.extra.forEach(dropPhoto);},"Pozele 360° au fost scoase. Poza principală a rămas."));r.append(cl);}
+      c.append(r);
     }
     grid.append(c);
   });
@@ -947,7 +1017,7 @@ function toast(msg){const d=el("div","toast",msg);document.body.append(d);setTim
 function setStatus(m,err){const s=$("status");s.textContent=m;s.classList.toggle("err",!!err);if(err||m)toast(m);}
 // ---- data from Supabase ----
 function must(r){if(r&&r.error)throw r.error;return r?r.data:null;}
-function fromP(r){return {id:r.id,name:r.name,cat:r.cat||"Altele",size:r.size||"",price:r.price==null?"":String(r.price),desc:r.descr||"",sold:!!r.sold,img:r.photo||""};}
+function fromP(r){return {id:r.id,name:r.name,cat:r.cat||"Altele",size:r.size||"",price:r.price==null?"":String(r.price),desc:r.descr||"",sold:!!r.sold,img:r.photo||"",extra:Array.isArray(r.photos)?r.photos.filter(Boolean):[]};}
 function fromR(r){return {id:r.id,name:r.name,text:r.body||"",stars:r.stars||5,img:r.photo||""};}
 async function loadData(){
   if(!sb){loaded=true;render();return;}
