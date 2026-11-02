@@ -1093,8 +1093,11 @@ async function run(fn,okMsg){
   catch(e){
     console.error(e);const m=String((e&&(e.message||e.error_description))||"");
     if(/JWT|session|auth|row-level|permission|401|403/i.test(m))setStatus("Nu s-a salvat: nu sunteți conectat(ă) ca administrator. Ieșiți și intrați din nou.",true);
-    else if(/size|large|413/i.test(m))setStatus("Poza este prea mare. Încercați altă poză.",true);
-    else setStatus("Nu s-a putut salva. Verificați internetul și încercați din nou.",true);
+    else if(/size|large|413/i.test(m))setStatus("Fișierul este prea mare pentru Supabase. Dacă e un video, rulați o dată codul SQL primit (care mărește limita la 50 MB) și alegeți un video sub 50 MB.",true);
+    else if(/column|schema cache|photos|video/i.test(m)&&!/mime|size/i.test(m))setStatus("Nu s-a salvat: în Supabase lipsește coloana pentru video sau pozele 360°. Rulați o dată codul SQL primit (alter table products add column … video).",true);
+    else if(/mime|not supported|invalid.*type/i.test(m))setStatus("Nu s-a salvat: Supabase nu acceptă încă video-uri. Rulați o dată codul SQL primit (update storage.buckets …).",true);
+    else if(/exceed|too large|maximum allowed size|payload/i.test(m))setStatus("Fișierul este prea mare. Maximum 50 MB: alegeți un video mai scurt.",true);
+    else setStatus("Nu s-a putut salva. Verificați internetul și încercați din nou."+(m?" (Eroare: "+m.slice(0,140)+")":""),true);
     return false;
   }finally{busy=false;$("addBtn").disabled=false;}
 }
