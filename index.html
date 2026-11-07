@@ -898,6 +898,12 @@ function setupWorks(){
 function adminTools(p,work){
   const c=el("div","admintools");
       const r=el("div","adminrow");
+      if(!work){const pb=el("button",null,String(p.price||"").trim()?"€ Schimbă prețul":"€ Pune preț");pb.type="button";
+        pb.onclick=()=>{const v=prompt("Prețul în euro pentru „"+p.name+"”.\nLăsați gol ca să scrie „preț la cerere”.",String(p.price||""));if(v===null)return;
+          const t2=v.trim().replace(",",".").replace(/[€\s]/g,"");const n=parseFloat(t2);
+          if(t2&&isNaN(n)){setStatus("Scrieți doar cifre, de exemplu 45.",true);return;}
+          run(async()=>{must(await sb.from("products").update({price:t2?n:null}).eq("id",p.id));},t2?"Prețul a fost schimbat: €"+n+".":"Prețul a fost scos. Acum scrie „preț la cerere”.");};
+        r.append(pb);}
       if(!work){const s=el("button",null,p.sold?"Pune înapoi":"Marchează vândut");s.type="button";s.onclick=()=>run(async()=>{must(await sb.from("products").update({sold:!p.sold}).eq("id",p.id));},p.sold?"Din nou disponibilă.":"Marcată ca vândută.");r.append(s);}
       if(p.img){const dp=el("button",null,"Șterge poza");dp.type="button";confirmBtn(dp,"Șterge poza",()=>run(async()=>{must(await sb.from("products").update({photo:null}).eq("id",p.id));dropPhoto(p.img);},"Poza a fost ștearsă. Haina a rămas pe site."));r.append(dp);}
       const d=el("button","danger",(work?"Șterge lucrarea":"Șterge haina"));d.type="button";confirmBtn(d,(work?"Șterge lucrarea":"Șterge haina"),()=>run(async()=>{must(await sb.from("products").delete().eq("id",p.id));dropPhoto(p.img);},(work?"Lucrarea a fost ștearsă.":"Haina a fost ștearsă de pe site.")));
