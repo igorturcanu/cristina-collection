@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="nl"><head>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
+function ccConsent(v){var x=v?'granted':'denied';gtag('consent','update',{ad_storage:x,ad_user_data:x,ad_personalization:x,analytics_storage:x});}
+try{if(localStorage.getItem('cc-consent')==='granted')ccConsent(true);}catch(e){}
+gtag('js',new Date());
+gtag('config','AW-18143106397');
+// Conversie: clic pe orice link WhatsApp către Cristina
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href*="wa.me/31644162329"]');
+  if(!a)return;
+  gtag('event','conversion',{'send_to':'AW-18143106397/MvkVCNnsz6odEN2qp8tD'});
+},true);
+// Banner cookie-uri (ro / nl / ru / en)
+document.addEventListener('DOMContentLoaded',function(){
+  var st=null;try{st=localStorage.getItem('cc-consent');}catch(e){}
+  if(st==='granted'||st==='denied')return;
+  var L={
+    ro:['Folosim cookie-uri pentru a măsura anunțurile noastre (Google Ads). Acceptați?','Accept','Refuz'],
+    nl:['We gebruiken cookies om onze advertenties te meten (Google Ads). Akkoord?','Accepteren','Weigeren'],
+    ru:['Мы используем cookie для измерения эффективности рекламы (Google Ads). Согласны?','Принять','Отклонить'],
+    en:['We use cookies to measure our ads (Google Ads). Do you agree?','Accept','Decline']
+  };
+  var l='nl';try{var sv=localStorage.getItem('cc-lang');var nv=(navigator.language||'').slice(0,2).toLowerCase();l=L[sv]?sv:(L[nv]?nv:'nl');}catch(e){}
+  var t=L[l];
+  var d=document.createElement('div');
+  d.setAttribute('role','dialog');
+  d.style.cssText='position:fixed;left:12px;right:12px;bottom:12px;z-index:99999;background:#2a2024;color:#fff;padding:14px 16px;border-radius:12px;font:15px/1.4 system-ui,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.35);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;max-width:620px;margin:0 auto';
+  d.innerHTML='<span style="flex:1 1 240px"></span><span style="display:flex;gap:8px"><button type="button" data-v="0" style="padding:8px 14px;border-radius:8px;border:1px solid #fff;background:transparent;color:#fff;font:inherit;cursor:pointer"></button><button type="button" data-v="1" style="padding:8px 14px;border-radius:8px;border:0;background:#fff;color:#2a2024;font:inherit;font-weight:600;cursor:pointer"></button></span>';
+  d.firstChild.textContent=t[0];
+  var bt=d.querySelectorAll('button');bt[0].textContent=t[2];bt[1].textContent=t[1];
+  d.onclick=function(e){var b=e.target.closest('button');if(!b)return;var ok=b.dataset.v==='1';try{localStorage.setItem('cc-consent',ok?'granted':'denied');}catch(x){}ccConsent(ok);d.remove();};
+  document.body.appendChild(d);
+});
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18143106397"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cristina Collection – aanbiedingen kleding vermaken in Schiedam</title>
+<meta name="description" content="Kleding vermaken in Schiedam met korting: 10% vanaf 3 stuks, korting voor nieuwe klanten, stempelkaart. Afspraak via WhatsApp.">
+<meta property="og:title" content="Cristina Collection – aanbiedingen">
+<meta property="og:description" content="Kleding vermaken met korting vanaf 3 stuks. Afspraak via WhatsApp.">
+<meta property="og:image" content="https://igorturcanu.github.io/cristina-collection/img/hero.jpg">
+<meta property="og:url" content="https://igorturcanu.github.io/cristina-collection/oferte/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%E2%9C%82%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<style>body{margin:0}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Quicksand:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: one column landing page for ads. Tailor's chalk paper, ink text, measuring-tape yellow as the single accent. */
+:root{
+  --bg:#f6f4ef; --surface:#ffffff; --ink:#1d2333; --muted:#5d6475; --line:#d9d5ca;
+  --tape:#f2c230; --tape-ink:#2a2200; --ok:#1f7a4d; --wa:#1d8f4e;
+  --display:"Gloock", Georgia, "Times New Roman", serif;
+  --body:"Karla", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141824; --surface:#1d2231; --ink:#eceae4; --muted:#a3a9b8; --line:#2f3547;
+  --tape:#f2c230; --tape-ink:#2a2200; --ok:#5cc58e; --wa:#3fbf72; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141824; --surface:#1d2231; --ink:#eceae4; --muted:#a3a9b8; --line:#2f3547;
+  --tape:#f2c230; --tape-ink:#2a2200; --ok:#5cc58e; --wa:#3fbf72; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:18px}
+.brand{font-family:var(--display);font-size:1.25rem}
+.brand small{display:block;font-family:var(--body);font-size:.8rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.lang{display:flex;gap:4px}
+.lang button{font:600 .8rem var(--body);letter-spacing:.06em;border:1px solid var(--line);background:transparent;color:var(--muted);padding:6px 10px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.draft{background:var(--surface);border:1px dashed var(--muted);color:var(--muted);font-size:.85rem;padding:8px 12px;border-radius:8px}
+h1,h2{font-family:var(--display);font-weight:400;text-wrap:balance;line-height:1.1;margin:0}
+h1{font-size:clamp(2.2rem,7vw,3.4rem)}
+h2{font-size:clamp(1.6rem,5vw,2.1rem)}
+.hero{display:grid;gap:18px;padding-block:28px 8px}
+.hero p{margin:0;color:var(--muted);max-width:56ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:700 1rem var(--body);text-decoration:none;padding:13px 18px;border-radius:10px;border:2px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer}
+.btn.wa{background:var(--wa);border-color:var(--wa);color:#fff}
+.btn:focus-visible,.lang button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--tape);outline-offset:2px}
+.facts{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.9rem;color:var(--muted);margin:0;padding:0;list-style:none}
+/* measuring tape divider */
+.tape{height:34px;margin-block:30px;background-color:var(--tape);color:var(--tape-ink);
+  background-image:repeating-linear-gradient(90deg,var(--tape-ink) 0 1px,transparent 1px 10px),repeating-linear-gradient(90deg,var(--tape-ink) 0 2px,transparent 2px 50px);
+  background-size:100% 9px,100% 16px;background-repeat:no-repeat;background-position:0 0,0 0;position:relative;overflow:hidden}
+.tape span{position:absolute;bottom:3px;font:500 .62rem var(--mono)}
+section{padding-block:6px 10px}
+.lead{color:var(--muted);margin:8px 0 18px}
+.offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:14px}
+.offer{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:8px;align-content:start}
+.offer .big{font-family:var(--display);font-size:2rem;line-height:1}
+.offer p{margin:0;color:var(--muted);font-size:.95rem}
+.code{justify-self:start;font:500 .8rem var(--mono);letter-spacing:.08em;border:1.5px dashed var(--ink);padding:4px 8px;border-radius:6px}
+.offer button{justify-self:start;font:700 .9rem var(--body);background:none;border:none;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:14px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;display:grid;gap:4px}
+.steps li::before{content:counter(s);font-family:var(--display);font-size:1.6rem;color:var(--muted)}
+form{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:14px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px}
+label{display:grid;gap:5px;font-weight:700;font-size:.9rem}
+label span.opt{font-weight:400;color:var(--muted)}
+input,select,textarea{font:1rem var(--body);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:11px 12px;width:100%}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400}
+.check input{width:auto;margin-top:4px}
+.err{color:#c0392b;font-size:.9rem;min-height:1.2em;margin:0}
+.result{display:grid;gap:10px}
+.result pre{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px;margin:0;font:.9rem var(--body)}
+.music{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+.ch{display:grid;gap:6px;text-decoration:none;color:var(--ink);border-top:2px solid var(--ink);padding-top:12px}
+.ch strong{font-family:var(--display);font-weight:400;font-size:1.3rem}
+.ch span{color:var(--muted);font-size:.95rem}
+footer{color:var(--muted);font-size:.85rem;padding-block:30px 40px}
+.copyline{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.copyline code{font:500 .95rem var(--mono);user-select:all}
+.small{font:600 .8rem var(--body);border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:6px;padding:4px 8px;cursor:pointer}
+@media (prefers-reduced-motion:no-preference){.btn{transition:transform .15s}.btn:hover{transform:translateY(-1px)}}
+/* vivid variant: single light theme by choice */
+:root,:root[data-theme="dark"],:root[data-theme="light"]{--bg:#f7f0ff;--surface:#ffffff;--ink:#2e1238;--muted:#6b4a78;--line:#e6d6f5;--tape:#d6249f;--accent:#c81d8f;--wa:#128c4a;--grad:linear-gradient(135deg,#e0218a 0%,#9b3fe4 100%);--display:"Playfair Display",Georgia,serif;--body:"Quicksand",system-ui,sans-serif;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#f7f0ff;--surface:#ffffff;--ink:#2e1238;--muted:#6b4a78;--line:#e6d6f5;--tape:#d6249f;--accent:#c81d8f;--wa:#128c4a;--grad:linear-gradient(135deg,#e0218a 0%,#9b3fe4 100%);--display:"Playfair Display",Georgia,serif;--body:"Quicksand",system-ui,sans-serif;color-scheme:light}}
+
+.hero{background:var(--grad);color:#fff;border-radius:28px;padding:32px 22px;margin-top:14px;box-shadow:0 18px 40px -22px var(--accent)}
+.hero h1{color:#fff}.hero p,.hero .facts{color:#fff;opacity:.95}
+.hero .btn:not(.wa){border-color:#fff;color:#fff}
+.hero .btn.wa{background:#fff;color:var(--wa);border-color:#fff}
+.btn{border-radius:999px}
+h2{color:var(--accent)}
+.tape span{display:none}
+.offer{border:none;border-radius:22px;color:var(--ink)}
+.offer .big{font-size:2.4rem}
+.offer p{color:var(--ink);opacity:.8}
+.code{border-radius:999px;padding:4px 12px;background:rgba(255,255,255,.7)}
+form{border:none;border-radius:22px;box-shadow:0 12px 34px -20px var(--accent)}
+input,select,textarea{border-radius:14px}
+.lang button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.steps li::before{color:var(--accent)}
+.ch{border-top:4px solid var(--accent)}
+.btn:focus-visible,.lang button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline-color:var(--accent)}
+
+h1{font-style:italic}
+.tape{height:6px;background:linear-gradient(90deg,#e0218a,#9b3fe4);border-radius:6px;margin-block:34px}
+.offer:nth-child(1){background:#ffd6ef}.offer:nth-child(2){background:#e9dcff}.offer:nth-child(3){background:#ffe3f4}.offer:nth-child(4){background:#f1e6ff}
+.offer .big{color:#c81d8f}
+</style>
+</head><body>
+
+<header><div class="wrap">
+  <div class="brand">Cristina Collection<small data-i="tag">Kleermaker in Schiedam</small></div>
+  <div class="lang" role="group" aria-label="Taal / Limbă">
+    <button type="button" id="l-nl" aria-pressed="true">NL</button>
+    <button type="button" id="l-ro" aria-pressed="false">RO</button>
+  </div>
+</div></header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <h1 data-i="h1">Kleding vermaken, met korting vanaf 3 stuks</h1>
+    <p data-i="sub">Inkorten, innemen, ritsen vervangen en kleding op maat. Stuur een foto via WhatsApp en Cristina laat je de prijs en de tijd weten.</p>
+    <div class="cta">
+      <a class="btn wa" id="wa-top" href="https://wa.me/31644162329" target="_blank" rel="noopener" data-i="cta1">Afspraak via WhatsApp</a>
+      <a class="btn" href="#boek" data-i="cta2">Kies je aanbieding</a>
+    </div>
+    <ul class="facts">
+      <li data-i="f1">Atelier in Schiedam</li><li data-i="f2">Snel antwoord op WhatsApp</li><li>NL · RO · EN · RU</li>
+    </ul>
+  </div>
+
+  <div class="tape" aria-hidden="true" id="tape"></div>
+
+  <section id="aanbod" aria-labelledby="t-offers">
+    <h2 id="t-offers" data-i="offersT">Aanbiedingen</h2>
+    <p class="lead" data-i="offersL">Noem de code in je bericht. Eén aanbieding per bezoek.</p>
+    <div class="offers" id="offers"></div>
+  </section>
+
+  <div class="tape" aria-hidden="true"></div>
+
+  <section aria-labelledby="t-how">
+    <h2 id="t-how" data-i="howT">Zo werkt het</h2>
+    <p class="lead"></p>
+    <ol class="steps">
+      <li><strong data-i="s1">Vul het formulier in</strong><span data-i="s1d">Wat moet er gebeuren en hoeveel stuks.</span></li>
+      <li><strong data-i="s2">Stuur het via WhatsApp</strong><span data-i="s2d">Voeg een foto van de kleding toe.</span></li>
+      <li><strong data-i="s3">Prijs en afspraak</strong><span data-i="s3d">Cristina antwoordt met prijs, tijd en dag.</span></li>
+    </ol>
+  </section>
+
+  <div class="tape" aria-hidden="true"></div>
+
+  <section id="boek" aria-labelledby="t-book">
+    <h2 id="t-book" data-i="bookT">Afspraak aanvragen</h2>
+    <p class="lead" data-i="bookL">Je bericht gaat rechtstreeks naar Cristina op WhatsApp.</p>
+    <form id="f" novalidate>
+      <div class="row">
+        <label for="name"><span data-i="lName">Naam</span><input id="name" autocomplete="name" value=""></label>
+        <label for="phone"><span data-i="lPhone">Telefoon / WhatsApp</span><input id="phone" type="tel" autocomplete="tel" placeholder="+31 6 …"></label>
+      </div>
+      <div class="row">
+        <label for="job"><span data-i="lJob">Wat moet er gebeuren?</span>
+          <select id="job"></select></label>
+        <label for="qty"><span data-i="lQty">Aantal stuks</span><input id="qty" type="number" min="1" max="20" value="3"></label>
+      </div>
+      <div class="row">
+        <label for="code"><span data-i="lCode">Aanbieding</span><select id="code"></select></label>
+        <label for="day"><span data-i="lDay">Gewenste dag</span> <input id="day" type="date"></label>
+      </div>
+      <label for="note"><span><span data-i="lNote">Opmerking</span> <span class="opt" data-i="opt">(optioneel)</span></span><textarea id="note" rows="2"></textarea></label>
+      <label class="check" for="gdpr"><input id="gdpr" type="checkbox"><span data-i="lGdpr">Ik ga akkoord dat Cristina Collection mij via telefoon of WhatsApp benadert over mijn kleding.</span></label>
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn wa" type="submit" data-i="send">Bericht klaarmaken</button>
+      <div class="result" id="res" hidden>
+        <pre id="msg"></pre>
+        <div class="cta">
+          <a class="btn wa" id="wa-send" href="#" target="_blank" rel="noopener" data-i="open">Open in WhatsApp</a>
+          <button class="btn" type="button" id="copy" data-i="copy">Kopieer bericht</button>
+        </div>
+      </div>
+    </form>
+    <div class="copyline" style="margin-top:12px"><span data-i="num">WhatsApp-nummer:</span> <code id="num">+31 6 44 16 23 29</code><button class="small" type="button" id="copynum" data-i="copyS">Kopieer</button></div>
+  </section>
+
+  <div class="tape" aria-hidden="true"></div>
+
+  <section aria-labelledby="t-music">
+    <h2 id="t-music" data-i="musicT">Even ontspannen?</h2>
+    <p class="lead" data-i="musicL">Rustige muziek van onze familiekanalen op YouTube. Voor tijdens het wachten, of voor het slapen.</p>
+    <div class="music">
+      <a class="ch" href="https://youtube.com/@soundsanddreamscapes" target="_blank" rel="noopener"><strong>Sounds and Dreamscapes</strong><span data-i="m1">Piano en natuurgeluiden om bij te slapen</span></a>
+      <a class="ch" href="https://youtube.com/@igorturcanu-ph5kd" target="_blank" rel="noopener"><strong>Oasis of Relaxation</strong><span data-i="m2">Meditatie en ontspannende klanken</span></a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Cristina Collection · Burgemeester van Haarenlaan 836, 3119 GW Schiedam · <a href="../" style="color:inherit" data-i="site">Volledige website</a></div></footer>
+
+<script>
+const WA="31644162329";
+const T={
+nl:{tag:"Kleermaker in Schiedam",draft:"Ciornă pentru Igor: procentele și codurile sunt propuneri. Cristina trebuie să le confirme înainte de reclame.",h1:"Kleding vermaken, met korting vanaf 3 stuks",sub:"Inkorten, innemen, ritsen vervangen en kleding op maat. Stuur een foto via WhatsApp en Cristina laat je de prijs en de tijd weten.",cta1:"Afspraak via WhatsApp",cta2:"Kies je aanbieding",f1:"Atelier in Schiedam",f2:"Snel antwoord op WhatsApp",offersT:"Aanbiedingen",offersL:"Noem de code in je bericht. Eén aanbieding per bezoek.",howT:"Zo werkt het",s1:"Vul het formulier in",s1d:"Wat moet er gebeuren en hoeveel stuks.",s2:"Stuur het via WhatsApp",s2d:"Voeg een foto van de kleding toe.",s3:"Prijs en afspraak",s3d:"Cristina antwoordt met prijs, tijd en dag.",bookT:"Afspraak aanvragen",bookL:"Je bericht gaat rechtstreeks naar Cristina op WhatsApp.",lName:"Naam",lPhone:"Telefoon / WhatsApp",lJob:"Wat moet er gebeuren?",lQty:"Aantal stuks",lCode:"Aanbieding",lDay:"Gewenste dag",lNote:"Opmerking",opt:"(optioneel)",lGdpr:"Ik ga akkoord dat Cristina Collection mij via telefoon of WhatsApp benadert over mijn kleding.",send:"Bericht klaarmaken",open:"Open in WhatsApp",copy:"Kopieer bericht",copied:"Gekopieerd",num:"WhatsApp-nummer:",copyS:"Kopieer",musicT:"Even ontspannen?",musicL:"Rustige muziek van onze familiekanalen op YouTube. Voor tijdens het wachten, of voor het slapen.",m1:"Piano en natuurgeluiden om bij te slapen",m2:"Meditatie en ontspannende klanken",site:"Volledige website",use:"Gebruik deze aanbieding",none:"Geen aanbieding",
+ jobs:["Inkorten (broek, rok, jurk, mouwen)","Innemen of uitleggen","Rits vervangen","Kleine reparatie (gat, naad)","Kleding op maat","Iets anders"],
+ eNeed:"Vul je naam, telefoonnummer en wat er moet gebeuren in.",eGdpr:"Vink het akkoord aan, zodat Cristina je mag benaderen.",
+ msg:(d)=>`Hallo Cristina, ik wil graag een afspraak.\nNaam: ${d.name}\nTelefoon: ${d.phone}\nWerk: ${d.job}\nAantal stuks: ${d.qty}\nAanbieding: ${d.code}${d.day?`\nGewenste dag: ${d.day}`:""}${d.note?`\nOpmerking: ${d.note}`:""}\nIk stuur zo een foto van de kleding.`},
+ro:{tag:"Croitoreasă în Schiedam",draft:"Ciornă pentru Igor: procentele și codurile sunt propuneri. Cristina trebuie să le confirme înainte de reclame.",h1:"Modificări de haine, cu reducere de la 3 piese",sub:"Scurtări, strâmtări, fermoare noi și haine pe măsură. Trimite o poză pe WhatsApp, iar Cristina îți spune prețul și termenul.",cta1:"Programare pe WhatsApp",cta2:"Alege oferta",f1:"Atelier în Schiedam",f2:"Răspuns rapid pe WhatsApp",offersT:"Oferte",offersL:"Scrie codul în mesaj. O ofertă pe vizită.",howT:"Cum funcționează",s1:"Completează formularul",s1d:"Ce trebuie făcut și câte piese.",s2:"Trimite pe WhatsApp",s2d:"Adaugă o poză cu haina.",s3:"Preț și programare",s3d:"Cristina răspunde cu prețul, termenul și ziua.",bookT:"Cere o programare",bookL:"Mesajul ajunge direct la Cristina pe WhatsApp.",lName:"Nume",lPhone:"Telefon / WhatsApp",lJob:"Ce trebuie făcut?",lQty:"Număr de piese",lCode:"Ofertă",lDay:"Ziua dorită",lNote:"Observații",opt:"(opțional)",lGdpr:"Sunt de acord ca Cristina Collection să mă contacteze prin telefon sau WhatsApp despre hainele mele.",send:"Pregătește mesajul",open:"Deschide în WhatsApp",copy:"Copiază mesajul",copied:"Copiat",num:"Număr WhatsApp:",copyS:"Copiază",musicT:"Puțină relaxare?",musicL:"Muzică liniștită de pe canalele noastre de familie de pe YouTube. Pentru așteptare sau pentru somn.",m1:"Pian și sunete din natură pentru somn",m2:"Meditație și sunete relaxante",site:"Site-ul complet",use:"Folosește oferta",none:"Fără ofertă",
+ jobs:["Scurtare (pantaloni, fustă, rochie, mâneci)","Strâmtare sau lărgire","Fermoar nou","Reparație mică (gaură, cusătură)","Haine pe măsură","Altceva"],
+ eNeed:"Completează numele, telefonul și ce trebuie făcut.",eGdpr:"Bifează acordul, ca Cristina să te poată contacta.",
+ msg:(d)=>`Bună, Cristina, aș dori o programare.\nNume: ${d.name}\nTelefon: ${d.phone}\nLucrare: ${d.job}\nNumăr de piese: ${d.qty}\nOfertă: ${d.code}${d.day?`\nZiua dorită: ${d.day}`:""}${d.note?`\nObservații: ${d.note}`:""}\nTrimit imediat o poză cu haina.`}
+};
+const OFFERS=[
+ {code:"PAKKET3",big:{nl:"−10%",ro:"−10%"},t:{nl:"3 stuks tegelijk",ro:"3 piese deodată"},d:{nl:"Breng 3 kledingstukken om te vermaken en betaal 10% minder. Vanaf 4 stuks 15%.",ro:"Aduci 3 haine la modificat și plătești cu 10% mai puțin. De la 4 piese, 15%."}},
+ {code:"EERSTE5",big:{nl:"€5",ro:"5 €"},t:{nl:"Nieuwe klant",ro:"Client nou"},d:{nl:"€5 korting op je eerste reparatie bij Cristina.",ro:"5 € reducere la prima lucrare la Cristina."}},
+ {code:"STEMPEL",big:{nl:"6e gratis",ro:"a 6-a gratis"},t:{nl:"Stempelkaart",ro:"Card de fidelitate"},d:{nl:"Spaar een stempel per reparatie. De 6e kleine reparatie is gratis.",ro:"Primești o ștampilă la fiecare lucrare. A 6-a reparație mică e gratuită."}},
+ {code:"VRIENDIN",big:{nl:"2× −10%",ro:"2× −10%"},t:{nl:"Samen met een vriendin",ro:"Cu o prietenă"},d:{nl:"Kom samen of stuur een vriendin: jullie krijgen allebei 10% korting.",ro:"Veniți împreună sau trimite o prietenă: amândouă primiți 10% reducere."}}
+];
+let lang="nl";
+try{const s=localStorage.getItem("cc-lang");if(s==="ro"||s==="nl")lang=s}catch(e){}
+const $=id=>document.getElementById(id);
+function render(){
+ const L=T[lang];document.documentElement.lang=lang;
+ document.querySelectorAll("[data-i]").forEach(el=>{const k=el.dataset.i;if(L[k])el.textContent=L[k]});
+ $("l-nl").setAttribute("aria-pressed",lang==="nl");$("l-ro").setAttribute("aria-pressed",lang==="ro");
+ $("offers").innerHTML="";
+ OFFERS.forEach(o=>{const a=document.createElement("article");a.className="offer";
+  a.innerHTML=`<div class="big"></div><strong></strong><p></p><span class="code"></span><button type="button"></button>`;
+  a.querySelector(".big").textContent=o.big[lang];a.querySelector("strong").textContent=o.t[lang];a.querySelector("p").textContent=o.d[lang];
+  a.querySelector(".code").textContent=o.code;const b=a.querySelector("button");b.textContent=L.use+" →";
+  b.onclick=()=>{$("code").value=o.code;$("boek").scrollIntoView({behavior:"smooth"});$("name").focus({preventScroll:true})};
+  $("offers").appendChild(a)});
+ const js=$("job"),jv=js.selectedIndex;js.innerHTML="";L.jobs.forEach((j,i)=>js.add(new Option(j,i)));js.selectedIndex=jv<0?0:jv;
+ const cs=$("code"),cv=cs.value||"PAKKET3";cs.innerHTML="";OFFERS.forEach(o=>cs.add(new Option(o.code+" · "+o.t[lang],o.code)));cs.add(new Option(L.none,"—"));cs.value=cv;
+ $("wa-top").href="https://wa.me/"+WA+"?text="+encodeURIComponent(lang==="nl"?"Hallo Cristina, ik wil graag een afspraak.":"Bună, Cristina, aș dori o programare.");
+ if(!$("res").hidden)build();
+}
+function setLang(l){lang=l;try{localStorage.setItem("cc-lang",l)}catch(e){}render()}
+$("l-nl").onclick=()=>setLang("nl");$("l-ro").onclick=()=>setLang("ro");
+function build(){
+ const L=T[lang];const d={name:$("name").value.trim(),phone:$("phone").value.trim(),job:L.jobs[$("job").value],qty:$("qty").value||"1",code:$("code").value,day:$("day").value,note:$("note").value.trim()};
+ const m=L.msg(d);$("msg").textContent=m;$("wa-send").href="https://wa.me/"+WA+"?text="+encodeURIComponent(m);$("res").hidden=false;
+}
+$("f").addEventListener("submit",e=>{e.preventDefault();const L=T[lang];
+ if(!$("name").value.trim()||!$("phone").value.trim()){$("err").textContent=L.eNeed;$("res").hidden=true;return}
+ if(!$("gdpr").checked){$("err").textContent=L.eGdpr;$("res").hidden=true;return}
+ $("err").textContent="";build()});
+function copyText(t,btn){const L=T[lang],orig=btn.textContent;
+ const done=()=>{btn.textContent=L.copied;setTimeout(()=>btn.textContent=orig,1500)};
+ try{navigator.clipboard.writeText(t).then(done,()=>sel())}catch(e){sel()}
+ function sel(){const r=document.createRange();r.selectNodeContents(btn.id==="copynum"?$("num"):$("msg"));const s=getSelection();s.removeAllRanges();s.addRange(r)}}
+$("copy").onclick=e=>copyText($("msg").textContent,e.currentTarget);
+$("copynum").onclick=e=>copyText("+31644162329",e.currentTarget);
+const tp=$("tape");for(let i=0;i<=30;i++){const s=document.createElement("span");s.textContent=i;s.style.left=(i*50+3)+"px";tp.appendChild(s)}
+render();
+</script>
+
+</body></html>
