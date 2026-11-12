@@ -148,9 +148,11 @@ h1{font-style:italic}
 
 <header><div class="wrap">
   <div class="brand">Cristina Collection<small data-i="tag">Kleermaker in Schiedam</small></div>
-  <div class="lang" role="group" aria-label="Taal / Limbă">
-    <button type="button" id="l-nl" aria-pressed="true">NL</button>
-    <button type="button" id="l-ro" aria-pressed="false">RO</button>
+  <div class="lang" id="langbar" role="group" aria-label="Limba / Taal / Language / Язык">
+    <button type="button" data-lang="ro" aria-pressed="false">RO</button>
+    <button type="button" data-lang="nl" aria-pressed="true">NL</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    <button type="button" data-lang="ru" aria-pressed="false">RU</button>
   </div>
 </div></header>
 
@@ -242,25 +244,37 @@ const T={
 nl:{tag:"Kleermaker in Schiedam",draft:"Ciornă pentru Igor: procentele și codurile sunt propuneri. Cristina trebuie să le confirme înainte de reclame.",h1:"Kleding vermaken, met korting vanaf 3 stuks",sub:"Inkorten, innemen, ritsen vervangen en kleding op maat. Stuur een foto via WhatsApp en Cristina laat je de prijs en de tijd weten.",cta1:"Afspraak via WhatsApp",cta2:"Kies je aanbieding",f1:"Atelier in Schiedam",f2:"Snel antwoord op WhatsApp",offersT:"Aanbiedingen",offersL:"Noem de code in je bericht. Eén aanbieding per bezoek.",howT:"Zo werkt het",s1:"Vul het formulier in",s1d:"Wat moet er gebeuren en hoeveel stuks.",s2:"Stuur het via WhatsApp",s2d:"Voeg een foto van de kleding toe.",s3:"Prijs en afspraak",s3d:"Cristina antwoordt met prijs, tijd en dag.",bookT:"Afspraak aanvragen",bookL:"Je bericht gaat rechtstreeks naar Cristina op WhatsApp.",lName:"Naam",lPhone:"Telefoon / WhatsApp",lJob:"Wat moet er gebeuren?",lQty:"Aantal stuks",lCode:"Aanbieding",lDay:"Gewenste dag",lNote:"Opmerking",opt:"(optioneel)",lGdpr:"Ik ga akkoord dat Cristina Collection mij via telefoon of WhatsApp benadert over mijn kleding.",send:"Bericht klaarmaken",open:"Open in WhatsApp",copy:"Kopieer bericht",copied:"Gekopieerd",num:"WhatsApp-nummer:",copyS:"Kopieer",musicT:"Even ontspannen?",musicL:"Rustige muziek van onze familiekanalen op YouTube. Voor tijdens het wachten, of voor het slapen.",m1:"Piano en natuurgeluiden om bij te slapen",m2:"Meditatie en ontspannende klanken",site:"Volledige website",use:"Gebruik deze aanbieding",none:"Geen aanbieding",
  jobs:["Inkorten (broek, rok, jurk, mouwen)","Innemen of uitleggen","Rits vervangen","Kleine reparatie (gat, naad)","Kleding op maat","Iets anders"],
  eNeed:"Vul je naam, telefoonnummer en wat er moet gebeuren in.",eGdpr:"Vink het akkoord aan, zodat Cristina je mag benaderen.",
+ wa:"Hallo Cristina, ik wil graag een afspraak.",
  msg:(d)=>`Hallo Cristina, ik wil graag een afspraak.\nNaam: ${d.name}\nTelefoon: ${d.phone}\nWerk: ${d.job}\nAantal stuks: ${d.qty}\nAanbieding: ${d.code}${d.day?`\nGewenste dag: ${d.day}`:""}${d.note?`\nOpmerking: ${d.note}`:""}\nIk stuur zo een foto van de kleding.`},
 ro:{tag:"Croitoreasă în Schiedam",draft:"Ciornă pentru Igor: procentele și codurile sunt propuneri. Cristina trebuie să le confirme înainte de reclame.",h1:"Modificări de haine, cu reducere de la 3 piese",sub:"Scurtări, strâmtări, fermoare noi și haine pe măsură. Trimite o poză pe WhatsApp, iar Cristina îți spune prețul și termenul.",cta1:"Programare pe WhatsApp",cta2:"Alege oferta",f1:"Atelier în Schiedam",f2:"Răspuns rapid pe WhatsApp",offersT:"Oferte",offersL:"Scrie codul în mesaj. O ofertă pe vizită.",howT:"Cum funcționează",s1:"Completează formularul",s1d:"Ce trebuie făcut și câte piese.",s2:"Trimite pe WhatsApp",s2d:"Adaugă o poză cu haina.",s3:"Preț și programare",s3d:"Cristina răspunde cu prețul, termenul și ziua.",bookT:"Cere o programare",bookL:"Mesajul ajunge direct la Cristina pe WhatsApp.",lName:"Nume",lPhone:"Telefon / WhatsApp",lJob:"Ce trebuie făcut?",lQty:"Număr de piese",lCode:"Ofertă",lDay:"Ziua dorită",lNote:"Observații",opt:"(opțional)",lGdpr:"Sunt de acord ca Cristina Collection să mă contacteze prin telefon sau WhatsApp despre hainele mele.",send:"Pregătește mesajul",open:"Deschide în WhatsApp",copy:"Copiază mesajul",copied:"Copiat",num:"Număr WhatsApp:",copyS:"Copiază",musicT:"Puțină relaxare?",musicL:"Muzică liniștită de pe canalele noastre de familie de pe YouTube. Pentru așteptare sau pentru somn.",m1:"Pian și sunete din natură pentru somn",m2:"Meditație și sunete relaxante",site:"Site-ul complet",use:"Folosește oferta",none:"Fără ofertă",
  jobs:["Scurtare (pantaloni, fustă, rochie, mâneci)","Strâmtare sau lărgire","Fermoar nou","Reparație mică (gaură, cusătură)","Haine pe măsură","Altceva"],
  eNeed:"Completează numele, telefonul și ce trebuie făcut.",eGdpr:"Bifează acordul, ca Cristina să te poată contacta.",
- msg:(d)=>`Bună, Cristina, aș dori o programare.\nNume: ${d.name}\nTelefon: ${d.phone}\nLucrare: ${d.job}\nNumăr de piese: ${d.qty}\nOfertă: ${d.code}${d.day?`\nZiua dorită: ${d.day}`:""}${d.note?`\nObservații: ${d.note}`:""}\nTrimit imediat o poză cu haina.`}
+ wa:"Bună, Cristina, aș dori o programare.",
+ msg:(d)=>`Bună, Cristina, aș dori o programare.\nNume: ${d.name}\nTelefon: ${d.phone}\nLucrare: ${d.job}\nNumăr de piese: ${d.qty}\nOfertă: ${d.code}${d.day?`\nZiua dorită: ${d.day}`:""}${d.note?`\nObservații: ${d.note}`:""}\nTrimit imediat o poză cu haina.`},
+en:{tag:"Seamstress in Schiedam",draft:"Ciornă pentru Igor: procentele și codurile sunt propuneri. Cristina trebuie să le confirme înainte de reclame.",h1:"Clothing alterations, with a discount from 3 items",sub:"Shortening, taking in, new zips and made-to-measure clothes. Send a photo on WhatsApp and Cristina will tell you the price and how long it takes.",cta1:"Book on WhatsApp",cta2:"Choose your offer",f1:"Workshop in Schiedam",f2:"Quick reply on WhatsApp",offersT:"Offers",offersL:"Mention the code in your message. One offer per visit.",howT:"How it works",s1:"Fill in the form",s1d:"What needs doing and how many items.",s2:"Send it on WhatsApp",s2d:"Add a photo of the clothes.",s3:"Price and appointment",s3d:"Cristina replies with the price, time and day.",bookT:"Request an appointment",bookL:"Your message goes straight to Cristina on WhatsApp.",lName:"Name",lPhone:"Phone / WhatsApp",lJob:"What needs doing?",lQty:"Number of items",lCode:"Offer",lDay:"Preferred day",lNote:"Note",opt:"(optional)",lGdpr:"I agree that Cristina Collection may contact me by phone or WhatsApp about my clothes.",send:"Prepare message",open:"Open in WhatsApp",copy:"Copy message",copied:"Copied",num:"WhatsApp number:",copyS:"Copy",musicT:"Time to relax?",musicL:"Calm music from our family channels on YouTube. For while you wait, or for sleep.",m1:"Piano and nature sounds for sleep",m2:"Meditation and relaxing sounds",site:"Full website",use:"Use this offer",none:"No offer",
+ jobs:["Shortening (trousers, skirt, dress, sleeves)","Taking in or letting out","Zip replacement","Small repair (hole, seam)","Made-to-measure clothes","Something else"],
+ eNeed:"Please fill in your name, phone number and what needs doing.",eGdpr:"Please tick the consent box so Cristina can contact you.",
+ wa:"Hello Cristina, I would like to book an appointment.",
+ msg:(d)=>`Hello Cristina, I would like to book an appointment.\nName: ${d.name}\nPhone: ${d.phone}\nWork: ${d.job}\nNumber of items: ${d.qty}\nOffer: ${d.code}${d.day?`\nPreferred day: ${d.day}`:""}${d.note?`\nNote: ${d.note}`:""}\nI'll send a photo of the clothes right away.`},
+ru:{tag:"Швея в Схидаме",draft:"Ciornă pentru Igor: procentele și codurile sunt propuneri. Cristina trebuie să le confirme înainte de reclame.",h1:"Переделка одежды со скидкой от 3 вещей",sub:"Укоротить, ушить, заменить молнию или сшить на заказ. Пришлите фото в WhatsApp, и Кристина скажет цену и срок.",cta1:"Записаться в WhatsApp",cta2:"Выбрать предложение",f1:"Ателье в Схидаме",f2:"Быстрый ответ в WhatsApp",offersT:"Предложения",offersL:"Укажите код в сообщении. Одно предложение на визит.",howT:"Как это работает",s1:"Заполните форму",s1d:"Что нужно сделать и сколько вещей.",s2:"Отправьте в WhatsApp",s2d:"Приложите фото одежды.",s3:"Цена и запись",s3d:"Кристина ответит с ценой, сроком и днём.",bookT:"Записаться",bookL:"Ваше сообщение придёт прямо Кристине в WhatsApp.",lName:"Имя",lPhone:"Телефон / WhatsApp",lJob:"Что нужно сделать?",lQty:"Количество вещей",lCode:"Предложение",lDay:"Желаемый день",lNote:"Комментарий",opt:"(необязательно)",lGdpr:"Я согласен(на), чтобы Cristina Collection связалась со мной по телефону или в WhatsApp по поводу моей одежды.",send:"Подготовить сообщение",open:"Открыть в WhatsApp",copy:"Копировать сообщение",copied:"Скопировано",num:"Номер WhatsApp:",copyS:"Копировать",musicT:"Немного отдохнуть?",musicL:"Спокойная музыка с наших семейных каналов на YouTube. Пока ждёте или перед сном.",m1:"Фортепиано и звуки природы для сна",m2:"Медитация и расслабляющие звуки",site:"Полный сайт",use:"Выбрать это предложение",none:"Без предложения",
+ jobs:["Укоротить (брюки, юбку, платье, рукава)","Ушить или расставить","Заменить молнию","Мелкий ремонт (дырка, шов)","Одежда на заказ","Другое"],
+ eNeed:"Укажите имя, телефон и что нужно сделать.",eGdpr:"Отметьте согласие, чтобы Кристина могла с вами связаться.",
+ wa:"Здравствуйте, Кристина! Хочу записаться.",
+ msg:(d)=>`Здравствуйте, Кристина! Хочу записаться.\nИмя: ${d.name}\nТелефон: ${d.phone}\nРабота: ${d.job}\nКоличество вещей: ${d.qty}\nПредложение: ${d.code}${d.day?`\nЖелаемый день: ${d.day}`:""}${d.note?`\nКомментарий: ${d.note}`:""}\nСейчас пришлю фото одежды.`}
 };
 const OFFERS=[
- {code:"PAKKET3",big:{nl:"−10%",ro:"−10%"},t:{nl:"3 stuks tegelijk",ro:"3 piese deodată"},d:{nl:"Breng 3 kledingstukken om te vermaken en betaal 10% minder. Vanaf 4 stuks 15%.",ro:"Aduci 3 haine la modificat și plătești cu 10% mai puțin. De la 4 piese, 15%."}},
- {code:"EERSTE5",big:{nl:"€5",ro:"5 €"},t:{nl:"Nieuwe klant",ro:"Client nou"},d:{nl:"€5 korting op je eerste reparatie bij Cristina.",ro:"5 € reducere la prima lucrare la Cristina."}},
- {code:"STEMPEL",big:{nl:"6e gratis",ro:"a 6-a gratis"},t:{nl:"Stempelkaart",ro:"Card de fidelitate"},d:{nl:"Spaar een stempel per reparatie. De 6e kleine reparatie is gratis.",ro:"Primești o ștampilă la fiecare lucrare. A 6-a reparație mică e gratuită."}},
- {code:"VRIENDIN",big:{nl:"2× −10%",ro:"2× −10%"},t:{nl:"Samen met een vriendin",ro:"Cu o prietenă"},d:{nl:"Kom samen of stuur een vriendin: jullie krijgen allebei 10% korting.",ro:"Veniți împreună sau trimite o prietenă: amândouă primiți 10% reducere."}}
+ {code:"PAKKET3",big:{nl:"−10%",ro:"−10%",en:"−10%",ru:"−10%"},t:{nl:"3 stuks tegelijk",ro:"3 piese deodată",en:"3 items at once",ru:"3 вещи сразу"},d:{nl:"Breng 3 kledingstukken om te vermaken en betaal 10% minder. Vanaf 4 stuks 15%.",ro:"Aduci 3 haine la modificat și plătești cu 10% mai puțin. De la 4 piese, 15%.",en:"Bring 3 items to be altered and pay 10% less. From 4 items, 15%.",ru:"Принесите 3 вещи на переделку и заплатите на 10% меньше. От 4 вещей скидка 15%."}},
+ {code:"EERSTE5",big:{nl:"€5",ro:"5 €",en:"€5",ru:"5 €"},t:{nl:"Nieuwe klant",ro:"Client nou",en:"New customer",ru:"Новый клиент"},d:{nl:"€5 korting op je eerste reparatie bij Cristina.",ro:"5 € reducere la prima lucrare la Cristina.",en:"€5 off your first repair with Cristina.",ru:"Скидка 5 € на первый заказ у Кристины."}},
+ {code:"STEMPEL",big:{nl:"6e gratis",ro:"a 6-a gratis",en:"6th free",ru:"6-я бесплатно"},t:{nl:"Stempelkaart",ro:"Card de fidelitate",en:"Loyalty card",ru:"Карта постоянного клиента"},d:{nl:"Spaar een stempel per reparatie. De 6e kleine reparatie is gratis.",ro:"Primești o ștampilă la fiecare lucrare. A 6-a reparație mică e gratuită.",en:"Collect a stamp for every repair. Your 6th small repair is free.",ru:"За каждый заказ вы получаете штамп. 6-й мелкий ремонт бесплатно."}},
+ {code:"VRIENDIN",big:{nl:"2× −10%",ro:"2× −10%",en:"2× −10%",ru:"2× −10%"},t:{nl:"Samen met een vriendin",ro:"Cu o prietenă",en:"Bring a friend",ru:"Вместе с подругой"},d:{nl:"Kom samen of stuur een vriendin: jullie krijgen allebei 10% korting.",ro:"Veniți împreună sau trimite o prietenă: amândouă primiți 10% reducere.",en:"Come together or send a friend: you both get 10% off.",ru:"Приходите вместе или пришлите подругу: вы обе получите скидку 10%."}}
 ];
 let lang="nl";
-try{const s=localStorage.getItem("cc-lang");if(s==="ro"||s==="nl")lang=s}catch(e){}
+try{const s=localStorage.getItem("cc-lang");if(s&&T[s])lang=s;else{const b=(navigator.language||"").slice(0,2).toLowerCase();lang=T[b]?b:(b==="mo"?"ro":"nl")}}catch(e){}
 const $=id=>document.getElementById(id);
 function render(){
  const L=T[lang];document.documentElement.lang=lang;
  document.querySelectorAll("[data-i]").forEach(el=>{const k=el.dataset.i;if(L[k])el.textContent=L[k]});
- $("l-nl").setAttribute("aria-pressed",lang==="nl");$("l-ro").setAttribute("aria-pressed",lang==="ro");
+ document.querySelectorAll("#langbar button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===lang));
  $("offers").innerHTML="";
  OFFERS.forEach(o=>{const a=document.createElement("article");a.className="offer";
   a.innerHTML=`<div class="big"></div><strong></strong><p></p><span class="code"></span><button type="button"></button>`;
@@ -270,11 +284,11 @@ function render(){
   $("offers").appendChild(a)});
  const js=$("job"),jv=js.selectedIndex;js.innerHTML="";L.jobs.forEach((j,i)=>js.add(new Option(j,i)));js.selectedIndex=jv<0?0:jv;
  const cs=$("code"),cv=cs.value||"PAKKET3";cs.innerHTML="";OFFERS.forEach(o=>cs.add(new Option(o.code+" · "+o.t[lang],o.code)));cs.add(new Option(L.none,"—"));cs.value=cv;
- $("wa-top").href="https://wa.me/"+WA+"?text="+encodeURIComponent(lang==="nl"?"Hallo Cristina, ik wil graag een afspraak.":"Bună, Cristina, aș dori o programare.");
+ $("wa-top").href="https://wa.me/"+WA+"?text="+encodeURIComponent(L.wa);
  if(!$("res").hidden)build();
 }
 function setLang(l){lang=l;try{localStorage.setItem("cc-lang",l)}catch(e){}render()}
-$("l-nl").onclick=()=>setLang("nl");$("l-ro").onclick=()=>setLang("ro");
+document.querySelectorAll("#langbar button").forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
 function build(){
  const L=T[lang];const d={name:$("name").value.trim(),phone:$("phone").value.trim(),job:L.jobs[$("job").value],qty:$("qty").value||"1",code:$("code").value,day:$("day").value,note:$("note").value.trim()};
  const m=L.msg(d);$("msg").textContent=m;$("wa-send").href="https://wa.me/"+WA+"?text="+encodeURIComponent(m);$("res").hidden=false;
