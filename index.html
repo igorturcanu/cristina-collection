@@ -484,6 +484,14 @@ footer .sig em{color:#F5B8CE}
 .secedit{border-color:#C9A9B5!important;background:#FFF9FB}
 .secedit .field textarea{min-height:70px}
 .secedit .actions{flex-wrap:wrap}
+
+.fmtbar{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 6px}
+.fmtbtn{min-width:40px;height:38px;border-radius:8px;border:1px solid var(--line);background:#fff;font-size:16px;cursor:pointer;color:var(--esp);padding:0 10px;display:grid;place-items:center}
+.fmtbtn:active{background:var(--sand)}
+.fmthelp{font-size:13.5px!important;color:var(--muted)!important;margin:0!important}
+.fmtprev{border:1px dashed var(--line);border-radius:12px;padding:12px 14px;background:#fff;display:grid;gap:6px}
+.fmtprev .fmtpl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.fmtprev h2.sec{font-size:28px;margin:0}.fmtprev p{margin:0}
 </style></head><body><script type="application/json" id="data">{"services": [{"id": "s9", "ro": "Coasere haine pe măsură", "nl": "Kleding op maat naaien", "en": "Clothes sewn to measure", "ru": "Пошив одежды на заказ", "price": ""}, {"id": "s10", "ro": "Modelare constructivă (tipare pe măsură)", "nl": "Patroonconstructie (patronen op maat)", "en": "Pattern making (made-to-measure patterns)", "ru": "Конструирование и моделирование одежды (выкройки)", "price": ""}, {"id": "s1", "ro": "Scurtare pantaloni și blugi", "nl": "Broek en jeans inkorten", "en": "Shorten trousers and jeans", "ru": "Укоротить брюки и джинсы", "price": ""}, {"id": "s2", "ro": "Scurtare rochie sau fustă", "nl": "Jurk of rok inkorten", "en": "Shorten a dress or skirt", "ru": "Укоротить платье или юбку", "price": ""}, {"id": "s3", "ro": "Scurtare mâneci", "nl": "Mouwen inkorten", "en": "Shorten sleeves", "ru": "Укоротить рукава", "price": ""}, {"id": "s4", "ro": "Strâmtare sau lărgire", "nl": "Innemen of uitleggen", "en": "Take in or let out", "ru": "Ушить или расширить", "price": ""}, {"id": "s5", "ro": "Înlocuire fermoar", "nl": "Rits vervangen", "en": "Replace a zipper", "ru": "Замена молнии", "price": ""}, {"id": "s7", "ro": "Reparații și cusături", "nl": "Reparaties en naaiwerk", "en": "Repairs and stitching", "ru": "Ремонт одежды", "price": ""}, {"id": "s8", "ro": "Alte lucrări — întrebați-ne", "nl": "Ander naaiwerk — vraag het ons", "en": "Other sewing work — just ask", "ru": "Другие работы — спрашивайте", "price": ""}], "products": [], "reviews": [], "hero": null, "ship": {"price": "6.95", "free": "", "discount": "20"}}</script><div class="wrap" id="root">
   <div class="topbar"><div class="tbin"><span class="tbitem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Schiedam</span><span class="tbitem tbwa">WhatsApp +31 6 44 16 23 29</span><div class="langbar" id="langbar" role="group" aria-label="Limba / Taal / Language / Язык">
     <button type="button" data-lang="ro">RO</button><button type="button" data-lang="nl">NL</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button>
@@ -977,6 +985,31 @@ async function autoTr(){
   }catch(e){console.error(e);setStatus("Traducerile nu s-au putut salva.",true);}
   trBusy=false;
 }
+// ---- simple text formatting: **bold**, _italic_, __underline__, {roz}color{/} ----
+const FCOL={roz:"#B3245A",auriu:"#B8862E",verde:"#1E8E4F",albastru:"#1D4ED8",negru:"#1F1418"};
+function esc(x){return String(x||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function fmt(x){
+  let h=esc(x);
+  h=h.replace(/\{(roz|auriu|verde|albastru|negru)\}([\s\S]*?)\{\/\}/g,(m,c,t)=>'<span style="color:'+FCOL[c]+'">'+t+"</span>");
+  h=h.replace(/\*\*([\s\S]+?)\*\*/g,"<strong>$1</strong>").replace(/__([\s\S]+?)__/g,"<u>$1</u>").replace(/(^|[\s(])_([^_]+?)_(?=$|[\s.,!?;:)])/g,"$1<em>$2</em>");
+  return h.replace(/\n/g,"<br>");
+}
+const plain=x=>String(x||"").replace(/\{(roz|auriu|verde|albastru|negru)\}|\{\/\}|\*\*|__/g,"").replace(/(^|\s)_([^_]+?)_/g,"$1$2");
+const hasFmt=x=>/\*\*|__|\{(roz|auriu|verde|albastru|negru)\}|(^|\s)_[^_]+_/.test(String(x||""));
+function fmtBar(inp,onChange){
+  const bar=el("div","fmtbar");
+  const wrapSel=(a,b)=>{const s0=inp.selectionStart,s1=inp.selectionEnd,v=inp.value;
+    if(s0===s1){setStatus("Selectați mai întâi cuvintele (țineți apăsat pe text), apoi apăsați butonul.",true);return;}
+    inp.value=v.slice(0,s0)+a+v.slice(s0,s1)+b+v.slice(s1);inp.focus();inp.setSelectionRange(s0+a.length,s1+a.length);onChange&&onChange();};
+  const btn=(label,title,fn,style)=>{const b=el("button","fmtbtn");b.type="button";b.innerHTML=label;b.title=title;b.setAttribute("aria-label",title);if(style)b.style.cssText=style;
+    b.addEventListener("mousedown",e=>e.preventDefault());b.onclick=fn;bar.append(b);};
+  btn("<b>B</b>","Îngroșat",()=>wrapSel("**","**"));
+  btn("<i>I</i>","Înclinat",()=>wrapSel("_","_"));
+  btn("<u>U</u>","Subliniat",()=>wrapSel("__","__"));
+  Object.entries(FCOL).forEach(([n,c])=>btn("●","Culoare "+n,()=>wrapSel("{"+n+"}","{/}"),"color:"+c+";font-size:22px"));
+  btn("✕","Șterge formatarea (tot textul)",()=>{inp.value=plain(inp.value);onChange&&onChange();});
+  return bar;
+}
 // ---- custom gallery sections: title and text edited by the admin ----
 const DEF_SECS=[
  {id:"a",eyebrow:"Înainte și după",title:"Haine modificate",text:"Haine ajustate, scurtate sau transformate de Cristina. Aveți o haină care nu vă vine bine? Trimiteți-mi o poză pe WhatsApp."},
@@ -993,17 +1026,21 @@ function renderSections(){
     if(!isAdmin&&loaded&&!items.length)return;
     const S=el("section","main gsec");S.id="sec-"+sec.id;
     const hd=el("div","sechead");
-    if(sec.eyebrow)hd.append(el("span","eyebrow",tx(sec.eyebrow)));
-    const h=el("h2","sec");const words=String(tx(sec.title)||"").split(" ");
-    if(words.length>1){h.append(words.slice(0,-1).join(" ")+" ");h.append(el("em",null,words[words.length-1]));}else h.append(tx(sec.title)||"");
-    hd.append(h);if(sec.text)hd.append(el("p",null,tx(sec.text)));S.append(hd);
-    if(nav){const a=el("a",null,tx(sec.title));a.href="#sec-"+sec.id;nav.append(a);}
+    if(sec.eyebrow){const e=el("span","eyebrow");e.innerHTML=fmt(tx(sec.eyebrow));hd.append(e);}
+    const h=el("h2","sec");const tt=tx(sec.title)||"";if(hasFmt(tt))h.innerHTML=fmt(tt);else{const words=String(tt).split(" ");
+    if(words.length>1){h.append(words.slice(0,-1).join(" ")+" ");h.append(el("em",null,words[words.length-1]));}else h.append(tt);}
+    hd.append(h);if(sec.text){const pp=el("p");pp.innerHTML=fmt(tx(sec.text));hd.append(pp);}S.append(hd);
+    if(nav){const a=el("a",null,plain(tx(sec.title)));a.href="#sec-"+sec.id;nav.append(a);}
     if(isAdmin){
       // edit the texts
       const ed=el("div","workadd secedit");
       ed.append(el("h3",null,"✏️ Textele secțiunii "+(idx+1)));
-      const mk=(lab,val,area)=>{const f=el("div","field");const l=el("label",null,lab);const i=document.createElement(area?"textarea":"input");i.value=val||"";i.maxLength=area?400:80;f.append(l,i);ed.append(f);return i;};
-      const iE=mk("Text mic deasupra (opțional)",sec.eyebrow),iT=mk("Titlul (ultimul cuvânt apare înclinat, roz)",sec.title),iX=mk("Descrierea",sec.text,true);
+      const pv=el("div","fmtprev");
+      const mk=(lab,val,area)=>{const f=el("div","field");const l=el("label",null,lab);const i=document.createElement(area?"textarea":"input");i.value=val||"";i.maxLength=area?600:120;
+        const upd=()=>{pv.innerHTML='<span class="fmtpl">Așa va arăta:</span><span class="eyebrow">'+fmt(iE.value)+'</span><h2 class="sec">'+(hasFmt(iT.value)?fmt(iT.value):esc(iT.value))+'</h2><p>'+fmt(iX.value)+'</p>';};
+        i.addEventListener("input",()=>upd());f.append(l,fmtBar(i,()=>upd()),i);ed.append(f);i._upd=upd;return i;};
+      let iE,iT,iX;iE=mk("Text mic deasupra (opțional)",sec.eyebrow);iT=mk("Titlul (dacă nu-l formatați, ultimul cuvânt apare înclinat, roz)",sec.title);iX=mk("Descrierea",sec.text,true);
+      ed.append(el("p","fmthelp","Selectați cuvintele cu degetul, apoi apăsați B (îngroșat), I (înclinat), U (subliniat) sau o bulină de culoare."));ed.append(pv);iT._upd();
       const row=el("div","actions");
       const sv=el("button","btn-main","Salvează textele");sv.type="button";
       sv.onclick=()=>{if(!iT.value.trim()){setStatus("Scrieți un titlu.",true);return;}
@@ -1044,7 +1081,7 @@ function renderSections(){
     const box=el("div","works");
     items.forEach(p=>{
       const f=el("figure","work");const w=el("div","wimg");
-      mediaThumb(p,w,p.name&&p.name!=="Lucrare"?tx(p.name):tx(sec.title));f.append(w);
+      mediaThumb(p,w,p.name&&p.name!=="Lucrare"?tx(p.name):plain(tx(sec.title)));f.append(w);
       if(p.name&&p.name!=="Lucrare")f.append(el("figcaption",null,tx(p.name)));
       const a=el("a","wask");a.href=waProduct(p);a.target="_blank";a.rel="noopener";a.innerHTML=WA_SVG;a.append(" "+t("askWork"));f.append(a);
       if(isAdmin)f.append(adminTools(p,true));
