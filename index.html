@@ -770,6 +770,7 @@ if(!state.services)state.services=[];
 if(!state.reviews)state.reviews=[];
 if(!state.ship)state.ship={price:"6.95",free:"",discount:"20"};
 let pendingExtra=[];
+if(typeof state==="object"&&!state.tr)state.tr={};
 let filter="Toate", isAdmin=false, artifactApi=null, pendingPhoto=null, busy=false, rating=0, pendingRevPhoto=null;
 const $=id=>document.getElementById(id);
 
@@ -905,7 +906,7 @@ function renderWorks(){
   list.forEach(p=>{
     const f=el("figure","work");const w=el("div","wimg");
     mediaThumb(p,w,p.name&&p.name!=="Lucrare"?p.name:t("workEyebrow"));f.append(w);
-    if(p.name&&p.name!=="Lucrare")f.append(el("figcaption",null,p.name));
+    if(p.name&&p.name!=="Lucrare")f.append(el("figcaption",null,tx(p.name)));
     const a=el("a","wask");a.href=waProduct(p);a.target="_blank";a.rel="noopener";a.innerHTML=WA_SVG;a.append(" "+t("askWork"));f.append(a);
     if(isAdmin)f.append(adminTools(p,true));
     box.append(f);
@@ -942,6 +943,40 @@ function setupWorks(){
       one?"Lucrarea cu "+photos.length+" poze este pe site.":(photos.length===1?"Lucrarea este pe site.":photos.length+" lucrări sunt pe site.")).then(ok=>{if(ok){pendingWorks=[];$("w-name").value="";$("w-photo").value="";msg.textContent="";$("wAddBtn").disabled=true;}});
   };
 }
+// ---- automatic translation of texts written by the admin (stored in settings "tr") ----
+const tx=x=>{if(!x||lang==="ro")return x;const e=state.tr&&state.tr[x];return (e&&e[lang])||x;};
+async function trOne(text,tl){
+  try{const r=await fetch("https://translate.googleapis.com/translate_a/single?client=gtx&sl=ro&tl="+tl+"&dt=t&q="+encodeURIComponent(text));
+    if(r.ok){const j=await r.json();const out=(j[0]||[]).map(x=>x[0]).join("");if(out)return out;}}catch(_){}
+  try{const r=await fetch("https://api.mymemory.translated.net/get?langpair=ro|"+tl+"&q="+encodeURIComponent(text));
+    if(r.ok){const j=await r.json();const out=j&&j.responseData&&j.responseData.translatedText;if(out&&!/MYMEMORY WARNING/i.test(out))return out;}}catch(_){}
+  return null;
+}
+function trStrings(){
+  const a=[];
+  secList().forEach(x=>a.push(x.eyebrow,x.title,x.text));
+  state.products.forEach(p=>a.push(p.name,p.desc));
+  return [...new Set(a.map(x=>String(x||"").trim()).filter(x=>x&&x!=="Lucrare"))];
+}
+let trBusy=false;
+async function autoTr(){
+  if(trBusy||!sb)return;
+  const todo=trStrings().filter(x=>{const e=state.tr[x];return !e||!e.nl||!e.en||!e.ru;});
+  if(!todo.length)return;
+  trBusy=true;setStatus("Se traduc textele noi în olandeză, engleză și rusă…");
+  const add={};let ok=0;
+  for(const x of todo){const e=Object.assign({},state.tr[x]||{});
+    for(const l of ["nl","en","ru"]){if(!e[l]){const v=await trOne(x,l);if(v){e[l]=v;ok++;}}}
+    add[x]=e;}
+  try{
+    const cur=must(await sb.from("settings").select("value").eq("key","tr").maybeSingle());
+    const merged=Object.assign({},(cur&&cur.value)||{},add);
+    must(await sb.from("settings").upsert({key:"tr",value:merged}));
+    state.tr=merged;render();
+    setStatus(ok?"Textele au fost traduse automat în olandeză, engleză și rusă.":"Traducerea automată nu a mers acum. Încercați mai târziu (reîncărcați pagina).",!ok);
+  }catch(e){console.error(e);setStatus("Traducerile nu s-au putut salva.",true);}
+  trBusy=false;
+}
 // ---- custom gallery sections: title and text edited by the admin ----
 const DEF_SECS=[
  {id:"a",eyebrow:"Înainte și după",title:"Haine modificate",text:"Haine ajustate, scurtate sau transformate de Cristina. Aveți o haină care nu vă vine bine? Trimiteți-mi o poză pe WhatsApp."},
@@ -958,11 +993,11 @@ function renderSections(){
     if(!isAdmin&&loaded&&!items.length)return;
     const S=el("section","main gsec");S.id="sec-"+sec.id;
     const hd=el("div","sechead");
-    if(sec.eyebrow)hd.append(el("span","eyebrow",sec.eyebrow));
-    const h=el("h2","sec");const words=String(sec.title||"").split(" ");
-    if(words.length>1){h.append(words.slice(0,-1).join(" ")+" ");h.append(el("em",null,words[words.length-1]));}else h.append(sec.title||"");
-    hd.append(h);if(sec.text)hd.append(el("p",null,sec.text));S.append(hd);
-    if(nav){const a=el("a",null,sec.title);a.href="#sec-"+sec.id;nav.append(a);}
+    if(sec.eyebrow)hd.append(el("span","eyebrow",tx(sec.eyebrow)));
+    const h=el("h2","sec");const words=String(tx(sec.title)||"").split(" ");
+    if(words.length>1){h.append(words.slice(0,-1).join(" ")+" ");h.append(el("em",null,words[words.length-1]));}else h.append(tx(sec.title)||"");
+    hd.append(h);if(sec.text)hd.append(el("p",null,tx(sec.text)));S.append(hd);
+    if(nav){const a=el("a",null,tx(sec.title));a.href="#sec-"+sec.id;nav.append(a);}
     if(isAdmin){
       // edit the texts
       const ed=el("div","workadd secedit");
@@ -972,7 +1007,7 @@ function renderSections(){
       const row=el("div","actions");
       const sv=el("button","btn-main","Salvează textele");sv.type="button";
       sv.onclick=()=>{if(!iT.value.trim()){setStatus("Scrieți un titlu.",true);return;}
-        const list=secList().map(x=>x.id===sec.id?{...x,eyebrow:iE.value.trim(),title:iT.value.trim(),text:iX.value.trim()}:x);saveSecs(list,"Textele secțiunii au fost salvate.");};
+        const list=secList().map(x=>x.id===sec.id?{...x,eyebrow:iE.value.trim(),title:iT.value.trim(),text:iX.value.trim()}:x);saveSecs(list,"Textele secțiunii au fost salvate. Acum se traduc automat…");};
       const del=el("button","plain danger","Șterge secțiunea");del.type="button";
       confirmBtn(del,"Șterge secțiunea",()=>{if(items.length){setStatus("Ștergeți mai întâi pozele din secțiune, apoi secțiunea.",true);return;}saveSecs(secList().filter(x=>x.id!==sec.id),"Secțiunea a fost ștearsă.");});
       const up=el("button","plain","↑ Mută mai sus");up.type="button";up.disabled=idx===0;
@@ -1009,8 +1044,8 @@ function renderSections(){
     const box=el("div","works");
     items.forEach(p=>{
       const f=el("figure","work");const w=el("div","wimg");
-      mediaThumb(p,w,p.name&&p.name!=="Lucrare"?p.name:sec.title);f.append(w);
-      if(p.name&&p.name!=="Lucrare")f.append(el("figcaption",null,p.name));
+      mediaThumb(p,w,p.name&&p.name!=="Lucrare"?tx(p.name):tx(sec.title));f.append(w);
+      if(p.name&&p.name!=="Lucrare")f.append(el("figcaption",null,tx(p.name)));
       const a=el("a","wask");a.href=waProduct(p);a.target="_blank";a.rel="noopener";a.innerHTML=WA_SVG;a.append(" "+t("askWork"));f.append(a);
       if(isAdmin)f.append(adminTools(p,true));
       box.append(f);
@@ -1206,9 +1241,9 @@ function render(){
     ph.append(el("span","tag",p.example?t("example"):catName(p.cat)));
     if(p.sold)ph.append(el("span","soldmark",t("sold")));
     c.append(ph);
-    c.append(el("h3","name",p.name));
+    c.append(el("h3","name",tx(p.name)));
     if(!work||p.price){const m=el("div","meta");m.append(el("span",null,p.size?t("size")+" "+p.size:""));m.append(el("span",String(p.price||"").trim()?"price":"price ask",fmtPrice(p.price)));c.append(m);}
-    if(p.desc)c.append(el("p","desc",p.desc));
+    if(p.desc)c.append(el("p","desc",tx(p.desc)));
     if(!p.sold){const a=el("a","btn-wa");a.href=waProduct(p);a.target="_blank";a.rel="noopener";a.innerHTML=WA_SVG;a.append(" "+(work?t("askWork"):t("ask")));c.append(a);}
     if(isAdmin)c.append(adminTools(p,work));
     grid.append(c);
@@ -1224,16 +1259,19 @@ function fromR(r){return {id:r.id,name:r.name,text:r.body||"",stars:r.stars||5,i
 async function loadData(){
   if(!sb){loaded=true;render();return;}
   try{
-    const [p,r,h,sx]=await Promise.all([
+    const [p,r,h,sx,tr]=await Promise.all([
       sb.from("products").select("*").order("sort",{ascending:true}).order("created_at",{ascending:false}),
       sb.from("reviews").select("*").order("created_at",{ascending:false}),
       sb.from("settings").select("value").eq("key","hero").maybeSingle(),
-      sb.from("settings").select("value").eq("key","sections").maybeSingle()]);
+      sb.from("settings").select("value").eq("key","sections").maybeSingle(),
+      sb.from("settings").select("value").eq("key","tr").maybeSingle()]);
     state.products=(must(p)||[]).map(fromP);state.reviews=(must(r)||[]).map(fromR);
     const hv=must(h);state.hero=hv&&hv.value&&hv.value.img?{img:hv.value.img}:null;
-    const sv=must(sx);state.sections=sv&&sv.value&&Array.isArray(sv.value.list)?sv.value.list:null;loadOk=true;
+    const sv=must(sx);state.sections=sv&&sv.value&&Array.isArray(sv.value.list)?sv.value.list:null;
+    const tv=must(tr);state.tr=(tv&&tv.value)||{};loadOk=true;
   }catch(e){console.error(e);loadOk=false;}
   loaded=true;render();
+  if(isAdmin&&loadOk)autoTr();
 }
 async function upload(dataUrl){
   const b=await (await fetch(dataUrl)).blob();
@@ -1431,7 +1469,7 @@ $("pfPick").onchange=e=>{const f=e.target.files&&e.target.files[0];e.target.valu
 async function becomeAdmin(user){
   let ok=false;try{const {data}=await sb.rpc("is_admin");ok=data===true;}catch(_){}
   if(!ok){await sb.auth.signOut();return false;}
-  setupAdmin(user&&user.email);seedIfEmpty();return true;
+  setupAdmin(user&&user.email);seedIfEmpty();if(firstLoad)firstLoad.then(()=>{if(loadOk)autoTr();});return true;
 }
 function openLogin(){$("pwMsg").textContent="";$("pwIn").value="";$("pwWrap").hidden=false;$("pwEmail").focus();}
 $("editBtn").onclick=openLogin;
