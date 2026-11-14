@@ -523,6 +523,13 @@ details.workadd>*:not(summary){margin-top:8px}
 .secedit .actions .btn-main{padding:9px 16px}
 .secedit .actions .plain{padding:8px 10px;font-size:13px}
 .fmtprev{padding:8px 10px!important}.fmtprev h2.sec{font-size:22px!important}
+
+.itemedit>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:0 2px 8px rgba(42,27,23,.08);font-size:17px}
+.itemedit>summary::-webkit-details-marker{display:none}
+.itemedit[open]>summary{background:var(--rasp);border-color:var(--rasp)}
+.itemedit .admintools{animation:fadein .2s}
+@keyframes fadein{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+details.workadd>summary{font-size:14px!important}
 </style></head><body><script type="application/json" id="data">{"services": [{"id": "s9", "ro": "Coasere haine pe măsură", "nl": "Kleding op maat naaien", "en": "Clothes sewn to measure", "ru": "Пошив одежды на заказ", "price": ""}, {"id": "s10", "ro": "Modelare constructivă (tipare pe măsură)", "nl": "Patroonconstructie (patronen op maat)", "en": "Pattern making (made-to-measure patterns)", "ru": "Конструирование и моделирование одежды (выкройки)", "price": ""}, {"id": "s1", "ro": "Scurtare pantaloni și blugi", "nl": "Broek en jeans inkorten", "en": "Shorten trousers and jeans", "ru": "Укоротить брюки и джинсы", "price": ""}, {"id": "s2", "ro": "Scurtare rochie sau fustă", "nl": "Jurk of rok inkorten", "en": "Shorten a dress or skirt", "ru": "Укоротить платье или юбку", "price": ""}, {"id": "s3", "ro": "Scurtare mâneci", "nl": "Mouwen inkorten", "en": "Shorten sleeves", "ru": "Укоротить рукава", "price": ""}, {"id": "s4", "ro": "Strâmtare sau lărgire", "nl": "Innemen of uitleggen", "en": "Take in or let out", "ru": "Ушить или расширить", "price": ""}, {"id": "s5", "ro": "Înlocuire fermoar", "nl": "Rits vervangen", "en": "Replace a zipper", "ru": "Замена молнии", "price": ""}, {"id": "s7", "ro": "Reparații și cusături", "nl": "Reparaties en naaiwerk", "en": "Repairs and stitching", "ru": "Ремонт одежды", "price": ""}, {"id": "s8", "ro": "Alte lucrări — întrebați-ne", "nl": "Ander naaiwerk — vraag het ons", "en": "Other sewing work — just ask", "ru": "Другие работы — спрашивайте", "price": ""}], "products": [], "reviews": [], "hero": null, "ship": {"price": "6.95", "free": "", "discount": "20"}}</script><div class="wrap" id="root">
   <div class="topbar"><div class="tbin"><span class="tbitem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Schiedam</span><span class="tbitem tbwa">WhatsApp +31 6 44 16 23 29</span><div class="langbar" id="langbar" role="group" aria-label="Limba / Taal / Language / Язык">
     <button type="button" data-lang="ro">RO</button><button type="button" data-lang="nl">NL</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button>
@@ -1177,7 +1184,7 @@ function adminTools(p,work){
       c.append(vl);
       if(p.video){const dv=el("button",null,"🗑 Video");dv.type="button";dv.title="Scoate video";confirmBtn(dv,"🗑 Video",()=>run(async()=>{must(await sb.from("products").update({video:null}).eq("id",p.id));dropPhoto(p.video);},"Video-ul a fost scos."));r.append(dv);}
       [...r.childNodes].forEach(n=>c.append(n));
-  return c;
+  const dt=el("details","itemedit");dt.append(el("summary",null,"✏️"),c);dt.querySelector("summary").title="Modifică";return dt;
 }
 function videoOpen(url,name){
   spinClose();
