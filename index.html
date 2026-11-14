@@ -475,11 +475,20 @@ footer .sig em{color:#F5B8CE}
 .aboutbox .aboutmini li:last-child{border-style:dashed}
 
 #editBtn{display:none!important}
+
+.pick{position:relative}.pickmore{position:absolute;right:8px;bottom:8px;background:var(--rasp);color:#fff;font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px}
+.workadd .consent{font-size:14.5px}
+
+#customSecs .gsec:nth-child(odd){background:var(--sand)}
+#customSecs .gsec:nth-child(even){background:var(--white)}
+.secedit{border-color:#C9A9B5!important;background:#FFF9FB}
+.secedit .field textarea{min-height:70px}
+.secedit .actions{flex-wrap:wrap}
 </style></head><body><script type="application/json" id="data">{"services": [{"id": "s9", "ro": "Coasere haine pe măsură", "nl": "Kleding op maat naaien", "en": "Clothes sewn to measure", "ru": "Пошив одежды на заказ", "price": ""}, {"id": "s10", "ro": "Modelare constructivă (tipare pe măsură)", "nl": "Patroonconstructie (patronen op maat)", "en": "Pattern making (made-to-measure patterns)", "ru": "Конструирование и моделирование одежды (выкройки)", "price": ""}, {"id": "s1", "ro": "Scurtare pantaloni și blugi", "nl": "Broek en jeans inkorten", "en": "Shorten trousers and jeans", "ru": "Укоротить брюки и джинсы", "price": ""}, {"id": "s2", "ro": "Scurtare rochie sau fustă", "nl": "Jurk of rok inkorten", "en": "Shorten a dress or skirt", "ru": "Укоротить платье или юбку", "price": ""}, {"id": "s3", "ro": "Scurtare mâneci", "nl": "Mouwen inkorten", "en": "Shorten sleeves", "ru": "Укоротить рукава", "price": ""}, {"id": "s4", "ro": "Strâmtare sau lărgire", "nl": "Innemen of uitleggen", "en": "Take in or let out", "ru": "Ушить или расширить", "price": ""}, {"id": "s5", "ro": "Înlocuire fermoar", "nl": "Rits vervangen", "en": "Replace a zipper", "ru": "Замена молнии", "price": ""}, {"id": "s7", "ro": "Reparații și cusături", "nl": "Reparaties en naaiwerk", "en": "Repairs and stitching", "ru": "Ремонт одежды", "price": ""}, {"id": "s8", "ro": "Alte lucrări — întrebați-ne", "nl": "Ander naaiwerk — vraag het ons", "en": "Other sewing work — just ask", "ru": "Другие работы — спрашивайте", "price": ""}], "products": [], "reviews": [], "hero": null, "ship": {"price": "6.95", "free": "", "discount": "20"}}</script><div class="wrap" id="root">
   <div class="topbar"><div class="tbin"><span class="tbitem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Schiedam</span><span class="tbitem tbwa">WhatsApp +31 6 44 16 23 29</span><div class="langbar" id="langbar" role="group" aria-label="Limba / Taal / Language / Язык">
     <button type="button" data-lang="ro">RO</button><button type="button" data-lang="nl">NL</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button>
   </div></div></div>
-  <div class="sitehead"><div class="shin"><a class="logo" href="#top">Cristina <em>Collection</em></a><nav class="jump"><a href="#despre" data-t="jumpAbout">Despre mine</a><a href="#croitorie" data-t="jumpSvc">Croitorie</a><a href="#lucrari" data-t="jumpWork">Lucrări făcute</a><a href="#haine" data-t="jumpShop">Haine de vânzare</a><a href="#pareri" data-t="jumpRev">Păreri</a><a href="#inregistrare" data-t="jumpReg">Înregistrare</a><a href="#plata" data-t="jumpPay">Plată</a><a href="#adresa" data-t="jumpAddr">Adresă</a></nav></div></div>
+  <div class="sitehead"><div class="shin"><a class="logo" href="#top">Cristina <em>Collection</em></a><nav class="jump"><a href="#despre" data-t="jumpAbout">Despre mine</a><a href="#croitorie" data-t="jumpSvc">Croitorie</a><a href="#lucrari" data-t="jumpWork">Lucrări făcute</a><a href="#haine" data-t="jumpShop">Haine create</a><span id="secNav" style="display:contents"></span><a href="#pareri" data-t="jumpRev">Păreri</a><a href="#inregistrare" data-t="jumpReg">Înregistrare</a><a href="#plata" data-t="jumpPay">Plată</a><a href="#adresa" data-t="jumpAddr">Adresă</a></nav></div></div>
   <header class="top hero" id="top">
       <figure class="heroimg" id="heroFig"><img id="heroImg" alt="Cristina Collection"><figcaption data-t="heroCap">Atelierul Cristinei</figcaption></figure>
     <div class="herotext">
@@ -505,7 +514,7 @@ footer .sig em{color:#F5B8CE}
     <h2 style="margin-top:10px">Adaugă o haină sau o lucrare</h2>
     <p>Alege poza, scrie numele și prețul, apoi apasă „Publică”. Apare imediat pe site, pentru toată lumea. Pozele cu lucrări făcute se pun mai jos, la „Haine făcute de Cristina”.</p>
     <div class="form">
-      <div style="grid-row:span 3;display:grid;gap:8px;align-content:start"><label class="filelbl" for="f-photo">1. Alege poza hainei:</label><input type="file" id="f-photo" accept="image/*" class="filein"><div class="pick" id="pick"><span id="pickText">Poza aleasă apare aici</span></div></div>
+      <div style="grid-row:span 3;display:grid;gap:8px;align-content:start"><label class="filelbl" for="f-photo">1. Alege poza hainei (poți alege mai multe):</label><input type="file" id="f-photo" accept="image/*" class="filein" multiple><div class="pick" id="pick"><span id="pickText">Poza aleasă apare aici</span></div></div>
       <div class="field"><label for="f-name">Nume</label><input id="f-name" placeholder="ex. Rochie neagră de seară" maxlength="80"></div>
       <div class="field"><label for="f-price">Preț (€)</label><input id="f-price" inputmode="decimal" placeholder="ex. 25" maxlength="10"></div>
       <div class="field"><label for="f-cat">Categorie</label><select id="f-cat"></select></div>
@@ -567,6 +576,7 @@ footer .sig em{color:#F5B8CE}
       <p>Puteți alege mai multe poze deodată, sau un video (maximum 50 MB, cam 30 de secunde). Scrieți întâi numele, dacă vreți (ex. „Rochie de seară cusută pe măsură”).</p>
       <div class="workpicks"><label class="chgphoto workpick">📷 Alege pozele<input type="file" id="w-photo" accept="image/*" multiple></label><label class="chgphoto workpick vidadd">🎬 Pune un video<input type="file" id="w-video" accept="video/*"></label></div>
       <div class="field"><label for="w-name">Nume (opțional)</label><input id="w-name" maxlength="80" placeholder="ex. Rochie cusută pe măsură"></div>
+      <label class="consent"><input type="checkbox" id="w-one" checked> Toate pozele alese sunt aceeași haină (o singură lucrare cu mai multe poze)</label>
       <div class="actions"><button type="button" class="btn-main" id="wAddBtn" disabled>Pune pe site</button><span class="status" id="wMsg" role="status"></span></div>
     </div>
     <div class="works" id="works"></div>
@@ -575,14 +585,17 @@ footer .sig em{color:#F5B8CE}
 
   <section class="main" id="haine">
     <div class="sechead">
-      <span class="eyebrow" data-t="shopEyebrow">Magazin</span>
-      <h2 class="sec" data-t-html="shopTitle">Haine de <em>vânzare</em></h2>
+      <span class="eyebrow" data-t="shopEyebrow">Create de Cristina</span>
+      <h2 class="sec" data-t-html="shopTitle">Haine create <em>în întregime</em></h2>
+      <p data-t="shopText">Haine cusute de Cristina de la zero, după tipar propriu. Fiecare piesă este unică.</p>
     </div>
     <nav class="filters" id="filters" aria-label="Categorii"></nav>
     <p class="count" id="count"></p>
     <div class="grid" id="grid"></div>
     <p class="empty" id="empty" hidden="" data-t="empty">Nu sunt haine în această categorie deocamdată.</p>
   </section>
+
+  <div id="customSecs"></div>
 
   <section class="main" id="pareri">
     <div class="sechead">
@@ -721,13 +734,13 @@ const CAT_T={
 };
 const T={
   ro:{jumpReg:"Înregistrare",regEyebrow:"Înregistrare",regTitle:"Înregistrați-vă la <em>Cristina</em>",regText:"Lăsați-ne numele și telefonul și vă anunțăm când lucrarea este gata. Datele ajung direct la Cristina pe WhatsApp.",regName:"Prenume",regLast:"Nume de familie",regPhone:"Telefon",regConsent:"Sunt de acord ca Cristina Collection să mă contacteze pe telefon sau WhatsApp despre lucrările mele.",regBtn:"Înregistrare pe WhatsApp",regErr:"Completați prenumele, numele și telefonul.",regErrEmail:"Adresa de email nu pare corectă.",regErrOk:"Bifați căsuța de acord ca să continuați.",regDone:"Se deschide WhatsApp. Apăsați „Trimite” ca să terminați înregistrarea.",regMsgIntro:"Bună ziua! Vreau să mă înregistrez la Cristina Collection ca să primesc informații despre lucrările mele.",regMsgName:"Nume",regMsgPhone:"Telefon",regMsgOk:"Sunt de acord să fiu contactat(ă).",jumpPay:"Plată",payEyebrow:"Plată",payTitle:"Plată <em>simplă</em> și sigură",payText:"După ce stabilim prețul, primiți pe WhatsApp un link de plată sigur. Nu trebuie să trimiteți nimănui datele cardului.",pay1:"iDEAL (Tikkie)",pay2:"Card bancar",pay3:"Revolut",jumpAbout:"Despre mine",heroCap:"Atelierul Cristinei",aboutEyebrow:"Despre mine",aboutTitle:"Cu <em>grijă</em> pentru moda dumneavoastră",aboutLead:"La Cristina Collection efectuez cu multă plăcere diferite tipuri de modelare constructivă a confecțiilor vestimentare (fuste, rochii, pantaloni, bluze, geci).",aboutText:"<p>Mă specializez în <strong>repararea, modificarea și proiectarea hainelor</strong> dumneavoastră.</p><div class=\"aboutbox\"><h3 class=\"abouth\">Lucrări principale</h3><ul class=\"aboutmain\"><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 17 17 3l4 4L7 21H3z\"/><path d=\"M7 13l2 2M10 10l2 2M13 7l2 2\"/></svg></span><span><strong>Haine cusute pe măsură</strong><small>după măsurile și tiparul dumneavoastră</small></span></li><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 20 20 4\"/><circle cx=\"18.5\" cy=\"5.5\" r=\"1.2\"/><path d=\"M3 9c4-3 8 3 12 0\"/><path d=\"M9 21c3-4 9-1 12-5\"/></svg></span><span><strong>Ajustare și lărgire</strong><small>haina stă perfect pe corp</small></span></li><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 3h10l1 18h-4l-2-11-2 11H6z\"/><path d=\"M7 7h10\"/></svg></span><span><strong>Lungire și scurtare</strong><small>pantaloni, fuste, rochii, mâneci</small></span></li><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2v20\"/><path d=\"M9 5h3M12 8h3M9 11h3M12 14h3M9 17h3\"/><rect x=\"10\" y=\"18\" width=\"4\" height=\"4\" rx=\"1\"/></svg></span><span><strong>Fermoare noi</strong><small>ascunse sau vizibile, metal sau plastic</small></span></li></ul><h3 class=\"abouth abouth2\">Și reparații mici</h3><ul class=\"aboutmini\"><li>Găuri și rupturi</li><li>Cusături desfăcute</li><li>…și multe altele</li></ul></div>",prom1:"Răspund repede pe WhatsApp",prom2:"Aflați prețul înainte să începem lucrul",prom3:"Îmi puteți scrie în română, rusă, olandeză sau engleză",
-    eyebrow:"Croitoreasă în Schiedam",lede:"Haine pe măsură, ajustări, reparații și haine de vânzare. Scrieți-ne pe WhatsApp.",waBtn:"Scrieți pe WhatsApp",copy:"Copiază",copied:"Copiat",selected:"Selectat",jumpSvc:"Croitorie",jumpShop:"Haine de vânzare",svcEyebrow:"Servicii",svcTitle:"Croitorie și <em>modelare constructivă</em>",svcLede:"Alegeți lucrarea și scrieți-ne pe WhatsApp, cu o poză a hainei dacă puteți. Prețul îl stabilim împreună cu Cristina, cu aproximație, după ce vede haina.",langNote:"Poți scrie pe WhatsApp în română sau rusă.",shopEyebrow:"Magazin",shopTitle:"Haine de <em>vânzare</em>",empty:"Nu sunt haine în această categorie deocamdată.",ask:"Întreabă pe WhatsApp",askSvc:"Întreabă",askWork:"Vreau și eu așa ceva",sold:"Vândut",example:"Exemplu",size:"Mărimea",onRequest:"preț la cerere",avail1:"haină disponibilă",availN:"haine disponibile",soldN:"vândute"},
+    eyebrow:"Croitoreasă în Schiedam",lede:"Haine pe măsură, ajustări, reparații și haine de vânzare. Scrieți-ne pe WhatsApp.",waBtn:"Scrieți pe WhatsApp",copy:"Copiază",copied:"Copiat",selected:"Selectat",jumpSvc:"Croitorie",jumpShop:"Haine create",svcEyebrow:"Servicii",svcTitle:"Croitorie și <em>modelare constructivă</em>",svcLede:"Alegeți lucrarea și scrieți-ne pe WhatsApp, cu o poză a hainei dacă puteți. Prețul îl stabilim împreună cu Cristina, cu aproximație, după ce vede haina.",langNote:"Poți scrie pe WhatsApp în română sau rusă.",shopEyebrow:"Create de Cristina",shopTitle:"Haine create <em>în întregime</em>",empty:"Nu sunt haine în această categorie deocamdată.",ask:"Întreabă pe WhatsApp",askSvc:"Întreabă",askWork:"Vreau și eu așa ceva",sold:"Vândut",example:"Exemplu",size:"Mărimea",onRequest:"preț la cerere",avail1:"haină disponibilă",availN:"haine disponibile",soldN:"vândute"},
   nl:{jumpReg:"Aanmelden",regEyebrow:"Aanmelden",regTitle:"Meld u aan bij <em>Cristina</em>",regText:"Laat uw naam en telefoonnummer achter, dan laten wij weten wanneer uw kleding klaar is. De gegevens gaan via WhatsApp rechtstreeks naar Cristina.",regName:"Voornaam",regLast:"Achternaam",regPhone:"Telefoon",regConsent:"Ik ga ermee akkoord dat Cristina Collection contact met mij opneemt via telefoon of WhatsApp over mijn opdrachten.",regBtn:"Aanmelden via WhatsApp",regErr:"Vul uw voornaam, achternaam en telefoon in.",regErrEmail:"Dit e-mailadres lijkt niet juist.",regErrOk:"Vink het vakje aan om verder te gaan.",regDone:"WhatsApp wordt geopend. Druk op Verzenden om de aanmelding af te ronden.",regMsgIntro:"Hallo! Ik wil me aanmelden bij Cristina Collection om informatie over mijn opdrachten te ontvangen.",regMsgName:"Naam",regMsgPhone:"Telefoon",regMsgOk:"Ik ga akkoord met contact.",jumpPay:"Betalen",payEyebrow:"Betalen",payTitle:"Eenvoudig en <em>veilig</em> betalen",payText:"Nadat we de prijs hebben afgesproken, ontvangt u via WhatsApp een veilige betaallink. U hoeft uw kaartgegevens aan niemand te sturen.",pay1:"iDEAL (Tikkie)",pay2:"Bankpas",pay3:"Revolut",jumpAbout:"Over mij",heroCap:"Het atelier van Cristina",aboutEyebrow:"Over mij",aboutTitle:"Met <em>zorg</em> voor uw mode",aboutLead:"Bij Cristina Collection doe ik met veel plezier allerlei soorten patroonconstructie voor kleding (rokken, jurken, broeken, blouses, jassen).",aboutText:"<p>Ik ben gespecialiseerd in het <strong>repareren, aanpassen en ontwerpen van uw kleding</strong>.</p><div class=\"aboutbox\"><h3 class=\"abouth\">Mijn specialiteiten</h3><ul class=\"aboutmain\"><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 17 17 3l4 4L7 21H3z\"/><path d=\"M7 13l2 2M10 10l2 2M13 7l2 2\"/></svg></span><span><strong>Kleding op maat</strong><small>naar uw maten en eigen patroon</small></span></li><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 20 20 4\"/><circle cx=\"18.5\" cy=\"5.5\" r=\"1.2\"/><path d=\"M3 9c4-3 8 3 12 0\"/><path d=\"M9 21c3-4 9-1 12-5\"/></svg></span><span><strong>Aanpassen en uitleggen</strong><small>een perfecte pasvorm</small></span></li><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 3h10l1 18h-4l-2-11-2 11H6z\"/><path d=\"M7 7h10\"/></svg></span><span><strong>Verlengen en inkorten</strong><small>broeken, rokken, jurken, mouwen</small></span></li><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2v20\"/><path d=\"M9 5h3M12 8h3M9 11h3M12 14h3M9 17h3\"/><rect x=\"10\" y=\"18\" width=\"4\" height=\"4\" rx=\"1\"/></svg></span><span><strong>Nieuwe ritsen</strong><small>verborgen of zichtbaar, metaal of kunststof</small></span></li></ul><h3 class=\"abouth abouth2\">En kleine reparaties</h3><ul class=\"aboutmini\"><li>Gaten en scheuren</li><li>Losse naden</li><li>…en nog veel meer</li></ul></div>",prom1:"Ik antwoord snel via WhatsApp",prom2:"U weet de prijs voordat we beginnen",prom3:"Schrijf mij in het Nederlands, Engels, Roemeens of Russisch",
-    eyebrow:"Naaister in Schiedam",lede:"Kleding op maat, aanpassingen, reparaties en kleding te koop. Stuur ons een WhatsApp.",waBtn:"Stuur een WhatsApp",copy:"Kopiëren",copied:"Gekopieerd",selected:"Geselecteerd",jumpSvc:"Naaiwerk",jumpShop:"Kleding te koop",svcEyebrow:"Diensten",svcTitle:"Naaiwerk en <em>patroonconstructie</em>",svcLede:"Kies wat u nodig heeft en stuur ons een WhatsApp, het liefst met een foto van het kledingstuk. De prijs spreekt u samen met Cristina af, bij benadering, nadat zij het kledingstuk heeft gezien.",langNote:"U kunt ons gewoon in het Nederlands of Engels schrijven. Een foto van de kleding helpt ook.",shopEyebrow:"Winkel",shopTitle:"Kleding <em>te koop</em>",empty:"Er is nog geen kleding in deze categorie.",ask:"Vraag via WhatsApp",askSvc:"Vragen",askWork:"Dit wil ik ook",sold:"Verkocht",example:"Voorbeeld",size:"Maat",onRequest:"prijs op aanvraag",avail1:"artikel beschikbaar",availN:"artikelen beschikbaar",soldN:"verkocht"},
+    eyebrow:"Naaister in Schiedam",lede:"Kleding op maat, aanpassingen, reparaties en kleding te koop. Stuur ons een WhatsApp.",waBtn:"Stuur een WhatsApp",copy:"Kopiëren",copied:"Gekopieerd",selected:"Geselecteerd",jumpSvc:"Naaiwerk",jumpShop:"Zelfgemaakt",svcEyebrow:"Diensten",svcTitle:"Naaiwerk en <em>patroonconstructie</em>",svcLede:"Kies wat u nodig heeft en stuur ons een WhatsApp, het liefst met een foto van het kledingstuk. De prijs spreekt u samen met Cristina af, bij benadering, nadat zij het kledingstuk heeft gezien.",langNote:"U kunt ons gewoon in het Nederlands of Engels schrijven. Een foto van de kleding helpt ook.",shopEyebrow:"Door Cristina gemaakt",shopTitle:"Volledig <em>zelf gemaakt</em>",empty:"Er is nog geen kleding in deze categorie.",ask:"Vraag via WhatsApp",askSvc:"Vragen",askWork:"Dit wil ik ook",sold:"Verkocht",example:"Voorbeeld",size:"Maat",onRequest:"prijs op aanvraag",avail1:"artikel beschikbaar",availN:"artikelen beschikbaar",soldN:"verkocht"},
   ru:{jumpReg:"Регистрация",regEyebrow:"Регистрация",regTitle:"Регистрация у <em>Кристины</em>",regText:"Оставьте имя и телефон, и мы сообщим, когда ваша работа будет готова. Данные придут Кристине прямо в WhatsApp.",regName:"Имя",regLast:"Фамилия",regPhone:"Телефон",regConsent:"Я согласен(на), чтобы Cristina Collection связывалась со мной по телефону или WhatsApp по поводу моих заказов.",regBtn:"Зарегистрироваться в WhatsApp",regErr:"Заполните имя, фамилию и телефон.",regErrEmail:"Похоже, email указан неверно.",regErrOk:"Отметьте галочку согласия, чтобы продолжить.",regDone:"Открывается WhatsApp. Нажмите «Отправить», чтобы завершить регистрацию.",regMsgIntro:"Здравствуйте! Хочу зарегистрироваться в Cristina Collection, чтобы получать информацию о моих заказах.",regMsgName:"Имя",regMsgPhone:"Телефон",regMsgOk:"Я согласен(на) на связь.",jumpPay:"Оплата",payEyebrow:"Оплата",payTitle:"Простая и <em>безопасная</em> оплата",payText:"Когда мы договоримся о цене, вы получите в WhatsApp безопасную ссылку для оплаты. Данные карты никому отправлять не нужно.",pay1:"iDEAL (Tikkie)",pay2:"Банковская карта",pay3:"Revolut",jumpAbout:"Обо мне",heroCap:"Мастерская Кристины",aboutEyebrow:"Обо мне",aboutTitle:"С <em>заботой</em> о вашем стиле",aboutLead:"В Cristina Collection я с большим удовольствием выполняю разные виды конструирования и моделирования одежды (юбки, платья, брюки, блузки, куртки).",aboutText:"<p>Я специализируюсь на <strong>ремонте, переделке и моделировании вашей одежды</strong>.</p><div class=\"aboutbox\"><h3 class=\"abouth\">Основные работы</h3><ul class=\"aboutmain\"><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 17 17 3l4 4L7 21H3z\"/><path d=\"M7 13l2 2M10 10l2 2M13 7l2 2\"/></svg></span><span><strong>Пошив по меркам</strong><small>по вашим меркам и выкройке</small></span></li><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 20 20 4\"/><circle cx=\"18.5\" cy=\"5.5\" r=\"1.2\"/><path d=\"M3 9c4-3 8 3 12 0\"/><path d=\"M9 21c3-4 9-1 12-5\"/></svg></span><span><strong>Подгонка и расширение</strong><small>идеальная посадка по фигуре</small></span></li><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 3h10l1 18h-4l-2-11-2 11H6z\"/><path d=\"M7 7h10\"/></svg></span><span><strong>Удлинение и укорачивание</strong><small>брюки, юбки, платья, рукава</small></span></li><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2v20\"/><path d=\"M9 5h3M12 8h3M9 11h3M12 14h3M9 17h3\"/><rect x=\"10\" y=\"18\" width=\"4\" height=\"4\" rx=\"1\"/></svg></span><span><strong>Новые молнии</strong><small>потайные или видимые, металл или пластик</small></span></li></ul><h3 class=\"abouth abouth2\">А также мелкий ремонт</h3><ul class=\"aboutmini\"><li>Дырки и разрывы</li><li>Распустившиеся швы</li><li>…и многое другое</li></ul></div>",prom1:"Быстро отвечаю в WhatsApp",prom2:"Цену вы узнаёте до начала работы",prom3:"Пишите мне на русском, румынском, нидерландском или английском",
-    eyebrow:"Швея в Схидаме",lede:"Одежда на заказ, подгонка, ремонт и одежда на продажу. Напишите нам в WhatsApp.",waBtn:"Написать в WhatsApp",copy:"Копировать",copied:"Скопировано",selected:"Выделено",jumpSvc:"Ателье",jumpShop:"Одежда на продажу",svcEyebrow:"Услуги",svcTitle:"Пошив и <em>конструирование одежды</em>",svcLede:"Выберите услугу и напишите нам в WhatsApp, лучше с фото вещи. Цену вы согласуете с Кристиной, примерно, после того как она увидит вещь.",langNote:"Можно писать нам в WhatsApp на русском языке. Фото вещи тоже поможет.",shopEyebrow:"Магазин",shopTitle:"Одежда <em>на продажу</em>",empty:"В этой категории пока нет одежды.",ask:"Спросить в WhatsApp",askSvc:"Спросить",askWork:"Хочу так же",sold:"Продано",example:"Пример",size:"Размер",onRequest:"цена по запросу",avail1:"вещь в наличии",availN:"вещей в наличии",soldN:"продано"},
+    eyebrow:"Швея в Схидаме",lede:"Одежда на заказ, подгонка, ремонт и одежда на продажу. Напишите нам в WhatsApp.",waBtn:"Написать в WhatsApp",copy:"Копировать",copied:"Скопировано",selected:"Выделено",jumpSvc:"Ателье",jumpShop:"Сшито с нуля",svcEyebrow:"Услуги",svcTitle:"Пошив и <em>конструирование одежды</em>",svcLede:"Выберите услугу и напишите нам в WhatsApp, лучше с фото вещи. Цену вы согласуете с Кристиной, примерно, после того как она увидит вещь.",langNote:"Можно писать нам в WhatsApp на русском языке. Фото вещи тоже поможет.",shopEyebrow:"Сшито Кристиной",shopTitle:"Одежда, сшитая <em>с нуля</em>",empty:"В этой категории пока нет одежды.",ask:"Спросить в WhatsApp",askSvc:"Спросить",askWork:"Хочу так же",sold:"Продано",example:"Пример",size:"Размер",onRequest:"цена по запросу",avail1:"вещь в наличии",availN:"вещей в наличии",soldN:"продано"},
   en:{jumpReg:"Sign up",regEyebrow:"Sign up",regTitle:"Sign up with <em>Cristina</em>",regText:"Leave your name and phone number and we will let you know when your item is ready. Your details go straight to Cristina on WhatsApp.",regName:"First name",regLast:"Last name",regPhone:"Phone",regConsent:"I agree that Cristina Collection may contact me by phone or WhatsApp about my orders.",regBtn:"Sign up on WhatsApp",regErr:"Please fill in your first name, last name and phone.",regErrEmail:"That email address does not look right.",regErrOk:"Tick the consent box to continue.",regDone:"WhatsApp is opening. Press Send to finish signing up.",regMsgIntro:"Hello! I would like to sign up with Cristina Collection to receive updates about my orders.",regMsgName:"Name",regMsgPhone:"Phone",regMsgOk:"I agree to be contacted.",jumpPay:"Payment",payEyebrow:"Payment",payTitle:"Simple, <em>secure</em> payment",payText:"Once we agree on the price, you receive a secure payment link on WhatsApp. You never need to send your card details to anyone.",pay1:"iDEAL (Tikkie)",pay2:"Bank card",pay3:"Revolut",jumpAbout:"About me",heroCap:"Cristina's workshop",aboutEyebrow:"About me",aboutTitle:"With <em>care</em> for your fashion",aboutLead:"At Cristina Collection I take great pleasure in all kinds of pattern making and garment construction (skirts, dresses, trousers, blouses, jackets).",aboutText:"<p>I specialise in <strong>repairing, altering and designing your clothes</strong>.</p><div class=\"aboutbox\"><h3 class=\"abouth\">Main services</h3><ul class=\"aboutmain\"><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 17 17 3l4 4L7 21H3z\"/><path d=\"M7 13l2 2M10 10l2 2M13 7l2 2\"/></svg></span><span><strong>Made-to-measure clothes</strong><small>cut to your measurements and pattern</small></span></li><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 20 20 4\"/><circle cx=\"18.5\" cy=\"5.5\" r=\"1.2\"/><path d=\"M3 9c4-3 8 3 12 0\"/><path d=\"M9 21c3-4 9-1 12-5\"/></svg></span><span><strong>Adjusting and letting out</strong><small>a perfect fit</small></span></li><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 3h10l1 18h-4l-2-11-2 11H6z\"/><path d=\"M7 7h10\"/></svg></span><span><strong>Lengthening and shortening</strong><small>trousers, skirts, dresses, sleeves</small></span></li><li><span class=\"amic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2v20\"/><path d=\"M9 5h3M12 8h3M9 11h3M12 14h3M9 17h3\"/><rect x=\"10\" y=\"18\" width=\"4\" height=\"4\" rx=\"1\"/></svg></span><span><strong>New zips</strong><small>hidden or visible, metal or plastic</small></span></li></ul><h3 class=\"abouth abouth2\">And small repairs</h3><ul class=\"aboutmini\"><li>Holes and tears</li><li>Loose seams</li><li>…and much more</li></ul></div>",prom1:"I reply quickly on WhatsApp",prom2:"You know the price before we start",prom3:"Write to me in English, Dutch, Romanian or Russian",
-    eyebrow:"Seamstress in Schiedam",lede:"Made-to-measure clothes, alterations, repairs and clothes for sale. Send us a WhatsApp message.",waBtn:"Message on WhatsApp",copy:"Copy",copied:"Copied",selected:"Selected",jumpSvc:"Tailoring",jumpShop:"Clothes for sale",svcEyebrow:"Services",svcTitle:"Sewing and <em>pattern making</em>",svcLede:"Choose what you need and send us a WhatsApp message, ideally with a photo of the item. You agree the price together with Cristina, as an estimate, once she has seen the item.",langNote:"Feel free to write in English or Dutch. A photo of the item helps too.",shopEyebrow:"Shop",shopTitle:"Clothes <em>for sale</em>",empty:"No items in this category yet.",ask:"Ask on WhatsApp",askSvc:"Ask",askWork:"I want this too",sold:"Sold",example:"Example",size:"Size",onRequest:"price on request",avail1:"item available",availN:"items available",soldN:"sold"}
+    eyebrow:"Seamstress in Schiedam",lede:"Made-to-measure clothes, alterations, repairs and clothes for sale. Send us a WhatsApp message.",waBtn:"Message on WhatsApp",copy:"Copy",copied:"Copied",selected:"Selected",jumpSvc:"Tailoring",jumpShop:"Made from scratch",svcEyebrow:"Services",svcTitle:"Sewing and <em>pattern making</em>",svcLede:"Choose what you need and send us a WhatsApp message, ideally with a photo of the item. You agree the price together with Cristina, as an estimate, once she has seen the item.",langNote:"Feel free to write in English or Dutch. A photo of the item helps too.",shopEyebrow:"Made by Cristina",shopTitle:"Clothes made <em>from scratch</em>",empty:"No items in this category yet.",ask:"Ask on WhatsApp",askSvc:"Ask",askWork:"I want this too",sold:"Sold",example:"Example",size:"Size",onRequest:"price on request",avail1:"item available",availN:"items available",soldN:"sold"}
 };
 const T_SHIP={"ro": {"jumpShip": "Livrare", "shipEyebrow": "Livrare prin curier", "shipTitle": "Livrare <em>acasă</em>", "shipText": "Trimitem coletul oriunde în Olanda, prin PostNL, DHL sau DPD. Scrie adresa și alege curierul.", "shipNote": "Livrăm doar în Olanda. Cristina îți scrie pe WhatsApp prețul livrării, înainte să trimită coletul.", "shipItem": "Ce comanzi", "shipItemPh": "ex. Rochie midi cu flori, mărimea M", "shipName": "Nume și prenume", "shipPhone": "Telefon", "shipStreet": "Stradă și număr", "shipZip": "Cod poștal", "shipCity": "Oraș", "shipCourier": "Curier", "shipPickup": "Ridic personal", "shipBtn": "Trimite comanda pe WhatsApp", "shipOrder": "Comandă cu livrare", "shipErr": "Completează toate câmpurile.", "shipErrZip": "Codul poștal nu pare corect. Exemplu: 1234 AB.", "shipDone": "Se deschide WhatsApp. Apasă „Trimite” ca mesajul să ajungă la Cristina.", "shipMsgIntro": "Bună ziua! Aș vrea să comand:", "shipMsgCourier": "Livrare", "shipMsgAddr": "Adresa", "shipMsgAsk": "Cât costă livrarea?", "shipMsgPickup": "Vin să ridic personal. Când pot veni?"}, "nl": {"jumpShip": "Bezorging", "shipEyebrow": "Bezorging", "shipTitle": "Thuis <em>bezorgd</em>", "shipText": "Wij versturen uw pakket naar heel Nederland, met PostNL, DHL of DPD. Vul uw adres in en kies de bezorger.", "shipNote": "Wij bezorgen alleen in Nederland. Cristina laat u via WhatsApp de verzendkosten weten voordat het pakket wordt verstuurd.", "shipItem": "Wat wilt u bestellen", "shipItemPh": "bv. Bloemenjurk, maat M", "shipName": "Volledige naam", "shipPhone": "Telefoon", "shipStreet": "Straat en huisnummer", "shipZip": "Postcode", "shipCity": "Plaats", "shipCourier": "Bezorger", "shipPickup": "Zelf ophalen", "shipBtn": "Bestelling sturen via WhatsApp", "shipOrder": "Bestellen met bezorging", "shipErr": "Vul alle velden in.", "shipErrZip": "De postcode lijkt niet te kloppen. Voorbeeld: 1234 AB.", "shipDone": "WhatsApp wordt geopend. Druk op verzenden zodat het bericht bij Cristina aankomt.", "shipMsgIntro": "Hallo! Ik wil graag bestellen:", "shipMsgCourier": "Bezorging", "shipMsgAddr": "Adres", "shipMsgAsk": "Wat zijn de verzendkosten?", "shipMsgPickup": "Ik kom het zelf ophalen. Wanneer kan ik langskomen?"}, "en": {"jumpShip": "Delivery", "shipEyebrow": "Delivery", "shipTitle": "Delivered <em>home</em>", "shipText": "We ship anywhere in the Netherlands with PostNL, DHL or DPD. Enter your address and choose the courier.", "shipNote": "We deliver within the Netherlands only. Cristina will tell you the delivery cost on WhatsApp before sending the parcel.", "shipItem": "What would you like to order", "shipItemPh": "e.g. Floral midi dress, size M", "shipName": "Full name", "shipPhone": "Phone", "shipStreet": "Street and number", "shipZip": "Postcode", "shipCity": "City", "shipCourier": "Courier", "shipPickup": "Pick up myself", "shipBtn": "Send order on WhatsApp", "shipOrder": "Order with delivery", "shipErr": "Please fill in all fields.", "shipErrZip": "The postcode doesn't look right. Example: 1234 AB.", "shipDone": "WhatsApp is opening. Press send so the message reaches Cristina.", "shipMsgIntro": "Hello! I would like to order:", "shipMsgCourier": "Delivery", "shipMsgAddr": "Address", "shipMsgAsk": "How much is delivery?", "shipMsgPickup": "I will pick it up myself. When can I come?"}, "ru": {"jumpShip": "Доставка", "shipEyebrow": "Доставка курьером", "shipTitle": "Доставка <em>на дом</em>", "shipText": "Отправляем посылки по всей Голландии через PostNL, DHL или DPD. Укажите адрес и выберите курьера.", "shipNote": "Доставляем только по Нидерландам. Кристина напишет вам в WhatsApp стоимость доставки до отправки посылки.", "shipItem": "Что заказываете", "shipItemPh": "напр. Платье миди с цветами, размер M", "shipName": "Имя и фамилия", "shipPhone": "Телефон", "shipStreet": "Улица и номер дома", "shipZip": "Почтовый индекс", "shipCity": "Город", "shipCourier": "Курьер", "shipPickup": "Заберу сам(а)", "shipBtn": "Отправить заказ в WhatsApp", "shipOrder": "Заказать с доставкой", "shipErr": "Заполните все поля.", "shipErrZip": "Индекс указан неверно. Пример: 1234 AB.", "shipDone": "Открывается WhatsApp. Нажмите «Отправить», чтобы сообщение дошло до Кристины.", "shipMsgIntro": "Здравствуйте! Хочу заказать:", "shipMsgCourier": "Доставка", "shipMsgAddr": "Адрес", "shipMsgAsk": "Сколько стоит доставка?", "shipMsgPickup": "Заберу сам(а). Когда можно прийти?"}};
 Object.keys(T_SHIP).forEach(l=>Object.assign(T[l],T_SHIP[l]));
@@ -739,6 +752,7 @@ const T_ADDR={"ro": {"jumpAddr": "Adresă", "addrEyebrow": "Adresă", "addrTitle
 Object.keys(T_ADDR).forEach(l=>Object.assign(T[l],T_ADDR[l]));
 const T_SPIN={ro:{spinOpen:"Vezi haina din toate părțile",zoomOpen:"Vezi poza mare",spinHint:"Trageți cu degetul stânga–dreapta ca să întoarceți haina."},nl:{spinOpen:"Bekijk het kledingstuk van alle kanten",zoomOpen:"Bekijk de grote foto",spinHint:"Sleep met uw vinger naar links of rechts om het kledingstuk te draaien."},en:{spinOpen:"See the item from all sides",zoomOpen:"See the large photo",spinHint:"Drag left or right to turn the item."},ru:{spinOpen:"Посмотреть вещь со всех сторон",zoomOpen:"Открыть большое фото",spinHint:"Проведите пальцем влево или вправо, чтобы повернуть вещь."}};Object.keys(T_SPIN).forEach(l=>Object.assign(T[l],T_SPIN[l]));
 const T_SVC={"ro": {"svcGo": "Cere prețul", "sd_s1": "Tiv curat, ca din fabrică", "sd_s5": "Fermoar nou, ascuns sau vizibil", "sd_s2": "Lungimea potrivită pentru dumneavoastră", "sd_s4": "Haina stă perfect pe corp", "sd_s7": "Găuri, rupturi, cusături desfăcute", "sd_s10": "Tipare și haine cusute pe măsură", "step1": "Alegeți lucrarea", "step2": "Trimiteți o poză pe WhatsApp", "step3": "Primiți prețul și termenul"}, "nl": {"svcGo": "Vraag de prijs", "sd_s1": "Nette zoom, als nieuw", "sd_s5": "Nieuwe rits, verborgen of zichtbaar", "sd_s2": "De juiste lengte voor u", "sd_s4": "Een perfecte pasvorm", "sd_s7": "Gaten, scheuren, losse naden", "sd_s10": "Patronen en kleding op maat", "step1": "Kies wat u nodig heeft", "step2": "Stuur een foto via WhatsApp", "step3": "Ontvang prijs en levertijd"}, "en": {"svcGo": "Get a price", "sd_s1": "A clean, factory-style hem", "sd_s5": "New zip, hidden or visible", "sd_s2": "The right length for you", "sd_s4": "A perfect fit", "sd_s7": "Holes, tears, loose seams", "sd_s10": "Patterns and made-to-measure clothes", "step1": "Choose the job", "step2": "Send a photo on WhatsApp", "step3": "Get the price and timing"}, "ru": {"svcGo": "Узнать цену", "sd_s1": "Аккуратный подгиб, как с фабрики", "sd_s5": "Новая молния, потайная или видимая", "sd_s2": "Нужная вам длина", "sd_s4": "Идеальная посадка по фигуре", "sd_s7": "Дырки, разрывы, распоротые швы", "sd_s10": "Выкройки и пошив по меркам", "step1": "Выберите услугу", "step2": "Пришлите фото в WhatsApp", "step3": "Получите цену и срок"}};Object.keys(T_SVC).forEach(l=>Object.assign(T[l],T_SVC[l]));
+const T_MOD={"ro": {"shopText": "Haine cusute de Cristina de la zero, după tipar propriu. Fiecare piesă este unică.", "jumpMod": "Haine modificate", "modEyebrow": "Înainte și după", "modTitle": "Haine <em>modificate</em>", "modText": "Haine ajustate, scurtate sau transformate de Cristina. Aveți o haină care nu vă vine bine? Trimiteți-mi o poză pe WhatsApp.", "modEmpty": "În curând: poze cu haine modificate."}, "nl": {"shopText": "Kleding die Cristina helemaal zelf naait, met een eigen patroon. Elk stuk is uniek.", "jumpMod": "Aangepaste kleding", "modEyebrow": "Voor en na", "modTitle": "Aangepaste <em>kleding</em>", "modText": "Kleding die Cristina heeft aangepast, ingekort of veranderd. Past iets niet goed? Stuur mij een foto via WhatsApp.", "modEmpty": "Binnenkort: foto’s van aangepaste kleding."}, "en": {"shopText": "Clothes Cristina sews entirely herself, from her own pattern. Every piece is unique.", "jumpMod": "Altered clothes", "modEyebrow": "Before and after", "modTitle": "Altered <em>clothes</em>", "modText": "Clothes Cristina has adjusted, shortened or transformed. Something doesn’t fit well? Send me a photo on WhatsApp.", "modEmpty": "Coming soon: photos of altered clothes."}, "ru": {"shopText": "Одежда, которую Кристина шьёт полностью сама, по собственной выкройке. Каждая вещь уникальна.", "jumpMod": "Переделанная одежда", "modEyebrow": "До и после", "modTitle": "Переделанная <em>одежда</em>", "modText": "Одежда, которую Кристина подогнала, укоротила или переделала. Вещь плохо сидит? Пришлите мне фото в WhatsApp.", "modEmpty": "Скоро здесь появятся фото переделанной одежды."}};Object.keys(T_MOD).forEach(l=>Object.assign(T[l],T_MOD[l]));
 const T_UI={"ro": {"trust1": "Atelier în Schiedam", "trust2": "Răspund repede pe WhatsApp", "trust3": "RO · NL · EN · RU", "aboutCta": "Scrieți-mi pe WhatsApp", "fAppt": "Programări doar pe WhatsApp"}, "nl": {"trust1": "Atelier in Schiedam", "trust2": "Snel antwoord via WhatsApp", "trust3": "NL · EN · RO · RU", "aboutCta": "Stuur mij een WhatsApp", "fAppt": "Afspraken alleen via WhatsApp"}, "en": {"trust1": "Workshop in Schiedam", "trust2": "Quick replies on WhatsApp", "trust3": "EN · NL · RO · RU", "aboutCta": "Message me on WhatsApp", "fAppt": "Appointments via WhatsApp only"}, "ru": {"trust1": "Ателье в Схидаме", "trust2": "Быстро отвечаю в WhatsApp", "trust3": "RU · RO · NL · EN", "aboutCta": "Напишите мне в WhatsApp", "fAppt": "Запись только через WhatsApp"}};Object.keys(T_UI).forEach(l=>Object.assign(T[l],T_UI[l]));
 const T_WORK={ro:{jumpWork:"Lucrări făcute",workEyebrow:"Portofoliu",workTitle:"Haine <em>făcute</em> de Cristina",workText:"Câteva lucrări terminate: haine cusute pe măsură, ajustări și reparații. Vă place ceva? Scrieți-ne pe WhatsApp.",workEmpty:"În curând: poze cu lucrările Cristinei."},
 nl:{jumpWork:"Ons werk",workEyebrow:"Portfolio",workTitle:"Door Cristina <em>gemaakt</em>",workText:"Een paar afgeronde opdrachten: kleding op maat, aanpassingen en reparaties. Iets gezien dat u mooi vindt? Stuur ons een WhatsApp.",workEmpty:"Binnenkort: foto's van Cristina's werk."},
@@ -755,6 +769,7 @@ let state=JSON.parse(document.getElementById("data").textContent);
 if(!state.services)state.services=[];
 if(!state.reviews)state.reviews=[];
 if(!state.ship)state.ship={price:"6.95",free:"",discount:"20"};
+let pendingExtra=[];
 let filter="Toate", isAdmin=false, artifactApi=null, pendingPhoto=null, busy=false, rating=0, pendingRevPhoto=null;
 const $=id=>document.getElementById(id);
 
@@ -784,7 +799,7 @@ function waGeneral(){
 }
 function waProduct(p){
   const pr=fmtPrice(p.price,"ro"), sz=p.size?` (${t("size").toLowerCase()} ${p.size})`:"";
-  if(p.cat==="Lucrările mele"){
+  if(p.cat==="Lucrările mele"||String(p.cat).startsWith("sec:")){
     const m={ro:`Bună ziua! Am văzut lucrarea „${p.name}” pe site. Aș vrea și eu ceva asemănător.`,nl:`Hallo! Ik zag “${p.name}” op uw website. Ik wil graag iets vergelijkbaars laten maken.`,en:`Hello! I saw “${p.name}” on your website. I would like something similar made.`,ru:`Здравствуйте! Я увидел(а) на сайте работу «${p.name}». Хочу заказать что-то похожее.`}[lang];
     return wa(m+roLine(`Clientul vrea o lucrare ca „${p.name}”.`));
   }
@@ -920,9 +935,96 @@ function setupWorks(){
   $("wAddBtn").onclick=()=>{
     if(!pendingWorks.length){msg.textContent="Alegeți mai întâi pozele.";return;}
     const name=$("w-name").value.trim()||"Lucrare",photos=pendingWorks.slice();
-    run(async()=>{for(const ph of photos){const url=await upload(ph);must(await sb.from("products").insert({name,cat:"Lucrările mele",photo:url,sold:false}));}},
-      photos.length===1?"Lucrarea este pe site.":photos.length+" lucrări sunt pe site.").then(ok=>{if(ok){pendingWorks=[];$("w-name").value="";$("w-photo").value="";msg.textContent="";$("wAddBtn").disabled=true;}});
+    const one=$("w-one").checked&&photos.length>1;
+    run(async()=>{const urls=[];for(const ph of photos)urls.push(await upload(ph));
+      if(one)must(await sb.from("products").insert({name,cat:"Lucrările mele",photo:urls[0],photos:urls.slice(1),sold:false}));
+      else for(const u of urls)must(await sb.from("products").insert({name,cat:"Lucrările mele",photo:u,sold:false}));},
+      one?"Lucrarea cu "+photos.length+" poze este pe site.":(photos.length===1?"Lucrarea este pe site.":photos.length+" lucrări sunt pe site.")).then(ok=>{if(ok){pendingWorks=[];$("w-name").value="";$("w-photo").value="";msg.textContent="";$("wAddBtn").disabled=true;}});
   };
+}
+// ---- custom gallery sections: title and text edited by the admin ----
+const DEF_SECS=[
+ {id:"a",eyebrow:"Înainte și după",title:"Haine modificate",text:"Haine ajustate, scurtate sau transformate de Cristina. Aveți o haină care nu vă vine bine? Trimiteți-mi o poză pe WhatsApp."},
+ {id:"b",eyebrow:"Ocazii speciale",title:"Rochii de seară",text:"Rochii pentru nunți, botezuri și petreceri, cusute sau ajustate pe măsură."},
+ {id:"c",eyebrow:"Pentru cei mici",title:"Haine pentru copii",text:"Haine cusute, scurtate sau reparate pentru copii."}];
+function secList(){return state.sections||DEF_SECS;}
+async function saveSecs(list,msg){return run(async()=>{must(await sb.from("settings").upsert({key:"sections",value:{list}}));},msg);}
+function renderSections(){
+  const wrap=$("customSecs");if(!wrap)return;wrap.innerHTML="";
+  const nav=$("secNav");if(nav)nav.innerHTML="";
+  secList().forEach((sec,idx)=>{
+    const cat="sec:"+sec.id;
+    const items=state.products.filter(p=>p.cat===cat&&(p.img||p.video||isAdmin));
+    if(!isAdmin&&loaded&&!items.length)return;
+    const S=el("section","main gsec");S.id="sec-"+sec.id;
+    const hd=el("div","sechead");
+    if(sec.eyebrow)hd.append(el("span","eyebrow",sec.eyebrow));
+    const h=el("h2","sec");const words=String(sec.title||"").split(" ");
+    if(words.length>1){h.append(words.slice(0,-1).join(" ")+" ");h.append(el("em",null,words[words.length-1]));}else h.append(sec.title||"");
+    hd.append(h);if(sec.text)hd.append(el("p",null,sec.text));S.append(hd);
+    if(nav){const a=el("a",null,sec.title);a.href="#sec-"+sec.id;nav.append(a);}
+    if(isAdmin){
+      // edit the texts
+      const ed=el("div","workadd secedit");
+      ed.append(el("h3",null,"✏️ Textele secțiunii "+(idx+1)));
+      const mk=(lab,val,area)=>{const f=el("div","field");const l=el("label",null,lab);const i=document.createElement(area?"textarea":"input");i.value=val||"";i.maxLength=area?400:80;f.append(l,i);ed.append(f);return i;};
+      const iE=mk("Text mic deasupra (opțional)",sec.eyebrow),iT=mk("Titlul (ultimul cuvânt apare înclinat, roz)",sec.title),iX=mk("Descrierea",sec.text,true);
+      const row=el("div","actions");
+      const sv=el("button","btn-main","Salvează textele");sv.type="button";
+      sv.onclick=()=>{if(!iT.value.trim()){setStatus("Scrieți un titlu.",true);return;}
+        const list=secList().map(x=>x.id===sec.id?{...x,eyebrow:iE.value.trim(),title:iT.value.trim(),text:iX.value.trim()}:x);saveSecs(list,"Textele secțiunii au fost salvate.");};
+      const del=el("button","plain danger","Șterge secțiunea");del.type="button";
+      confirmBtn(del,"Șterge secțiunea",()=>{if(items.length){setStatus("Ștergeți mai întâi pozele din secțiune, apoi secțiunea.",true);return;}saveSecs(secList().filter(x=>x.id!==sec.id),"Secțiunea a fost ștearsă.");});
+      const up=el("button","plain","↑ Mută mai sus");up.type="button";up.disabled=idx===0;
+      up.onclick=()=>{const l=secList().slice();[l[idx-1],l[idx]]=[l[idx],l[idx-1]];saveSecs(l,"Secțiunea a fost mutată.");};
+      row.append(sv,up,del);ed.append(row);S.append(ed);
+      // add photos / video
+      const ad=el("div","workadd");
+      ad.append(el("h3",null,"Adaugă poze sau video"));
+      ad.append(el("p",null,"Puteți alege mai multe poze deodată, sau un video (maximum 50 MB). Scrieți întâi numele, dacă vreți."));
+      const picks=el("div","workpicks");
+      const lp=el("label","chgphoto workpick","📷 Alege pozele");const ip=document.createElement("input");ip.type="file";ip.accept="image/*";ip.multiple=true;lp.append(ip);
+      const lv=el("label","chgphoto workpick vidadd","🎬 Pune un video");const iv=document.createElement("input");iv.type="file";iv.accept="video/*";lv.append(iv);
+      picks.append(lp,lv);ad.append(picks);
+      const nf=el("div","field");const nl=el("label",null,"Nume (opțional)");const ni=document.createElement("input");ni.maxLength=80;ni.placeholder="ex. Rochie scurtată";nf.append(nl,ni);ad.append(nf);
+      const oc=el("label","consent");const oi=document.createElement("input");oi.type="checkbox";oi.checked=true;oc.append(oi," Toate pozele alese sunt aceeași haină (o singură lucrare cu mai multe poze)");ad.append(oc);
+      const ar=el("div","actions");const go=el("button","btn-main","Pune pe site");go.type="button";go.disabled=true;const msg=el("span","status");ar.append(go,msg);ad.append(ar);
+      let pend=[];
+      ip.onchange=async e=>{const fs=[...(e.target.files||[])];if(!fs.length)return;msg.textContent="Se pregătesc pozele…";go.disabled=true;pend=[];
+        for(const f of fs){try{pend.push(await compress(f,1200,0.78));}catch(_){}}
+        msg.textContent=pend.length?(pend.length===1?"1 poză aleasă ✓":pend.length+" poze alese ✓"):"Pozele nu au putut fi citite.";go.disabled=!pend.length;};
+      photoGuard(ip,"Poze pentru „"+sec.title+"”");
+      iv.onchange=e=>{const f=e.target.files&&e.target.files[0];e.target.value="";if(!f)return;
+        if(f.size>50e6){msg.textContent="Video-ul are "+Math.round(f.size/1e6)+" MB. Maximum este 50 MB.";return;}
+        const name=ni.value.trim()||"Lucrare";msg.textContent="Se urcă video-ul… poate dura un minut.";
+        run(async()=>{const url=await uploadFile(f);must(await sb.from("products").insert({name,cat,video:url,sold:false}));},"Video-ul este pe site.");};
+      photoGuard(iv,"Video pentru „"+sec.title+"”");
+      go.onclick=()=>{const photos=pend.slice();if(!photos.length)return;const name=ni.value.trim()||"Lucrare";const one=oi.checked&&photos.length>1;
+        run(async()=>{const urls=[];for(const ph of photos)urls.push(await upload(ph));
+          if(one)must(await sb.from("products").insert({name,cat,photo:urls[0],photos:urls.slice(1),sold:false}));
+          else for(const u of urls)must(await sb.from("products").insert({name,cat,photo:u,sold:false}));},
+          one?"Lucrarea cu "+photos.length+" poze este pe site.":(photos.length===1?"Poza este pe site.":photos.length+" poze sunt pe site."));};
+      S.append(ad);
+    }
+    const box=el("div","works");
+    items.forEach(p=>{
+      const f=el("figure","work");const w=el("div","wimg");
+      mediaThumb(p,w,p.name&&p.name!=="Lucrare"?p.name:sec.title);f.append(w);
+      if(p.name&&p.name!=="Lucrare")f.append(el("figcaption",null,p.name));
+      const a=el("a","wask");a.href=waProduct(p);a.target="_blank";a.rel="noopener";a.innerHTML=WA_SVG;a.append(" "+t("askWork"));f.append(a);
+      if(isAdmin)f.append(adminTools(p,true));
+      box.append(f);
+    });
+    S.append(box);
+    if(!items.length)S.append(el("p","empty","Încă nu sunt poze în această secțiune."));
+    wrap.append(S);
+  });
+  if(isAdmin){
+    const S=el("section","main gsec");const b=el("button","btn-main","+ Adaugă o secțiune nouă");b.type="button";
+    b.onclick=()=>{const title=prompt("Titlul secțiunii noi (ex. Haine de mireasă):");if(!title||!title.trim())return;
+      saveSecs([...secList(),{id:Date.now().toString(36),eyebrow:"",title:title.trim(),text:""}],"Secțiunea „"+title.trim()+"” a fost adăugată. Scrieți-i descrierea și puneți poze.");};
+    S.append(b);wrap.append(S);
+  }
 }
 function adminTools(p,work){
   const c=el("div","admintools");
@@ -947,7 +1049,7 @@ function adminTools(p,work){
         e.target.value="";
       };
       photoGuard(fi,"Poză pentru „"+p.name+"”");
-      const sp=el("label","chgphoto spinadd");sp.append("🔄 "+(p.extra.length?"Adaugă poze 360° ("+(p.extra.length+(p.img?1:0))+")":"Adaugă poze 360°"));
+      const sp=el("label","chgphoto spinadd");sp.append("🖼️ "+(p.extra.length?"Mai multe poze ("+(p.extra.length+(p.img?1:0))+")":"Mai multe poze"));
       const si=document.createElement("input");si.type="file";si.accept="image/*";si.multiple=true;si.setAttribute("aria-label","Poze din toate părțile pentru "+p.name);sp.append(si);
       si.onchange=async e=>{
         const fs=[...(e.target.files||[])];e.target.value="";if(!fs.length)return;
@@ -961,7 +1063,7 @@ function adminTools(p,work){
       };
       photoGuard(si,"Poze 360° pentru „"+p.name+"”");
       c.append(ch);c.append(sp);
-      if(p.extra.length){const cl=el("button",null,"Scoate pozele 360°");cl.type="button";confirmBtn(cl,"Scoate pozele 360°",()=>run(async()=>{must(await sb.from("products").update({photos:[]}).eq("id",p.id));p.extra.forEach(dropPhoto);},"Pozele 360° au fost scoase. Poza principală a rămas."));r.append(cl);}
+      if(p.extra.length){const cl=el("button",null,"Scoate pozele în plus");cl.type="button";confirmBtn(cl,"Scoate pozele în plus",()=>run(async()=>{must(await sb.from("products").update({photos:[]}).eq("id",p.id));p.extra.forEach(dropPhoto);},"Pozele 360° au fost scoase. Poza principală a rămas."));r.append(cl);}
       const vl=el("label","chgphoto vidadd");vl.append("🎬 "+(p.video?"Schimbă video":"Adaugă video"));
       const vi=document.createElement("input");vi.type="file";vi.accept="video/*";vi.setAttribute("aria-label","Video pentru "+p.name);vl.append(vi);
       vi.onchange=e=>{
@@ -1031,7 +1133,7 @@ function spinOpen(frames,name){
 }
 function spinClose(){if(!spin)return;if(spin.timer)clearInterval(spin.timer);if(spin.key)document.removeEventListener("keydown",spin.key);document.removeEventListener("keydown",spin.esc);spin.wrap.remove();spin=null;}
 function renderFilters(){
-  const present=new Set(state.products.filter(p=>p.cat!=="Lucrările mele").map(p=>p.cat));
+  const present=new Set(state.products.filter(p=>p.cat!=="Lucrările mele"&&!String(p.cat).startsWith("sec:")).map(p=>p.cat));
   const list=["Toate",...CATS.filter(c=>present.has(c))];
   if(!list.includes(filter))filter="Toate";
   const nav=$("filters");nav.innerHTML="";
@@ -1089,9 +1191,9 @@ function renderAddr(){
 }
 function render(){
   if(qSvc&&!$("qWrap").hidden)qRender();
-  renderHero();renderAddr();renderServices();renderWorks();renderFilters();renderReviews();renderStars();renderShare();
+  renderHero();renderAddr();renderServices();renderWorks();renderSections();renderFilters();renderReviews();renderStars();renderShare();
   const grid=$("grid");grid.innerHTML="";
-  const items=state.products.filter(p=>p.cat!=="Lucrările mele"&&(filter==="Toate"||p.cat===filter));
+  const items=state.products.filter(p=>p.cat!=="Lucrările mele"&&!String(p.cat).startsWith("sec:")&&(filter==="Toate"||p.cat===filter));
   const forSale=items.filter(p=>p.cat!=="Lucrările mele");
   const avail=forSale.filter(p=>!p.sold).length, soldN=forSale.length-avail;
   $("count").textContent=forSale.length?`${avail} ${avail===1?t("avail1"):t("availN")}${soldN?" · "+soldN+" "+t("soldN"):""}`:"";
@@ -1122,12 +1224,14 @@ function fromR(r){return {id:r.id,name:r.name,text:r.body||"",stars:r.stars||5,i
 async function loadData(){
   if(!sb){loaded=true;render();return;}
   try{
-    const [p,r,h]=await Promise.all([
+    const [p,r,h,sx]=await Promise.all([
       sb.from("products").select("*").order("sort",{ascending:true}).order("created_at",{ascending:false}),
       sb.from("reviews").select("*").order("created_at",{ascending:false}),
-      sb.from("settings").select("value").eq("key","hero").maybeSingle()]);
+      sb.from("settings").select("value").eq("key","hero").maybeSingle(),
+      sb.from("settings").select("value").eq("key","sections").maybeSingle()]);
     state.products=(must(p)||[]).map(fromP);state.reviews=(must(r)||[]).map(fromR);
-    const hv=must(h);state.hero=hv&&hv.value&&hv.value.img?{img:hv.value.img}:null;loadOk=true;
+    const hv=must(h);state.hero=hv&&hv.value&&hv.value.img?{img:hv.value.img}:null;
+    const sv=must(sx);state.sections=sv&&sv.value&&Array.isArray(sv.value.list)?sv.value.list:null;loadOk=true;
   }catch(e){console.error(e);loadOk=false;}
   loaded=true;render();
 }
@@ -1203,9 +1307,11 @@ function setupAdmin(email){
   applyLang();
   const sel=$("f-cat");sel.innerHTML="";CATS.filter(c=>c!=="Lucrările mele").forEach(c=>{const o=el("option",null,c);o.value=c;sel.append(o);});
   $("f-photo").onchange=async e=>{
-    const f=e.target.files&&e.target.files[0];if(!f)return;
-    $("pick").innerHTML='<span>Se pregătește poza…</span>';
-    try{pendingPhoto=await compress(f);const pk=$("pick");pk.innerHTML="";const im=new Image();im.src=pendingPhoto;im.alt="Poza aleasă";pk.append(im);}
+    const fs=[...(e.target.files||[])];const f=fs[0];if(!f)return;
+    $("pick").innerHTML='<span>Se pregătește poza…</span>';pendingExtra=[];
+    try{pendingPhoto=await compress(f);for(const g of fs.slice(1)){try{pendingExtra.push(await compress(g,1000,0.76));}catch(_){}}
+      const pk=$("pick");pk.innerHTML="";const im=new Image();im.src=pendingPhoto;im.alt="Poza aleasă";pk.append(im);
+      if(pendingExtra.length)pk.append(el("span","pickmore","+"+pendingExtra.length+" poze"));}
     catch(_){pendingPhoto=null;$("pick").innerHTML='<span>Poza nu a putut fi citită. Încearcă altă poză (JPG sau PNG) sau trimite-o lui Claude în chat.</span>';}
   };
   $("addBtn").onclick=()=>{
@@ -1214,8 +1320,8 @@ function setupAdmin(email){
     if(!name){setStatus("Scrie numele.",true);$("f-name").focus();return;}
     const pr=parseFloat($("f-price").value.trim().replace(",","."));
     const row={name,cat:$("f-cat").value,size:$("f-size").value.trim(),price:isNaN(pr)?null:pr,descr:$("f-desc").value.trim(),sold:$("f-sold").checked};
-    const photo=pendingPhoto;
-    run(async()=>{row.photo=await upload(photo);must(await sb.from("products").insert(row));},"Gata! „"+name+"” este pe site.").then(ok=>{if(ok){pendingPhoto=null;["f-name","f-price","f-size","f-desc"].forEach(i=>$(i).value="");$("f-sold").checked=false;$("f-photo").value="";$("pick").innerHTML='<span id="pickText">Poza aleasă apare aici</span>';}});
+    const photo=pendingPhoto,extra=pendingExtra.slice();
+    run(async()=>{row.photo=await upload(photo);if(extra.length){row.photos=[];for(const x of extra)row.photos.push(await upload(x));}must(await sb.from("products").insert(row));},"Gata! „"+name+"” este pe site.").then(ok=>{if(ok){pendingPhoto=null;pendingExtra=[];["f-name","f-price","f-size","f-desc"].forEach(i=>$(i).value="");$("f-sold").checked=false;$("f-photo").value="";$("pick").innerHTML='<span id="pickText">Poza aleasă apare aici</span>';}});
   };
   $("h-photo").onchange=async e=>{
     const f=e.target.files&&e.target.files[0];if(!f)return;
