@@ -502,6 +502,27 @@ footer .sig em{color:#F5B8CE}
 .fmtprev{border:1px dashed var(--line);border-radius:12px;padding:12px 14px;background:#fff;display:grid;gap:6px}
 .fmtprev .fmtpl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
 .fmtprev h2.sec{font-size:28px;margin:0}.fmtprev p{margin:0}
+
+.admintools{display:flex!important;flex-wrap:wrap;gap:5px!important;margin-top:4px}
+.admintools>*{flex:0 0 auto!important;width:auto!important;min-height:32px!important;height:32px;padding:0 9px!important;font-size:12.5px!important;font-weight:600;border-radius:8px!important;line-height:1;display:inline-flex!important;align-items:center;justify-content:center;white-space:nowrap;border:1px solid var(--line);background:#fff;color:var(--esp);cursor:pointer}
+.admintools .chgphoto{background:var(--rasp)!important;color:#fff!important;border:0}
+.admintools .spinadd{background:var(--esp)!important}.admintools .vidadd{background:#5B4A44!important}
+.admintools .danger{color:var(--danger)}
+details.workadd{padding:0!important;gap:0!important;overflow:hidden}
+details.workadd>summary{list-style:none;cursor:pointer;padding:11px 14px;font-weight:700;font-size:15px;color:var(--rasp);display:flex;align-items:center;justify-content:space-between}
+details.workadd>summary::-webkit-details-marker{display:none}
+details.workadd>summary::after{content:"▾";font-size:14px;transition:transform .2s}
+details.workadd[open]>summary::after{transform:rotate(180deg)}
+details.workadd[open]{padding:0 14px 14px!important}
+details.workadd[open]>summary{margin:0 -14px 8px;border-bottom:1px dashed var(--line)}
+details.workadd>*:not(summary){margin-top:8px}
+.secrow details.workadd{margin-bottom:10px}
+.fmtbar{gap:4px!important}.fmtbtn{min-width:32px!important;height:32px!important;padding:0 8px!important;font-size:14px!important}
+.secedit .field input,.secedit .field textarea{padding:8px 10px}
+.secedit .field textarea{min-height:56px!important}
+.secedit .actions .btn-main{padding:9px 16px}
+.secedit .actions .plain{padding:8px 10px;font-size:13px}
+.fmtprev{padding:8px 10px!important}.fmtprev h2.sec{font-size:22px!important}
 </style></head><body><script type="application/json" id="data">{"services": [{"id": "s9", "ro": "Coasere haine pe măsură", "nl": "Kleding op maat naaien", "en": "Clothes sewn to measure", "ru": "Пошив одежды на заказ", "price": ""}, {"id": "s10", "ro": "Modelare constructivă (tipare pe măsură)", "nl": "Patroonconstructie (patronen op maat)", "en": "Pattern making (made-to-measure patterns)", "ru": "Конструирование и моделирование одежды (выкройки)", "price": ""}, {"id": "s1", "ro": "Scurtare pantaloni și blugi", "nl": "Broek en jeans inkorten", "en": "Shorten trousers and jeans", "ru": "Укоротить брюки и джинсы", "price": ""}, {"id": "s2", "ro": "Scurtare rochie sau fustă", "nl": "Jurk of rok inkorten", "en": "Shorten a dress or skirt", "ru": "Укоротить платье или юбку", "price": ""}, {"id": "s3", "ro": "Scurtare mâneci", "nl": "Mouwen inkorten", "en": "Shorten sleeves", "ru": "Укоротить рукава", "price": ""}, {"id": "s4", "ro": "Strâmtare sau lărgire", "nl": "Innemen of uitleggen", "en": "Take in or let out", "ru": "Ушить или расширить", "price": ""}, {"id": "s5", "ro": "Înlocuire fermoar", "nl": "Rits vervangen", "en": "Replace a zipper", "ru": "Замена молнии", "price": ""}, {"id": "s7", "ro": "Reparații și cusături", "nl": "Reparaties en naaiwerk", "en": "Repairs and stitching", "ru": "Ремонт одежды", "price": ""}, {"id": "s8", "ro": "Alte lucrări — întrebați-ne", "nl": "Ander naaiwerk — vraag het ons", "en": "Other sewing work — just ask", "ru": "Другие работы — спрашивайте", "price": ""}], "products": [], "reviews": [], "hero": null, "ship": {"price": "6.95", "free": "", "discount": "20"}}</script><div class="wrap" id="root">
   <div class="topbar"><div class="tbin"><span class="tbitem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Schiedam</span><span class="tbitem tbwa">WhatsApp +31 6 44 16 23 29</span><div class="langbar" id="langbar" role="group" aria-label="Limba / Taal / Language / Язык">
     <button type="button" data-lang="ro">RO</button><button type="button" data-lang="nl">NL</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button>
@@ -589,14 +610,12 @@ footer .sig em{color:#F5B8CE}
       <h2 class="sec" data-t-html="workTitle">Haine <em>făcute</em> de Cristina</h2>
       <p data-t="workText">Câteva lucrări terminate: haine cusute pe măsură, ajustări și reparații. Vă place ceva? Scrieți-ne pe WhatsApp.</p>
     </div>
-    <div class="workadd" id="workAdd" hidden="">
-      <h3>Adaugă poze cu lucrări făcute</h3>
-      <p>Puteți alege mai multe poze deodată, sau un video (maximum 50 MB, cam 30 de secunde). Scrieți întâi numele, dacă vreți (ex. „Rochie de seară cusută pe măsură”).</p>
+    <details class="workadd" id="workAdd" hidden=""><summary>➕ Adaugă poze sau video</summary>
       <div class="workpicks"><label class="chgphoto workpick">📷 Alege pozele<input type="file" id="w-photo" accept="image/*" multiple></label><label class="chgphoto workpick vidadd">🎬 Pune un video<input type="file" id="w-video" accept="video/*"></label></div>
       <div class="field"><label for="w-name">Nume (opțional)</label><input id="w-name" maxlength="80" placeholder="ex. Rochie cusută pe măsură"></div>
-      <label class="consent"><input type="checkbox" id="w-one" checked> Toate pozele alese sunt aceeași haină (o singură lucrare cu mai multe poze)</label>
+      <label class="consent"><input type="checkbox" id="w-one" checked> Toate pozele = o singură haină</label>
       <div class="actions"><button type="button" class="btn-main" id="wAddBtn" disabled>Pune pe site</button><span class="status" id="wMsg" role="status"></span></div>
-    </div>
+    </details>
     <div class="works" id="works"></div>
     <p class="empty" id="worksEmpty" hidden="" data-t="workEmpty">În curând: poze cu lucrările Cristinei.</p>
   </section>
@@ -1006,9 +1025,9 @@ function fmt(x){
 }
 const plain=x=>String(x||"").replace(/\{(roz|auriu|verde|albastru|negru)\}|\{\/\}|\*\*|__/g,"").replace(/(^|\s)_([^_]+?)_/g,"$1$2");
 const hasFmt=x=>/\*\*|__|\{(roz|auriu|verde|albastru|negru)\}|(^|\s)_[^_]+_/.test(String(x||""));
-function fmtBar(inp,onChange){
-  const bar=el("div","fmtbar");
-  const wrapSel=(a,b)=>{const s0=inp.selectionStart,s1=inp.selectionEnd,v=inp.value;
+function fmtBar(getInp,onChange){
+  const bar=el("div","fmtbar");let inp=null;
+  const wrapSel=(a,b)=>{inp=typeof getInp==="function"?getInp():getInp;if(!inp)return;const s0=inp.selectionStart,s1=inp.selectionEnd,v=inp.value;
     if(s0===s1){setStatus("Selectați mai întâi cuvintele (țineți apăsat pe text), apoi apăsați butonul.",true);return;}
     inp.value=v.slice(0,s0)+a+v.slice(s0,s1)+b+v.slice(s1);inp.focus();inp.setSelectionRange(s0+a.length,s1+a.length);onChange&&onChange();};
   const btn=(label,title,fn,style)=>{const b=el("button","fmtbtn");b.type="button";b.innerHTML=label;b.title=title;b.setAttribute("aria-label",title);if(style)b.style.cssText=style;
@@ -1017,7 +1036,7 @@ function fmtBar(inp,onChange){
   btn("<i>I</i>","Înclinat",()=>wrapSel("_","_"));
   btn("<u>U</u>","Subliniat",()=>wrapSel("__","__"));
   Object.entries(FCOL).forEach(([n,c])=>btn("●","Culoare "+n,()=>wrapSel("{"+n+"}","{/}"),"color:"+c+";font-size:22px"));
-  btn("✕","Șterge formatarea (tot textul)",()=>{inp.value=plain(inp.value);onChange&&onChange();});
+  btn("✕","Șterge formatarea (căsuța selectată)",()=>{inp=typeof getInp==="function"?getInp():getInp;if(!inp)return;inp.value=plain(inp.value);onChange&&onChange();});
   return bar;
 }
 // ---- custom gallery sections: title and text edited by the admin ----
@@ -1044,14 +1063,14 @@ function renderSections(){
     if(nav){const a=el("a",null,plain(tx(sec.title)));a.href="#sec-"+sec.id;nav.append(a);}
     if(isAdmin){
       // edit the texts
-      const ed=el("div","workadd secedit");
-      ed.append(el("h3",null,"✏️ Textele secțiunii "+(idx+1)));
+      const ed=el("details","workadd secedit");
+      ed.append(el("summary",null,"✏️ Editează textele"));
       const pv=el("div","fmtprev");
       const mk=(lab,val,area)=>{const f=el("div","field");const l=el("label",null,lab);const i=document.createElement(area?"textarea":"input");i.value=val||"";i.maxLength=area?600:120;
         const upd=()=>{pv.innerHTML='<span class="fmtpl">Așa va arăta:</span><span class="eyebrow">'+fmt(iE.value)+'</span><h2 class="sec">'+(hasFmt(iT.value)?fmt(iT.value):esc(iT.value))+'</h2><p>'+fmt(iX.value)+'</p>';};
-        i.addEventListener("input",()=>upd());f.append(l,fmtBar(i,()=>upd()),i);ed.append(f);i._upd=upd;return i;};
-      let iE,iT,iX;iE=mk("Text mic deasupra (opțional)",sec.eyebrow);iT=mk("Titlul (dacă nu-l formatați, ultimul cuvânt apare înclinat, roz)",sec.title);iX=mk("Descrierea",sec.text,true);
-      ed.append(el("p","fmthelp","Selectați cuvintele cu degetul, apoi apăsați B (îngroșat), I (înclinat), U (subliniat) sau o bulină de culoare."));ed.append(pv);iT._upd();
+        i.addEventListener("input",()=>upd());i.addEventListener("focus",()=>{lastInp=i;});f.append(l,i);ed.append(f);i._upd=upd;return i;};
+      let iE,iT,iX,lastInp=null;ed.append(fmtBar(()=>lastInp||iX,()=>{lastInp&&lastInp._upd();}));iE=mk("Text mic deasupra",sec.eyebrow);iT=mk("Titlul",sec.title);iX=mk("Descrierea",sec.text,true);
+      ed.insertBefore(el("p","fmthelp","Selectați cuvinte într-o căsuță, apoi apăsați B, I, U sau o culoare."),ed.children[1]);ed.append(pv);iT._upd();
       const row=el("div","actions");
       const sv=el("button","btn-main","Salvează textele");sv.type="button";
       sv.onclick=()=>{if(!iT.value.trim()){setStatus("Scrieți un titlu.",true);return;}
@@ -1062,15 +1081,14 @@ function renderSections(){
       up.onclick=()=>{const l=secList().slice();[l[idx-1],l[idx]]=[l[idx],l[idx-1]];saveSecs(l,"Secțiunea a fost mutată.");};
       row.append(sv,up,del);ed.append(row);S.append(ed);
       // add photos / video
-      const ad=el("div","workadd");
-      ad.append(el("h3",null,"Adaugă poze sau video"));
-      ad.append(el("p",null,"Puteți alege mai multe poze deodată, sau un video (maximum 50 MB). Scrieți întâi numele, dacă vreți."));
+      const ad=el("details","workadd");if(!items.length)ad.open=true;
+      ad.append(el("summary",null,"➕ Adaugă poze sau video"));
       const picks=el("div","workpicks");
       const lp=el("label","chgphoto workpick","📷 Alege pozele");const ip=document.createElement("input");ip.type="file";ip.accept="image/*";ip.multiple=true;lp.append(ip);
       const lv=el("label","chgphoto workpick vidadd","🎬 Pune un video");const iv=document.createElement("input");iv.type="file";iv.accept="video/*";lv.append(iv);
       picks.append(lp,lv);ad.append(picks);
       const nf=el("div","field");const nl=el("label",null,"Nume (opțional)");const ni=document.createElement("input");ni.maxLength=80;ni.placeholder="ex. Rochie scurtată";nf.append(nl,ni);ad.append(nf);
-      const oc=el("label","consent");const oi=document.createElement("input");oi.type="checkbox";oi.checked=true;oc.append(oi," Toate pozele alese sunt aceeași haină (o singură lucrare cu mai multe poze)");ad.append(oc);
+      const oc=el("label","consent");const oi=document.createElement("input");oi.type="checkbox";oi.checked=true;oc.append(oi," Toate pozele = o singură haină");ad.append(oc);
       const ar=el("div","actions");const go=el("button","btn-main","Pune pe site");go.type="button";go.disabled=true;const msg=el("span","status");ar.append(go,msg);ad.append(ar);
       let pend=[];
       ip.onchange=async e=>{const fs=[...(e.target.files||[])];if(!fs.length)return;msg.textContent="Se pregătesc pozele…";go.disabled=true;pend=[];
@@ -1112,17 +1130,17 @@ function renderSections(){
 function adminTools(p,work){
   const c=el("div","admintools");
       const r=el("div","adminrow");
-      if(!work){const pb=el("button",null,String(p.price||"").trim()?"€ Schimbă prețul":"€ Pune preț");pb.type="button";
+      if(!work){const pb=el("button",null,"€ Preț");pb.type="button";pb.title="Schimbă sau scoate prețul";
         pb.onclick=()=>{const v=prompt("Prețul în euro pentru „"+p.name+"”.\nLăsați gol ca să scrie „preț la cerere”.",String(p.price||""));if(v===null)return;
           const t2=v.trim().replace(",",".").replace(/[€\s]/g,"");const n=parseFloat(t2);
           if(t2&&isNaN(n)){setStatus("Scrieți doar cifre, de exemplu 45.",true);return;}
           run(async()=>{must(await sb.from("products").update({price:t2?n:null}).eq("id",p.id));},t2?"Prețul a fost schimbat: €"+n+".":"Prețul a fost scos. Acum scrie „preț la cerere”.");};
         r.append(pb);}
-      if(!work){const s=el("button",null,p.sold?"Pune înapoi":"Marchează vândut");s.type="button";s.onclick=()=>run(async()=>{must(await sb.from("products").update({sold:!p.sold}).eq("id",p.id));},p.sold?"Din nou disponibilă.":"Marcată ca vândută.");r.append(s);}
-      if(p.img){const dp=el("button",null,"Șterge poza");dp.type="button";confirmBtn(dp,"Șterge poza",()=>run(async()=>{must(await sb.from("products").update({photo:null}).eq("id",p.id));dropPhoto(p.img);},"Poza a fost ștearsă. Haina a rămas pe site."));r.append(dp);}
-      const d=el("button","danger",(work?"Șterge lucrarea":"Șterge haina"));d.type="button";confirmBtn(d,(work?"Șterge lucrarea":"Șterge haina"),()=>run(async()=>{must(await sb.from("products").delete().eq("id",p.id));dropPhoto(p.img);},(work?"Lucrarea a fost ștearsă.":"Haina a fost ștearsă de pe site.")));
+      if(!work){const s=el("button",null,p.sold?"↩ Disponibil":"✓ Vândut");s.type="button";s.title=p.sold?"Pune înapoi la vânzare":"Marchează vândut";s.onclick=()=>run(async()=>{must(await sb.from("products").update({sold:!p.sold}).eq("id",p.id));},p.sold?"Din nou disponibilă.":"Marcată ca vândută.");r.append(s);}
+      if(p.img){const dp=el("button",null,"🗑 Poza");dp.type="button";dp.title="Șterge doar poza";confirmBtn(dp,"🗑 Poza",()=>run(async()=>{must(await sb.from("products").update({photo:null}).eq("id",p.id));dropPhoto(p.img);},"Poza a fost ștearsă. Haina a rămas pe site."));r.append(dp);}
+      const d=el("button","danger","✕ Șterge");d.type="button";d.title=work?"Șterge lucrarea":"Șterge haina";confirmBtn(d,"✕ Șterge",()=>run(async()=>{must(await sb.from("products").delete().eq("id",p.id));dropPhoto(p.img);},(work?"Lucrarea a fost ștearsă.":"Haina a fost ștearsă de pe site.")));
       r.append(d);
-      const ch=el("label","chgphoto");ch.append("📷 "+(p.img?"Schimbă poza":"Adaugă poză"));
+      const ch=el("label","chgphoto");ch.append("📷 Poza");ch.title=p.img?"Schimbă poza":"Adaugă poză";
       const fi=document.createElement("input");fi.type="file";fi.accept="image/*";fi.setAttribute("aria-label","Alege poza pentru "+p.name);ch.append(fi);
       fi.onchange=async e=>{
         const f=e.target.files&&e.target.files[0];if(!f)return;
@@ -1132,7 +1150,7 @@ function adminTools(p,work){
         e.target.value="";
       };
       photoGuard(fi,"Poză pentru „"+p.name+"”");
-      const sp=el("label","chgphoto spinadd");sp.append("🖼️ "+(p.extra.length?"Mai multe poze ("+(p.extra.length+(p.img?1:0))+")":"Mai multe poze"));
+      const sp=el("label","chgphoto spinadd");sp.append("🖼️ +Poze"+(p.extra.length?" ("+(p.extra.length+(p.img?1:0))+")":""));sp.title="Adaugă mai multe poze";
       const si=document.createElement("input");si.type="file";si.accept="image/*";si.multiple=true;si.setAttribute("aria-label","Poze din toate părțile pentru "+p.name);sp.append(si);
       si.onchange=async e=>{
         const fs=[...(e.target.files||[])];e.target.value="";if(!fs.length)return;
@@ -1146,8 +1164,8 @@ function adminTools(p,work){
       };
       photoGuard(si,"Poze 360° pentru „"+p.name+"”");
       c.append(ch);c.append(sp);
-      if(p.extra.length){const cl=el("button",null,"Scoate pozele în plus");cl.type="button";confirmBtn(cl,"Scoate pozele în plus",()=>run(async()=>{must(await sb.from("products").update({photos:[]}).eq("id",p.id));p.extra.forEach(dropPhoto);},"Pozele 360° au fost scoase. Poza principală a rămas."));r.append(cl);}
-      const vl=el("label","chgphoto vidadd");vl.append("🎬 "+(p.video?"Schimbă video":"Adaugă video"));
+      if(p.extra.length){const cl=el("button",null,"🗑 +Poze");cl.type="button";cl.title="Scoate pozele în plus";confirmBtn(cl,"🗑 +Poze",()=>run(async()=>{must(await sb.from("products").update({photos:[]}).eq("id",p.id));p.extra.forEach(dropPhoto);},"Pozele 360° au fost scoase. Poza principală a rămas."));r.append(cl);}
+      const vl=el("label","chgphoto vidadd");vl.append("🎬 Video");vl.title=p.video?"Schimbă video":"Adaugă video";
       const vi=document.createElement("input");vi.type="file";vi.accept="video/*";vi.setAttribute("aria-label","Video pentru "+p.name);vl.append(vi);
       vi.onchange=e=>{
         const f=e.target.files&&e.target.files[0];e.target.value="";if(!f)return;
@@ -1157,8 +1175,8 @@ function adminTools(p,work){
       };
       photoGuard(vi,"Video pentru „"+p.name+"”");
       c.append(vl);
-      if(p.video){const dv=el("button",null,"Scoate video");dv.type="button";confirmBtn(dv,"Scoate video",()=>run(async()=>{must(await sb.from("products").update({video:null}).eq("id",p.id));dropPhoto(p.video);},"Video-ul a fost scos."));r.append(dv);}
-      c.append(r);
+      if(p.video){const dv=el("button",null,"🗑 Video");dv.type="button";dv.title="Scoate video";confirmBtn(dv,"🗑 Video",()=>run(async()=>{must(await sb.from("products").update({video:null}).eq("id",p.id));dropPhoto(p.video);},"Video-ul a fost scos."));r.append(dv);}
+      [...r.childNodes].forEach(n=>c.append(n));
   return c;
 }
 function videoOpen(url,name){
